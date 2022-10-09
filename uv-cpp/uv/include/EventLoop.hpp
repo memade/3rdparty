@@ -19,49 +19,49 @@
 
 namespace uv
 {
-using DefaultCallback = std::function<void()>;
+ using DefaultCallback = std::function<void()>;
 
-class Async;
-class EventLoop
-{
-public:
-    enum Mode
-    {
-        Default,
-        New
-    };
-    enum Status
-    {
-        NotStarted,
-        Started,
-        Stopped
-    };
-    EventLoop();
-    ~EventLoop();
+ class Async;
+ class EventLoop
+ {
+ public:
+  enum Mode
+  {
+   Default,
+   New
+  };
+  enum Status
+  {
+   NotStarted,
+   Started,
+   Stopped
+  };
+  EventLoop();
+  ~EventLoop();
 
-    static EventLoop* DefaultLoop();
+  static EventLoop* DefaultLoop();
 
-    int run();
-    int runNoWait();
-    int stop();
-    bool isStopped();
-    Status getStatus();
-    bool isRunInLoopThread();
-    void runInThisLoop(const DefaultCallback func);
-    uv_loop_t* handle();
+  int run();
+  int runNoWait();
+  int stop();
+  bool isStopped();
+  Status getStatus();
+  bool isRunInLoopThread();
+  void runInThisLoop(const DefaultCallback func);
+  uv_loop_t* handle();
 
-    static const char* GetErrorMessage(int status);
+  static const char* GetErrorMessage(int status);
 
-private:
-    EventLoop(Mode mode);
+ private:
+  EventLoop(Mode mode);
 
-    std::thread::id loopThreadId_;
-    uv_loop_t* loop_;
-    Async* async_;
-    std::atomic<Status> status_;
-};
+  std::thread::id loopThreadId_;
+  uv_loop_t* loop_;
+  Async* async_;
+  std::atomic<Status> status_;
+ };
 
-using EventLoopPtr = std::shared_ptr<uv::EventLoop>;
+ using EventLoopPtr = std::shared_ptr<uv::EventLoop>;
 }
 #endif
 
