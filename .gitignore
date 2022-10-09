@@ -12,9 +12,9 @@
 *.pch
 
 # Compiled Dynamic libraries
-*.so
+#*.so
 *.dylib
-*.dll
+#*.dll
 
 # Fortran module files
 *.mod
@@ -30,3 +30,21 @@
 *.exe
 *.out
 *.app
+
+*.pdb
+*.vcxproj.user
+.vs/
+*.idb
+*.tlog
+*.ilk
+*.log
+
+*.idb
+*.vcxproj.user
+.vs/
+libcef_dll_wrapper.lib
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x64_beta/Debug
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x64_beta/Release
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x86_beta/Debug
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x86_beta/Release
+wxWidgets-3.2.1/lib
