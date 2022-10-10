@@ -8,8 +8,8 @@
    Description: https://github.com/wlgq2/uv-cpp
 */
 
-#include "../include/http/Response.hpp"
-#include "../include/LogWriter.hpp"
+#include <http/Response.hpp>
+#include <LogWriter.hpp>
 
 using namespace uv;
 using namespace uv::http;

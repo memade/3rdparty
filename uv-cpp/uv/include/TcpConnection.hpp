@@ -19,98 +19,98 @@
 #include <atomic>
 #include <string>
 
-#include "EventLoop.hpp"
-#include "ListBuffer.hpp"
-#include "CycleBuffer.hpp"
-#include "SocketAddr.hpp"
+#include <EventLoop.hpp>
+#include <ListBuffer.hpp>
+#include <CycleBuffer.hpp>
+#include <SocketAddr.hpp>
 
 namespace uv
 {
 
-struct WriteInfo
-{
-	static const int Disconnected = -1;
-	int status;
-	char* buf;
-	unsigned long size;
-};
+ struct WriteInfo
+ {
+  static const int Disconnected = -1;
+  int status;
+  char* buf;
+  unsigned long size;
+ };
 
 
-class TcpConnection ;
-class TcpServer;
-class ConnectionWrapper;
+ class TcpConnection;
+ class TcpServer;
+ class ConnectionWrapper;
 
-using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
-using AfterWriteCallback =  std::function<void (WriteInfo& )> ;
-using OnMessageCallback =  std::function<void (TcpConnectionPtr,const char*,ssize_t)>  ;
-using OnCloseCallback =  std::function<void (std::string& )>  ;
-using CloseCompleteCallback =  std::function<void (std::string&)>  ;
+ using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
+ using AfterWriteCallback = std::function<void(WriteInfo&)>;
+ using OnMessageCallback = std::function<void(TcpConnectionPtr, const char*, ssize_t)>;
+ using OnCloseCallback = std::function<void(std::string&)>;
+ using CloseCompleteCallback = std::function<void(std::string&)>;
 
 
-class TcpConnection : public std::enable_shared_from_this<TcpConnection>
-{
-public :
-    TcpConnection(EventLoop* loop,std::string& name,UVTcpPtr client,bool isConnected = true);
-    virtual ~TcpConnection();
-    
-    void onSocketClose();
-    void close(std::function<void(std::string&)> callback);
+ class TcpConnection : public std::enable_shared_from_this<TcpConnection>
+ {
+ public:
+  TcpConnection(EventLoop* loop, std::string& name, UVTcpPtr client, bool isConnected = true);
+  virtual ~TcpConnection();
 
-    int write(const char* buf,ssize_t size,AfterWriteCallback callback);
-    void writeInLoop(const char* buf,ssize_t size,AfterWriteCallback callback);
+  void onSocketClose();
+  void close(std::function<void(std::string&)> callback);
 
-    void setWrapper(std::shared_ptr<ConnectionWrapper> wrapper);
-    std::shared_ptr<ConnectionWrapper> getWrapper();
+  int write(const char* buf, ssize_t size, AfterWriteCallback callback);
+  void writeInLoop(const char* buf, ssize_t size, AfterWriteCallback callback);
 
-    void setMessageCallback(OnMessageCallback callback);
-    void setConnectCloseCallback(OnCloseCallback callback);
-    
-    void setConnectStatus(bool status);
-    bool isConnected();
-    
-    const std::string& Name();
+  void setWrapper(std::shared_ptr<ConnectionWrapper> wrapper);
+  std::shared_ptr<ConnectionWrapper> getWrapper();
 
-    PacketBufferPtr getPacketBuffer();
-private:
-    void onMessage(const char* buf, ssize_t size);
-    void CloseComplete();
-    char* resizeData(size_t size);
-    static void  onMesageReceive(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf);
-    
-private :
-    std::string name_;
-    bool connected_;
-    EventLoop* loop_;
-    UVTcpPtr handle_;
-    std::string data_;
-    PacketBufferPtr buffer_;
-    std::weak_ptr<ConnectionWrapper> wrapper_;
+  void setMessageCallback(OnMessageCallback callback);
+  void setConnectCloseCallback(OnCloseCallback callback);
 
-    OnMessageCallback onMessageCallback_;
-    OnCloseCallback onConnectCloseCallback_;
-    CloseCompleteCallback closeCompleteCallback_;
-};
+  void setConnectStatus(bool status);
+  bool isConnected();
 
-class  ConnectionWrapper : public std::enable_shared_from_this<ConnectionWrapper>
-{
-public:
-    ConnectionWrapper(TcpConnectionPtr connection)
-        :connection_(connection)
-    {
-    }
+  const std::string& Name();
 
-    ~ConnectionWrapper()
-    {
-        TcpConnectionPtr connection = connection_.lock();
-        if (connection)
-        {
-            connection->onSocketClose();
-        }
-    }
+  PacketBufferPtr getPacketBuffer();
+ private:
+  void onMessage(const char* buf, ssize_t size);
+  void CloseComplete();
+  char* resizeData(size_t size);
+  static void  onMesageReceive(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf);
 
-private:
-    std::weak_ptr<TcpConnection> connection_;
-};
-using ConnectionWrapperPtr = std::shared_ptr<ConnectionWrapper>;
+ private:
+  std::string name_;
+  bool connected_;
+  EventLoop* loop_;
+  UVTcpPtr handle_;
+  std::string data_;
+  PacketBufferPtr buffer_;
+  std::weak_ptr<ConnectionWrapper> wrapper_;
+
+  OnMessageCallback onMessageCallback_;
+  OnCloseCallback onConnectCloseCallback_;
+  CloseCompleteCallback closeCompleteCallback_;
+ };
+
+ class  ConnectionWrapper : public std::enable_shared_from_this<ConnectionWrapper>
+ {
+ public:
+  ConnectionWrapper(TcpConnectionPtr connection)
+   :connection_(connection)
+  {
+  }
+
+  ~ConnectionWrapper()
+  {
+   TcpConnectionPtr connection = connection_.lock();
+   if (connection)
+   {
+    connection->onSocketClose();
+   }
+  }
+
+ private:
+  std::weak_ptr<TcpConnection> connection_;
+ };
+ using ConnectionWrapperPtr = std::shared_ptr<ConnectionWrapper>;
 }
 #endif

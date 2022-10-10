@@ -20,57 +20,56 @@
 #include "TcpConnection.hpp"
 #include "TimerWheel.hpp"
 
-namespace uv
-{
+namespace uv {
 
-using OnConnectionStatusCallback =  std::function<void (std::weak_ptr<TcpConnection> )> ;
+ using OnConnectionStatusCallback = std::function<void(std::weak_ptr<TcpConnection>)>;
 
-//no thread safe.
-class TcpServer
-{
-public:
-    static void SetBufferMode(uv::GlobalConfig::BufferMode mode);
-public:
-    TcpServer(EventLoop* loop, bool tcpNoDelay = true);
-    virtual ~TcpServer();
-    int bindAndListen(SocketAddr& addr);
-    void close(DefaultCallback callback);
-    
-    TcpConnectionPtr getConnection(const std::string& name);
-    void closeConnection(const std::string& name);
+ //no thread safe.
+ class TcpServer
+ {
+ public:
+  static void SetBufferMode(uv::GlobalConfig::BufferMode mode);
+ public:
+  TcpServer(EventLoop* loop, bool tcpNoDelay = true);
+  virtual ~TcpServer();
+  int bindAndListen(SocketAddr& addr);
+  void close(DefaultCallback callback);
 
-    void setNewConnectCallback(OnConnectionStatusCallback callback);
-    void setConnectCloseCallback(OnConnectionStatusCallback callback);
+  TcpConnectionPtr getConnection(const std::string& name);
+  void closeConnection(const std::string& name);
 
-    void setMessageCallback(OnMessageCallback callback);
+  void setNewConnectCallback(OnConnectionStatusCallback callback);
+  void setConnectCloseCallback(OnConnectionStatusCallback callback);
 
-    void write(TcpConnectionPtr connection,const char* buf,unsigned int size, AfterWriteCallback callback = nullptr);
-    void write(std::string& name,const char* buf,unsigned int size, AfterWriteCallback callback =nullptr);
-    void writeInLoop(TcpConnectionPtr connection,const char* buf,unsigned int size,AfterWriteCallback callback);
-    void writeInLoop(std::string& name,const char* buf,unsigned int size,AfterWriteCallback callback);
+  void setMessageCallback(OnMessageCallback callback);
 
-    void setTimeout(unsigned int);
-private:
-    void onAccept(EventLoop* loop, UVTcpPtr client);
+  void write(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
+  void write(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
+  void writeInLoop(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback);
+  void writeInLoop(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback);
 
-    void addConnection(std::string& name, TcpConnectionPtr connection);
-    void removeConnection(std::string& name);
-    void onMessage(TcpConnectionPtr connection, const char* buf, ssize_t size);
-protected:
-    EventLoop* loop_;
-private:
-    bool tcpNoDelay_;
-    SocketAddr::IPV ipv_;
-    std::shared_ptr <TcpAcceptor> accetper_;
-    std::map<std::string ,TcpConnectionPtr>  connnections_;
+  void setTimeout(unsigned int);
+ private:
+  void onAccept(EventLoop* loop, UVTcpPtr client);
 
-
-    OnMessageCallback onMessageCallback_;
-    OnConnectionStatusCallback onNewConnectCallback_;
-    OnConnectionStatusCallback onConnectCloseCallback_;
-    TimerWheel<ConnectionWrapper> timerWheel_;
-};
+  void addConnection(std::string& name, TcpConnectionPtr connection);
+  void removeConnection(std::string& name);
+  void onMessage(TcpConnectionPtr connection, const char* buf, ssize_t size);
+ protected:
+  EventLoop* loop_;
+ private:
+  bool tcpNoDelay_;
+  SocketAddr::IPV ipv_;
+  std::shared_ptr <TcpAcceptor> accetper_;
+  std::map<std::string, TcpConnectionPtr>  connnections_;
 
 
-}
+  OnMessageCallback onMessageCallback_;
+  OnConnectionStatusCallback onNewConnectCallback_;
+  OnConnectionStatusCallback onConnectCloseCallback_;
+  TimerWheel<ConnectionWrapper> timerWheel_;
+ };
+
+
+}///namespace uv
 #endif
