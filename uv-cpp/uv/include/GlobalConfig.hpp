@@ -16,28 +16,28 @@
 
 namespace uv
 {
-class PacketBuffer;
-class Packet;
-using ReadBufferStringFunc = std::function<int(PacketBuffer*, std::string&)>;
-using ReadBufferPacketFunc = std::function<int(PacketBuffer*, Packet&)>;
-using ReadBufferVoidFunc = std::function<int(PacketBuffer*, void*)>;
+ class PacketBuffer;
+ class Packet;
+ using ReadBufferStringFunc = std::function<int(PacketBuffer*, std::string&)>;
+ using ReadBufferPacketFunc = std::function<int(PacketBuffer*, Packet&)>;
+ using ReadBufferVoidFunc = std::function<int(PacketBuffer*, void*)>;
 
-class GlobalConfig
-{
-public:
-    enum BufferMode
-    {
-        NoBuffer,
-        CycleBuffer,
-        ListBuffer
-    };
-    static BufferMode BufferModeStatus;
-    static uint64_t   CycleBufferSize;
+ class GlobalConfig
+ {
+ public:
+  enum BufferMode
+  {
+   NoBuffer,
+   CycleBuffer,
+   ListBuffer
+  };
+  static BufferMode BufferModeStatus;
+  static uint64_t   CycleBufferSize;
 
 
-    static ReadBufferStringFunc ReadBufferString;
-    static ReadBufferPacketFunc ReadBufferPacket;
-    static ReadBufferVoidFunc ReadBufferVoid;
-};
+  static ReadBufferStringFunc ReadBufferString;
+  static ReadBufferPacketFunc ReadBufferPacket;
+  static ReadBufferVoidFunc ReadBufferVoid;
+ };
 }
 #endif

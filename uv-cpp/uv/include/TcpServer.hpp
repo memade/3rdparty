@@ -25,44 +25,46 @@ namespace uv {
  using OnConnectionStatusCallback = std::function<void(std::weak_ptr<TcpConnection>)>;
 
  //no thread safe.
- class TcpServer
- {
+ class TcpServer {
+ protected:
+  std::shared_ptr<std::mutex> m_Mutex = std::make_shared<std::mutex>();
  public:
   static void SetBufferMode(uv::GlobalConfig::BufferMode mode);
  public:
   TcpServer(EventLoop* loop, bool tcpNoDelay = true);
   virtual ~TcpServer();
-  int bindAndListen(SocketAddr& addr);
-  void close(DefaultCallback callback);
+ protected:
+  virtual int bindAndListen(SocketAddr& addr);
 
-  TcpConnectionPtr getConnection(const std::string& name);
-  void closeConnection(const std::string& name);
+  virtual void close(DefaultCallback callback);
 
-  void setNewConnectCallback(OnConnectionStatusCallback callback);
-  void setConnectCloseCallback(OnConnectionStatusCallback callback);
+  virtual TcpConnectionPtr getConnection(const std::string& name);
+  virtual void closeConnection(const std::string& name);
 
-  void setMessageCallback(OnMessageCallback callback);
+  virtual void setNewConnectCallback(OnConnectionStatusCallback callback);
+  virtual void setConnectCloseCallback(OnConnectionStatusCallback callback);
 
-  void write(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
-  void write(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
-  void writeInLoop(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback);
-  void writeInLoop(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback);
+  virtual void setMessageCallback(OnMessageCallback callback);
 
-  void setTimeout(unsigned int);
- private:
-  void onAccept(EventLoop* loop, UVTcpPtr client);
+  virtual void write(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
+  virtual void write(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
+  virtual void writeInLoop(TcpConnectionPtr connection, const char* buf, unsigned int size, AfterWriteCallback callback);
+  virtual void writeInLoop(std::string& name, const char* buf, unsigned int size, AfterWriteCallback callback);
 
-  void addConnection(std::string& name, TcpConnectionPtr connection);
-  void removeConnection(std::string& name);
-  void onMessage(TcpConnectionPtr connection, const char* buf, ssize_t size);
+  virtual void setTimeout(unsigned int);
+ protected:
+  virtual void onAccept(EventLoop* loop, UVTcpPtr client);
+
+  virtual void addConnection(std::string& name, TcpConnectionPtr connection);
+  virtual void removeConnection(std::string& name);
+  virtual void onMessage(TcpConnectionPtr connection, const char* buf, ssize_t size);
  protected:
   EventLoop* loop_;
- private:
+ protected:
   bool tcpNoDelay_;
   SocketAddr::IPV ipv_;
   std::shared_ptr <TcpAcceptor> accetper_;
   std::map<std::string, TcpConnectionPtr>  connnections_;
-
 
   OnMessageCallback onMessageCallback_;
   OnConnectionStatusCallback onNewConnectCallback_;

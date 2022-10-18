@@ -131,6 +131,12 @@ void uv::TcpClient::afterConnectFail()
  runConnectCallback(TcpClient::OnConnectFail);
 }
 
+int uv::TcpClient::write(const std::string& buf, AfterWriteCallback callback) {
+ if (!buf.empty())
+  return write(buf.data(), buf.size(), callback);
+ return -1;
+}
+
 int uv::TcpClient::write(const char* buf, unsigned int size, AfterWriteCallback callback)
 {
  if (connection_)

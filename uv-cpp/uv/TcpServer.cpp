@@ -75,15 +75,12 @@ void uv::TcpServer::onAccept(EventLoop* loop, UVTcpPtr client)
  }
 }
 
-int TcpServer::bindAndListen(SocketAddr& addr)
-{
+int TcpServer::bindAndListen(SocketAddr& addr) {
  ipv_ = addr.Ipv();
  accetper_ = std::make_shared<TcpAcceptor>(loop_, tcpNoDelay_);
  auto rst = accetper_->bind(addr);
  if (0 != rst)
- {
   return rst;
- }
  accetper_->setNewConnectionCallback(std::bind(&TcpServer::onAccept, this, std::placeholders::_1, std::placeholders::_2));
  timerWheel_.start();
  return accetper_->listen();
@@ -205,7 +202,7 @@ void TcpServer::setNewConnectCallback(OnConnectionStatusCallback callback)
  onNewConnectCallback_ = callback;
 }
 
-void  TcpServer::setConnectCloseCallback(OnConnectionStatusCallback callback)
+void TcpServer::setConnectCloseCallback(OnConnectionStatusCallback callback)
 {
  onConnectCloseCallback_ = callback;
 }

@@ -57,8 +57,7 @@ TcpConnection::TcpConnection(EventLoop* loop, std::string& name, UVTcpPtr client
 {
  handle_->data = static_cast<void*>(this);
  ::uv_read_start((uv_stream_t*)handle_.get(),
-  [](uv_handle_t* handle, size_t suggested_size, uv_buf_t* buf)
-  {
+  [](uv_handle_t* handle, size_t suggested_size, uv_buf_t* buf) {
    auto conn = static_cast<TcpConnection*>(handle->data);
    buf->base = conn->resizeData(suggested_size);
 #if _MSC_VER

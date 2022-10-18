@@ -40,6 +40,7 @@ namespace uv
   void connect(SocketAddr& addr);
   void close(std::function<void(uv::TcpClient*)> callback);
 
+  int write(const std::string&, AfterWriteCallback callback = nullptr);
   int write(const char* buf, unsigned int size, AfterWriteCallback callback = nullptr);
   void writeInLoop(const char* buf, unsigned int size, AfterWriteCallback callback);
 

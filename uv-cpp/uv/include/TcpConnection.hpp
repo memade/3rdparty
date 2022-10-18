@@ -18,6 +18,7 @@
 #include <functional>
 #include <atomic>
 #include <string>
+#include <mutex>
 
 #include <EventLoop.hpp>
 #include <ListBuffer.hpp>
@@ -49,35 +50,37 @@ namespace uv
 
  class TcpConnection : public std::enable_shared_from_this<TcpConnection>
  {
+ protected:
+  std::shared_ptr<std::mutex> m_Mutex = std::make_shared<std::mutex>();
  public:
   TcpConnection(EventLoop* loop, std::string& name, UVTcpPtr client, bool isConnected = true);
   virtual ~TcpConnection();
+ public:
+  virtual void onSocketClose();
+  virtual void close(std::function<void(std::string&)> callback);
 
-  void onSocketClose();
-  void close(std::function<void(std::string&)> callback);
+  virtual int write(const char* buf, ssize_t size, AfterWriteCallback callback);
+  virtual void writeInLoop(const char* buf, ssize_t size, AfterWriteCallback callback);
 
-  int write(const char* buf, ssize_t size, AfterWriteCallback callback);
-  void writeInLoop(const char* buf, ssize_t size, AfterWriteCallback callback);
+  virtual void setWrapper(std::shared_ptr<ConnectionWrapper> wrapper);
+  virtual std::shared_ptr<ConnectionWrapper> getWrapper();
 
-  void setWrapper(std::shared_ptr<ConnectionWrapper> wrapper);
-  std::shared_ptr<ConnectionWrapper> getWrapper();
+  virtual void setMessageCallback(OnMessageCallback callback);
+  virtual void setConnectCloseCallback(OnCloseCallback callback);
 
-  void setMessageCallback(OnMessageCallback callback);
-  void setConnectCloseCallback(OnCloseCallback callback);
+  virtual void setConnectStatus(bool status);
+  virtual bool isConnected();
 
-  void setConnectStatus(bool status);
-  bool isConnected();
-
-  const std::string& Name();
+  virtual const std::string& Name();
 
   PacketBufferPtr getPacketBuffer();
- private:
+ protected:
   void onMessage(const char* buf, ssize_t size);
   void CloseComplete();
   char* resizeData(size_t size);
   static void  onMesageReceive(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf);
 
- private:
+ protected:
   std::string name_;
   bool connected_;
   EventLoop* loop_;
@@ -91,7 +94,7 @@ namespace uv
   CloseCompleteCallback closeCompleteCallback_;
  };
 
- class  ConnectionWrapper : public std::enable_shared_from_this<ConnectionWrapper>
+ class ConnectionWrapper : public std::enable_shared_from_this<ConnectionWrapper>
  {
  public:
   ConnectionWrapper(TcpConnectionPtr connection)
