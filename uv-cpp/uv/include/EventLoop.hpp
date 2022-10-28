@@ -46,6 +46,7 @@ namespace uv
   int stop();
   bool isStopped();
   Status getStatus();
+  void setStatus(const Status&);
   bool isRunInLoopThread();
   void runInThisLoop(const DefaultCallback func);
   uv_loop_t* handle();

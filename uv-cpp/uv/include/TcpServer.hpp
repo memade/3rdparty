@@ -33,7 +33,7 @@ namespace uv {
  public:
   TcpServer(EventLoop* loop, bool tcpNoDelay = true);
   virtual ~TcpServer();
- protected:
+ public:
   virtual int bindAndListen(SocketAddr& addr);
 
   virtual void close(DefaultCallback callback);

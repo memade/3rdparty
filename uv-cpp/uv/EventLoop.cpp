@@ -102,7 +102,9 @@ bool EventLoop::isStopped()
 {
  return status_ == Status::Stopped;
 }
-
+void EventLoop::setStatus(const Status& status) {
+ status_ = status;
+}
 EventLoop::Status EventLoop::getStatus()
 {
  return status_;

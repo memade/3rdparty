@@ -236,10 +236,10 @@ void uv__tcp_endgame(uv_loop_t* loop, uv_tcp_t* handle) {
   unsigned int i;
   uv_tcp_accept_t* req;
 
-  assert(handle->flags & UV_HANDLE_CLOSING);
-  assert(handle->reqs_pending == 0);
-  assert(!(handle->flags & UV_HANDLE_CLOSED));
-  assert(handle->socket == INVALID_SOCKET);
+  //assert(handle->flags & UV_HANDLE_CLOSING);
+  //assert(handle->reqs_pending == 0);
+  //assert(!(handle->flags & UV_HANDLE_CLOSED));
+  //assert(handle->socket == INVALID_SOCKET);
 
   if (!(handle->flags & UV_HANDLE_CONNECTION) && handle->tcp.serv.accept_reqs) {
     if (handle->flags & UV_HANDLE_EMULATE_IOCP) {

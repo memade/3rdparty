@@ -63,14 +63,16 @@ namespace curlpp {
    CURLMSG msg;
   };
   typedef std::list<std::pair<const curlpp::Easy*, Info>> Msgs;
- protected:
+ public:
   IMulti();
   ~IMulti();
+ private:
   virtual void Init();
   virtual void UnInit();
  public:
-  virtual void Push(const curlpp::Easy* handle);
-  virtual void Pop(const curlpp::Easy* handle);
+  virtual void Stop();
+  virtual void Push(curlpp::Easy* handle);
+  virtual bool Pop(const curlpp::Easy* handle);
   virtual bool Perform(int* nbHandles);
   virtual void FDSet(fd_set* read_fd_set, fd_set* write_fd_set, fd_set* exc_fd_set, int* max_fd);
   virtual Msgs InfoGet();
