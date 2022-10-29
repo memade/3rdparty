@@ -31,7 +31,6 @@
     <ClCompile Include="..\uv\http\Response.cpp" />
     <ClCompile Include="..\uv\Idle.cpp" />
     <ClCompile Include="..\uv\ListBuffer.cpp" />
-    <ClCompile Include="..\uv\LogWriter.cpp" />
     <ClCompile Include="..\uv\Packet.cpp" />
     <ClCompile Include="..\uv\Signal.cpp" />
     <ClCompile Include="..\uv\SocketAddr.cpp" />

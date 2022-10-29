@@ -9,7 +9,6 @@
 */
 
 #include <TcpAcceptor.hpp>
-#include <LogWriter.hpp>
 
 using namespace std;
 using namespace uv;
@@ -65,7 +64,7 @@ int TcpAcceptor::listen()
   {
    if (status < 0)
    {
-    uv::LogWriter::Instance()->error(std::string("New connection error :") + EventLoop::GetErrorMessage(status));
+    //uv::LogWriter::Instance()->error(std::string("New connection error :") + EventLoop::GetErrorMessage(status));
     return;
    }
    TcpAcceptor* accept = static_cast<TcpAcceptor*>(server->data);

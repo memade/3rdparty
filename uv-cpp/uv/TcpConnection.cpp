@@ -11,7 +11,6 @@ Description: https://github.com/wlgq2/uv-cpp
 #include <TcpConnection.hpp>
 #include <TcpServer.hpp>
 #include <Async.hpp>
-#include <LogWriter.hpp>
 #include <GlobalConfig.hpp>
 
 using namespace std;
@@ -142,7 +141,7 @@ int TcpConnection::write(const char* buf, ssize_t size, AfterWriteCallback callb
    });
   if (0 != rst)
   {
-   uv::LogWriter::Instance()->error(std::string("write data error:" + std::to_string(rst)));
+   //uv::LogWriter::Instance()->error(std::string("write data error:" + std::to_string(rst)));
    if (nullptr != callback)
    {
     struct WriteInfo info = { rst,const_cast<char*>(buf),static_cast<unsigned long>(size) };
@@ -203,7 +202,7 @@ void  TcpConnection::onMesageReceive(uv_stream_t* client, ssize_t nread, const u
  else if (nread < 0)
  {
   connection->setConnectStatus(false);
-  uv::LogWriter::Instance()->error(uv_err_name((int)nread));
+  //uv::LogWriter::Instance()->error(uv_err_name((int)nread));
 
   if (nread != UV_EOF)
   {

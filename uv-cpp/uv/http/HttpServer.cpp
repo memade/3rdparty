@@ -70,7 +70,7 @@ void uv::http::HttpServer::onMesage(TcpConnectionPtr conn, const char* data, ssi
  auto packetbuf = conn->getPacketBuffer();
  if (nullptr == packetbuf)
  {
-  uv::LogWriter::Instance()->error("http server need use data buffer.");
+  //uv::LogWriter::Instance()->error("http server need use data buffer.");
   return;
  }
  packetbuf->append(data, size);

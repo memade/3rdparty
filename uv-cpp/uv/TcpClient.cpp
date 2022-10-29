@@ -11,7 +11,6 @@
 #include <string>
 
 #include <TcpClient.hpp>
-#include <LogWriter.hpp>
 #include <Packet.hpp>
 
 using namespace uv;
@@ -55,7 +54,7 @@ void TcpClient::connect(SocketAddr& addr)
    auto handle = static_cast<TcpClient*>((req->data));
    if (0 != status)
    {
-    uv::LogWriter::Instance()->error("connect fail.");
+    //uv::LogWriter::Instance()->error("connect fail.");
     handle->onConnect(false);
     return;
    }
@@ -145,7 +144,7 @@ int uv::TcpClient::write(const char* buf, unsigned int size, AfterWriteCallback 
  }
  else if (callback)
  {
-  uv::LogWriter::Instance()->warn("try write a disconnect connection.");
+  //uv::LogWriter::Instance()->warn("try write a disconnect connection.");
   WriteInfo info = { WriteInfo::Disconnected,const_cast<char*>(buf),size };
   callback(info);
  }
@@ -160,7 +159,7 @@ void uv::TcpClient::writeInLoop(const char* buf, unsigned int size, AfterWriteCa
  }
  else if (callback)
  {
-  uv::LogWriter::Instance()->warn("try write a disconnect connection.");
+  //uv::LogWriter::Instance()->warn("try write a disconnect connection.");
   WriteInfo info = { WriteInfo::Disconnected,const_cast<char*>(buf),size };
   callback(info);
  }
@@ -206,6 +205,6 @@ void uv::TcpClient::runConnectCallback(TcpClient::ConnectStatus status)
 void uv::TcpClient::onClose(std::string& name)
 {
  //connection_ = nullptr;
- uv::LogWriter::Instance()->info("Close tcp client connection complete.");
+ //uv::LogWriter::Instance()->info("Close tcp client connection complete.");
  runConnectCallback(TcpClient::OnConnectClose);
 }

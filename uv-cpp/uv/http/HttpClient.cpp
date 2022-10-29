@@ -104,7 +104,7 @@ void HttpClient::onMessage(const char* data, ssize_t size)
  }
  else if (rst == ParseResult::Error)
  {
-  uv::LogWriter::Instance()->error("parse http's response error.");
+  //uv::LogWriter::Instance()->error("parse http's response error.");
   //解析出错
   buffer_.clear();
  }

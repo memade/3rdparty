@@ -9,7 +9,7 @@
 */
 
 #include <http/Response.hpp>
-#include <LogWriter.hpp>
+//#include <LogWriter.hpp>
 
 using namespace uv;
 using namespace uv::http;

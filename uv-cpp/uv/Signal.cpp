@@ -9,7 +9,6 @@
 */
 
 #include <Signal.hpp>
-#include <LogWriter.hpp>
 #include <EventLoop.hpp>
 
 using namespace uv;
@@ -81,6 +80,6 @@ void Signal::onSignal(uv_signal_t* handle, int signum)
  auto ptr = static_cast <Signal*>(handle->data);
  if (!ptr->handle(signum))
  {
-  uv::LogWriter::Instance()->warn(std::string("non defined signal handle :") + std::to_string(signum));
+  //uv::LogWriter::Instance()->warn(std::string("non defined signal handle :") + std::to_string(signum));
  }
 }

@@ -8,7 +8,6 @@ Last modified: 2019-10-20
 Description: https://github.com/wlgq2/uv-cpp
 */
 #include <Udp.hpp>
-#include <LogWriter.hpp>
 
 using namespace uv;
 
@@ -58,7 +57,8 @@ int Udp::send(SocketAddr& to, const char* buf, unsigned size)
    {
     std::string info("udp send error :");
     info += EventLoop::GetErrorMessage(status);
-    uv::LogWriter::Instance()->error(info);
+    //uv::LogWriter::Instance()->error(info);
+    //std::cout << info << std::endl;
    }
    delete handle;
   });
@@ -114,7 +114,7 @@ void Udp::onMesageReceive(uv_udp_t* handle, ssize_t nread, const uv_buf_t* buf, 
  {
   std::string info("udp read error :");
   info += EventLoop::GetErrorMessage((int)nread);
-  uv::LogWriter::Instance()->error(info);
+  //uv::LogWriter::Instance()->error(info);
  }
  else if (nread > 0)
  {

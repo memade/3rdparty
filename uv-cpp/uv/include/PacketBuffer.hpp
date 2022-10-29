@@ -15,7 +15,6 @@ Description: https://github.com/wlgq2/uv-cpp
 #include   <string>
 #include   <memory>
 
-#include   "LogWriter.hpp"
 #include   "GlobalConfig.hpp"
 
 namespace uv
@@ -38,7 +37,7 @@ namespace uv
   {
    if (nullptr != GlobalConfig::ReadBufferString)
     return GlobalConfig::ReadBufferString(this, out);
-   uv::LogWriter::Instance()->error("not defined packet parse func.");
+   //uv::LogWriter::Instance()->error("not defined packet parse func.");
    return -1;
   }
 
@@ -46,7 +45,7 @@ namespace uv
   {
    if (nullptr != GlobalConfig::ReadBufferPacket)
     return GlobalConfig::ReadBufferPacket(this, out);
-   uv::LogWriter::Instance()->error("not defined packet parse func.");
+   //uv::LogWriter::Instance()->error("not defined packet parse func.");
    return -1;
   }
 
@@ -54,7 +53,7 @@ namespace uv
   {
    if (nullptr != GlobalConfig::ReadBufferVoid)
     return GlobalConfig::ReadBufferVoid(this, out);
-   uv::LogWriter::Instance()->error("not defined packet parse func.");
+   //uv::LogWriter::Instance()->error("not defined packet parse func.");
    return -1;
   }
  };

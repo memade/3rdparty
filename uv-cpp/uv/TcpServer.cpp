@@ -14,7 +14,6 @@
 #include <string>
 
 #include <TcpServer.hpp>
-#include <LogWriter.hpp>
 
 using namespace std;
 using namespace uv;
@@ -52,8 +51,6 @@ void uv::TcpServer::onAccept(EventLoop* loop, UVTcpPtr client)
 {
  string key;
  SocketAddr::AddrToStr(client.get(), key, ipv_);
-
- uv::LogWriter::Instance()->debug("new connect  " + key);
  shared_ptr<TcpConnection> connection(new TcpConnection(loop, key, client));
  if (connection)
  {
@@ -71,7 +68,7 @@ void uv::TcpServer::onAccept(EventLoop* loop, UVTcpPtr client)
  }
  else
  {
-  uv::LogWriter::Instance()->error("create connection fail. :" + key);
+  //uv::LogWriter::Instance()->error("create connection fail. :" + key);
  }
 }
 
@@ -185,7 +182,7 @@ void TcpServer::writeInLoop(shared_ptr<TcpConnection> connection, const char* bu
  }
  else if (callback)
  {
-  uv::LogWriter::Instance()->warn("try write a disconnect connection.");
+  //uv::LogWriter::Instance()->warn("try write a disconnect connection.");
   WriteInfo info = { WriteInfo::Disconnected,const_cast<char*>(buf),size };
   callback(info);
  }
