@@ -7,7 +7,7 @@
 
    Description: https://github.com/wlgq2/uv-cpp
 */
-
+#include <iostream>
 #include <TcpAcceptor.hpp>
 
 using namespace std;
@@ -64,6 +64,7 @@ int TcpAcceptor::listen()
   {
    if (status < 0)
    {
+    std::cout << std::string("New connection error :") + EventLoop::GetErrorMessage(status) << std::endl;
     //uv::LogWriter::Instance()->error(std::string("New connection error :") + EventLoop::GetErrorMessage(status));
     return;
    }

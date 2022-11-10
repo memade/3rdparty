@@ -11,6 +11,7 @@
 #ifndef UV_HTTP_SERVER_HPP
 #define UV_HTTP_SERVER_HPP
 
+#include <iostream>
 #include "../TcpServer.hpp"
 #include "RadixTree.hpp"
 #include "Request.hpp"

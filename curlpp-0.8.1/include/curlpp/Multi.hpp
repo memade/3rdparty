@@ -55,7 +55,6 @@ namespace curlpp {
  };
 
  class IMulti {
- protected:
   std::shared_ptr<std::mutex> m_Mutex = std::make_shared<std::mutex>();
  public:
   struct Info {

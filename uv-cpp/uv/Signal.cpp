@@ -7,7 +7,8 @@
 
    Description: https://github.com/wlgq2/uv-cpp
 */
-
+#include <iostream>
+#include <string>
 #include <Signal.hpp>
 #include <EventLoop.hpp>
 
@@ -80,6 +81,6 @@ void Signal::onSignal(uv_signal_t* handle, int signum)
  auto ptr = static_cast <Signal*>(handle->data);
  if (!ptr->handle(signum))
  {
-  //uv::LogWriter::Instance()->warn(std::string("non defined signal handle :") + std::to_string(signum));
+  std::cout << std::string("non defined signal handle :") + std::to_string(signum) << std::endl;
  }
 }

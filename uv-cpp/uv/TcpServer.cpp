@@ -8,7 +8,7 @@
    Description: https://github.com/wlgq2/uv-cpp
 */
 
-
+#include <iostream>
 #include <functional>
 #include <memory>
 #include <string>
@@ -68,7 +68,7 @@ void uv::TcpServer::onAccept(EventLoop* loop, UVTcpPtr client)
  }
  else
  {
-  //uv::LogWriter::Instance()->error("create connection fail. :" + key);
+  std::cout << "create connection fail. :" + key << std::endl;
  }
 }
 
@@ -182,7 +182,7 @@ void TcpServer::writeInLoop(shared_ptr<TcpConnection> connection, const char* bu
  }
  else if (callback)
  {
-  //uv::LogWriter::Instance()->warn("try write a disconnect connection.");
+  std::cout << "try write a disconnect connection." << std::endl;
   WriteInfo info = { WriteInfo::Disconnected,const_cast<char*>(buf),size };
   callback(info);
  }
