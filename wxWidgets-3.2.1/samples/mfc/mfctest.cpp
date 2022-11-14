@@ -173,9 +173,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, char *, int)
 
 CMainWindow::CMainWindow()
 {
-    LoadAccelTable( "MainAccelTable" );
-    Create( NULL, "Hello Foundation Application",
-        WS_OVERLAPPEDWINDOW, rectDefault, NULL, "MainMenu" );
+    LoadAccelTable( L"MainAccelTable" );
+    Create( NULL, L"Hello Foundation Application",
+        WS_OVERLAPPEDWINDOW, rectDefault, NULL, L"MainMenu" );
 
     // Create a container representing the MFC window in wxWidgets window
     // hierarchy.
@@ -206,7 +206,7 @@ void CMainWindow::OnPaint()
 
 void CMainWindow::OnAbout()
 {
-    CDialog about( "AboutBox", this );
+    CDialog about( L"AboutBox", this );
     about.DoModal();
 }
 
