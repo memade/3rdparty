@@ -7,7 +7,7 @@
 ## via makefile.in
 
 
-PLATFORM=VC-WIN32
+PLATFORM=VC-WIN64A
 SRCDIR=.
 BLDDIR=.
 FIPSKEY=f4556650ac31d35461610bac4ed81b1a181b2d8a43ea2854cbae22ca74560813
@@ -19,21 +19,21 @@ MINOR=0
 
 SHLIB_VERSION_NUMBER=3
 
-LIBS= apps\libapps.lib  libcrypto.lib  libssl.lib  providers\libcommon.lib  providers\libdefault.lib  providers\liblegacy.lib  test\libtestutil.lib
+LIBS= apps\libapps.lib  libcrypto.lib  libssl.lib  providers\libcommon.lib  providers\libdefault.lib  providers\libfips.lib  providers\liblegacy.lib  test\libtestutil.lib
 SHLIBS=
 SHLIBPDBS=
 MODULES=providers\legacy.dll test\p_test.dll
-MODULEPDBS=providers\legacy.pdb test\p_test.pdb
-FIPSMODULE=
-FIPSMODULENAME=
-PROGRAMS=apps\openssl.exe fuzz\asn1-test.exe fuzz\asn1parse-test.exe fuzz\bignum-test.exe fuzz\bndiv-test.exe fuzz\client-test.exe fuzz\cmp-test.exe fuzz\cms-test.exe fuzz\conf-test.exe fuzz\crl-test.exe fuzz\ct-test.exe fuzz\server-test.exe fuzz\x509-test.exe test\aborttest.exe test\aesgcmtest.exe test\afalgtest.exe test\algorithmid_test.exe test\asn1_decode_test.exe test\asn1_dsa_internal_test.exe test\asn1_encode_test.exe test\asn1_internal_test.exe test\asn1_string_table_test.exe test\asn1_time_test.exe test\asynciotest.exe test\asynctest.exe test\bad_dtls_test.exe test\bftest.exe test\bio_callback_test.exe test\bio_core_test.exe test\bio_enc_test.exe test\bio_memleak_test.exe test\bio_prefix_text.exe test\bio_readbuffer_test.exe test\bioprinttest.exe test\bn_internal_test.exe test\bntest.exe test\buildtest_c_aes.exe test\buildtest_c_async.exe test\buildtest_c_blowfish.exe test\buildtest_c_bn.exe test\buildtest_c_buffer.exe test\buildtest_c_camellia.exe test\buildtest_c_cast.exe test\buildtest_c_cmac.exe test\buildtest_c_cmp_util.exe test\buildtest_c_comp.exe test\buildtest_c_conf_api.exe test\buildtest_c_configuration.exe test\buildtest_c_conftypes.exe test\buildtest_c_core.exe test\buildtest_c_core_dispatch.exe test\buildtest_c_core_names.exe test\buildtest_c_core_object.exe test\buildtest_c_cryptoerr_legacy.exe test\buildtest_c_decoder.exe test\buildtest_c_des.exe test\buildtest_c_dh.exe test\buildtest_c_dsa.exe test\buildtest_c_dtls1.exe test\buildtest_c_e_os2.exe test\buildtest_c_ebcdic.exe test\buildtest_c_ec.exe test\buildtest_c_ecdh.exe test\buildtest_c_ecdsa.exe test\buildtest_c_encoder.exe test\buildtest_c_engine.exe test\buildtest_c_evp.exe test\buildtest_c_fips_names.exe test\buildtest_c_hmac.exe test\buildtest_c_http.exe test\buildtest_c_kdf.exe test\buildtest_c_macros.exe test\buildtest_c_md2.exe test\buildtest_c_md4.exe test\buildtest_c_md5.exe test\buildtest_c_modes.exe test\buildtest_c_obj_mac.exe test\buildtest_c_objects.exe test\buildtest_c_ossl_typ.exe test\buildtest_c_param_build.exe test\buildtest_c_params.exe test\buildtest_c_pem.exe test\buildtest_c_pem2.exe test\buildtest_c_prov_ssl.exe test\buildtest_c_provider.exe test\buildtest_c_rand.exe test\buildtest_c_rc2.exe test\buildtest_c_rc4.exe test\buildtest_c_rc5.exe test\buildtest_c_ripemd.exe test\buildtest_c_rsa.exe test\buildtest_c_seed.exe test\buildtest_c_self_test.exe test\buildtest_c_sha.exe test\buildtest_c_srtp.exe test\buildtest_c_ssl2.exe test\buildtest_c_sslerr_legacy.exe test\buildtest_c_stack.exe test\buildtest_c_store.exe test\buildtest_c_symhacks.exe test\buildtest_c_tls1.exe test\buildtest_c_ts.exe test\buildtest_c_txt_db.exe test\buildtest_c_types.exe test\buildtest_c_whrlpool.exe test\casttest.exe test\chacha_internal_test.exe test\cipher_overhead_test.exe test\cipherbytes_test.exe test\cipherlist_test.exe test\ciphername_test.exe test\clienthellotest.exe test\cmactest.exe test\cmp_asn_test.exe test\cmp_client_test.exe test\cmp_ctx_test.exe test\cmp_hdr_test.exe test\cmp_msg_test.exe test\cmp_protect_test.exe test\cmp_server_test.exe test\cmp_status_test.exe test\cmp_vfy_test.exe test\cmsapitest.exe test\conf_include_test.exe test\confdump.exe test\constant_time_test.exe test\context_internal_test.exe test\crltest.exe test\ct_test.exe test\ctype_internal_test.exe test\curve448_internal_test.exe test\d2i_test.exe test\danetest.exe test\defltfips_test.exe test\destest.exe test\dhtest.exe test\drbgtest.exe test\dsa_no_digest_size_test.exe test\dsatest.exe test\dtls_mtu_test.exe test\dtlstest.exe test\dtlsv1listentest.exe test\ec_internal_test.exe test\ecdsatest.exe test\ecstresstest.exe test\ectest.exe test\endecode_test.exe test\endecoder_legacy_test.exe test\enginetest.exe test\errtest.exe test\evp_extra_test.exe test\evp_extra_test2.exe test\evp_fetch_prov_test.exe test\evp_kdf_test.exe test\evp_libctx_test.exe test\evp_pkey_ctx_new_from_name.exe test\evp_pkey_dparams_test.exe test\evp_pkey_provided_test.exe test\evp_test.exe test\exdatatest.exe test\exptest.exe test\fatalerrtest.exe test\ffc_internal_test.exe test\gmdifftest.exe test\hexstr_test.exe test\hmactest.exe test\http_test.exe test\ideatest.exe test\igetest.exe test\keymgmt_internal_test.exe test\lhash_test.exe test\localetest.exe test\mdc2test.exe test\memleaktest.exe test\modes_internal_test.exe test\namemap_internal_test.exe test\ocspapitest.exe test\ossl_store_test.exe test\packettest.exe test\param_build_test.exe test\params_api_test.exe test\params_conversion_test.exe test\params_test.exe test\pbelutest.exe test\pbetest.exe test\pem_read_depr_test.exe test\pemtest.exe test\pkcs12_format_test.exe test\pkcs7_test.exe test\pkey_meth_kdf_test.exe test\pkey_meth_test.exe test\poly1305_internal_test.exe test\property_test.exe test\prov_config_test.exe test\provfetchtest.exe test\provider_fallback_test.exe test\provider_internal_test.exe test\provider_pkey_test.exe test\provider_status_test.exe test\provider_test.exe test\rand_status_test.exe test\rand_test.exe test\rc2test.exe test\rc4test.exe test\rc5test.exe test\rdrand_sanitytest.exe test\recordlentest.exe test\rsa_complex.exe test\rsa_mp_test.exe test\rsa_sp800_56b_test.exe test\rsa_test.exe test\sanitytest.exe test\secmemtest.exe test\servername_test.exe test\sha_test.exe test\siphash_internal_test.exe test\sm2_internal_test.exe test\sm3_internal_test.exe test\sm4_internal_test.exe test\sparse_array_test.exe test\srptest.exe test\ssl_cert_table_internal_test.exe test\ssl_ctx_test.exe test\ssl_old_test.exe test\ssl_test.exe test\ssl_test_ctx_test.exe test\sslapitest.exe test\sslbuffertest.exe test\sslcorrupttest.exe test\stack_test.exe test\sysdefaulttest.exe test\test_test.exe test\threadstest.exe test\threadstest_fips.exe test\time_offset_test.exe test\tls13ccstest.exe test\tls13encryptiontest.exe test\uitest.exe test\upcallstest.exe test\user_property_test.exe test\v3ext.exe test\v3nametest.exe test\verify_extra_test.exe test\versions.exe test\wpackettest.exe test\x509_check_cert_pkey_test.exe test\x509_dup_cert_test.exe test\x509_internal_test.exe test\x509_time_test.exe test\x509aux.exe
-PROGRAMPDBS=apps\openssl.pdb fuzz\asn1-test.pdb fuzz\asn1parse-test.pdb fuzz\bignum-test.pdb fuzz\bndiv-test.pdb fuzz\client-test.pdb fuzz\cmp-test.pdb fuzz\cms-test.pdb fuzz\conf-test.pdb fuzz\crl-test.pdb fuzz\ct-test.pdb fuzz\server-test.pdb fuzz\x509-test.pdb test\aborttest.pdb test\aesgcmtest.pdb test\afalgtest.pdb test\algorithmid_test.pdb test\asn1_decode_test.pdb test\asn1_dsa_internal_test.pdb test\asn1_encode_test.pdb test\asn1_internal_test.pdb test\asn1_string_table_test.pdb test\asn1_time_test.pdb test\asynciotest.pdb test\asynctest.pdb test\bad_dtls_test.pdb test\bftest.pdb test\bio_callback_test.pdb test\bio_core_test.pdb test\bio_enc_test.pdb test\bio_memleak_test.pdb test\bio_prefix_text.pdb test\bio_readbuffer_test.pdb test\bioprinttest.pdb test\bn_internal_test.pdb test\bntest.pdb test\buildtest_c_aes.pdb test\buildtest_c_async.pdb test\buildtest_c_blowfish.pdb test\buildtest_c_bn.pdb test\buildtest_c_buffer.pdb test\buildtest_c_camellia.pdb test\buildtest_c_cast.pdb test\buildtest_c_cmac.pdb test\buildtest_c_cmp_util.pdb test\buildtest_c_comp.pdb test\buildtest_c_conf_api.pdb test\buildtest_c_configuration.pdb test\buildtest_c_conftypes.pdb test\buildtest_c_core.pdb test\buildtest_c_core_dispatch.pdb test\buildtest_c_core_names.pdb test\buildtest_c_core_object.pdb test\buildtest_c_cryptoerr_legacy.pdb test\buildtest_c_decoder.pdb test\buildtest_c_des.pdb test\buildtest_c_dh.pdb test\buildtest_c_dsa.pdb test\buildtest_c_dtls1.pdb test\buildtest_c_e_os2.pdb test\buildtest_c_ebcdic.pdb test\buildtest_c_ec.pdb test\buildtest_c_ecdh.pdb test\buildtest_c_ecdsa.pdb test\buildtest_c_encoder.pdb test\buildtest_c_engine.pdb test\buildtest_c_evp.pdb test\buildtest_c_fips_names.pdb test\buildtest_c_hmac.pdb test\buildtest_c_http.pdb test\buildtest_c_kdf.pdb test\buildtest_c_macros.pdb test\buildtest_c_md2.pdb test\buildtest_c_md4.pdb test\buildtest_c_md5.pdb test\buildtest_c_modes.pdb test\buildtest_c_obj_mac.pdb test\buildtest_c_objects.pdb test\buildtest_c_ossl_typ.pdb test\buildtest_c_param_build.pdb test\buildtest_c_params.pdb test\buildtest_c_pem.pdb test\buildtest_c_pem2.pdb test\buildtest_c_prov_ssl.pdb test\buildtest_c_provider.pdb test\buildtest_c_rand.pdb test\buildtest_c_rc2.pdb test\buildtest_c_rc4.pdb test\buildtest_c_rc5.pdb test\buildtest_c_ripemd.pdb test\buildtest_c_rsa.pdb test\buildtest_c_seed.pdb test\buildtest_c_self_test.pdb test\buildtest_c_sha.pdb test\buildtest_c_srtp.pdb test\buildtest_c_ssl2.pdb test\buildtest_c_sslerr_legacy.pdb test\buildtest_c_stack.pdb test\buildtest_c_store.pdb test\buildtest_c_symhacks.pdb test\buildtest_c_tls1.pdb test\buildtest_c_ts.pdb test\buildtest_c_txt_db.pdb test\buildtest_c_types.pdb test\buildtest_c_whrlpool.pdb test\casttest.pdb test\chacha_internal_test.pdb test\cipher_overhead_test.pdb test\cipherbytes_test.pdb test\cipherlist_test.pdb test\ciphername_test.pdb test\clienthellotest.pdb test\cmactest.pdb test\cmp_asn_test.pdb test\cmp_client_test.pdb test\cmp_ctx_test.pdb test\cmp_hdr_test.pdb test\cmp_msg_test.pdb test\cmp_protect_test.pdb test\cmp_server_test.pdb test\cmp_status_test.pdb test\cmp_vfy_test.pdb test\cmsapitest.pdb test\conf_include_test.pdb test\confdump.pdb test\constant_time_test.pdb test\context_internal_test.pdb test\crltest.pdb test\ct_test.pdb test\ctype_internal_test.pdb test\curve448_internal_test.pdb test\d2i_test.pdb test\danetest.pdb test\defltfips_test.pdb test\destest.pdb test\dhtest.pdb test\drbgtest.pdb test\dsa_no_digest_size_test.pdb test\dsatest.pdb test\dtls_mtu_test.pdb test\dtlstest.pdb test\dtlsv1listentest.pdb test\ec_internal_test.pdb test\ecdsatest.pdb test\ecstresstest.pdb test\ectest.pdb test\endecode_test.pdb test\endecoder_legacy_test.pdb test\enginetest.pdb test\errtest.pdb test\evp_extra_test.pdb test\evp_extra_test2.pdb test\evp_fetch_prov_test.pdb test\evp_kdf_test.pdb test\evp_libctx_test.pdb test\evp_pkey_ctx_new_from_name.pdb test\evp_pkey_dparams_test.pdb test\evp_pkey_provided_test.pdb test\evp_test.pdb test\exdatatest.pdb test\exptest.pdb test\fatalerrtest.pdb test\ffc_internal_test.pdb test\gmdifftest.pdb test\hexstr_test.pdb test\hmactest.pdb test\http_test.pdb test\ideatest.pdb test\igetest.pdb test\keymgmt_internal_test.pdb test\lhash_test.pdb test\localetest.pdb test\mdc2test.pdb test\memleaktest.pdb test\modes_internal_test.pdb test\namemap_internal_test.pdb test\ocspapitest.pdb test\ossl_store_test.pdb test\packettest.pdb test\param_build_test.pdb test\params_api_test.pdb test\params_conversion_test.pdb test\params_test.pdb test\pbelutest.pdb test\pbetest.pdb test\pem_read_depr_test.pdb test\pemtest.pdb test\pkcs12_format_test.pdb test\pkcs7_test.pdb test\pkey_meth_kdf_test.pdb test\pkey_meth_test.pdb test\poly1305_internal_test.pdb test\property_test.pdb test\prov_config_test.pdb test\provfetchtest.pdb test\provider_fallback_test.pdb test\provider_internal_test.pdb test\provider_pkey_test.pdb test\provider_status_test.pdb test\provider_test.pdb test\rand_status_test.pdb test\rand_test.pdb test\rc2test.pdb test\rc4test.pdb test\rc5test.pdb test\rdrand_sanitytest.pdb test\recordlentest.pdb test\rsa_complex.pdb test\rsa_mp_test.pdb test\rsa_sp800_56b_test.pdb test\rsa_test.pdb test\sanitytest.pdb test\secmemtest.pdb test\servername_test.pdb test\sha_test.pdb test\siphash_internal_test.pdb test\sm2_internal_test.pdb test\sm3_internal_test.pdb test\sm4_internal_test.pdb test\sparse_array_test.pdb test\srptest.pdb test\ssl_cert_table_internal_test.pdb test\ssl_ctx_test.pdb test\ssl_old_test.pdb test\ssl_test.pdb test\ssl_test_ctx_test.pdb test\sslapitest.pdb test\sslbuffertest.pdb test\sslcorrupttest.pdb test\stack_test.pdb test\sysdefaulttest.pdb test\test_test.pdb test\threadstest.pdb test\threadstest_fips.pdb test\time_offset_test.pdb test\tls13ccstest.pdb test\tls13encryptiontest.pdb test\uitest.pdb test\upcallstest.pdb test\user_property_test.pdb test\v3ext.pdb test\v3nametest.pdb test\verify_extra_test.pdb test\versions.pdb test\wpackettest.pdb test\x509_check_cert_pkey_test.pdb test\x509_dup_cert_test.pdb test\x509_internal_test.pdb test\x509_time_test.pdb test\x509aux.pdb
+MODULEPDBS=providers\fips.pdb providers\legacy.pdb test\p_test.pdb
+FIPSMODULE=providers\fips.dll
+FIPSMODULENAME=fips.dll
+PROGRAMS=apps\openssl.exe fuzz\asn1-test.exe fuzz\asn1parse-test.exe fuzz\bignum-test.exe fuzz\bndiv-test.exe fuzz\client-test.exe fuzz\cmp-test.exe fuzz\cms-test.exe fuzz\conf-test.exe fuzz\crl-test.exe fuzz\ct-test.exe fuzz\server-test.exe fuzz\x509-test.exe test\aborttest.exe test\acvp_test.exe test\aesgcmtest.exe test\afalgtest.exe test\algorithmid_test.exe test\asn1_decode_test.exe test\asn1_dsa_internal_test.exe test\asn1_encode_test.exe test\asn1_internal_test.exe test\asn1_string_table_test.exe test\asn1_time_test.exe test\asynciotest.exe test\asynctest.exe test\bad_dtls_test.exe test\bftest.exe test\bio_callback_test.exe test\bio_core_test.exe test\bio_enc_test.exe test\bio_memleak_test.exe test\bio_prefix_text.exe test\bio_readbuffer_test.exe test\bioprinttest.exe test\bn_internal_test.exe test\bntest.exe test\buildtest_c_aes.exe test\buildtest_c_async.exe test\buildtest_c_blowfish.exe test\buildtest_c_bn.exe test\buildtest_c_buffer.exe test\buildtest_c_camellia.exe test\buildtest_c_cast.exe test\buildtest_c_cmac.exe test\buildtest_c_cmp_util.exe test\buildtest_c_comp.exe test\buildtest_c_conf_api.exe test\buildtest_c_configuration.exe test\buildtest_c_conftypes.exe test\buildtest_c_core.exe test\buildtest_c_core_dispatch.exe test\buildtest_c_core_names.exe test\buildtest_c_core_object.exe test\buildtest_c_cryptoerr_legacy.exe test\buildtest_c_decoder.exe test\buildtest_c_des.exe test\buildtest_c_dh.exe test\buildtest_c_dsa.exe test\buildtest_c_dtls1.exe test\buildtest_c_e_os2.exe test\buildtest_c_ebcdic.exe test\buildtest_c_ec.exe test\buildtest_c_ecdh.exe test\buildtest_c_ecdsa.exe test\buildtest_c_encoder.exe test\buildtest_c_engine.exe test\buildtest_c_evp.exe test\buildtest_c_fips_names.exe test\buildtest_c_hmac.exe test\buildtest_c_http.exe test\buildtest_c_kdf.exe test\buildtest_c_macros.exe test\buildtest_c_md2.exe test\buildtest_c_md4.exe test\buildtest_c_md5.exe test\buildtest_c_modes.exe test\buildtest_c_obj_mac.exe test\buildtest_c_objects.exe test\buildtest_c_ossl_typ.exe test\buildtest_c_param_build.exe test\buildtest_c_params.exe test\buildtest_c_pem.exe test\buildtest_c_pem2.exe test\buildtest_c_prov_ssl.exe test\buildtest_c_provider.exe test\buildtest_c_rand.exe test\buildtest_c_rc2.exe test\buildtest_c_rc4.exe test\buildtest_c_rc5.exe test\buildtest_c_ripemd.exe test\buildtest_c_rsa.exe test\buildtest_c_seed.exe test\buildtest_c_self_test.exe test\buildtest_c_sha.exe test\buildtest_c_srtp.exe test\buildtest_c_ssl2.exe test\buildtest_c_sslerr_legacy.exe test\buildtest_c_stack.exe test\buildtest_c_store.exe test\buildtest_c_symhacks.exe test\buildtest_c_tls1.exe test\buildtest_c_ts.exe test\buildtest_c_txt_db.exe test\buildtest_c_types.exe test\buildtest_c_whrlpool.exe test\casttest.exe test\chacha_internal_test.exe test\cipher_overhead_test.exe test\cipherbytes_test.exe test\cipherlist_test.exe test\ciphername_test.exe test\clienthellotest.exe test\cmactest.exe test\cmp_asn_test.exe test\cmp_client_test.exe test\cmp_ctx_test.exe test\cmp_hdr_test.exe test\cmp_msg_test.exe test\cmp_protect_test.exe test\cmp_server_test.exe test\cmp_status_test.exe test\cmp_vfy_test.exe test\cmsapitest.exe test\conf_include_test.exe test\confdump.exe test\constant_time_test.exe test\context_internal_test.exe test\crltest.exe test\ct_test.exe test\ctype_internal_test.exe test\curve448_internal_test.exe test\d2i_test.exe test\danetest.exe test\defltfips_test.exe test\destest.exe test\dhtest.exe test\drbgtest.exe test\dsa_no_digest_size_test.exe test\dsatest.exe test\dtls_mtu_test.exe test\dtlstest.exe test\dtlsv1listentest.exe test\ec_internal_test.exe test\ecdsatest.exe test\ecstresstest.exe test\ectest.exe test\endecode_test.exe test\endecoder_legacy_test.exe test\enginetest.exe test\errtest.exe test\evp_extra_test.exe test\evp_extra_test2.exe test\evp_fetch_prov_test.exe test\evp_kdf_test.exe test\evp_libctx_test.exe test\evp_pkey_ctx_new_from_name.exe test\evp_pkey_dparams_test.exe test\evp_pkey_provided_test.exe test\evp_test.exe test\exdatatest.exe test\exptest.exe test\fatalerrtest.exe test\ffc_internal_test.exe test\gmdifftest.exe test\hexstr_test.exe test\hmactest.exe test\http_test.exe test\ideatest.exe test\igetest.exe test\keymgmt_internal_test.exe test\lhash_test.exe test\localetest.exe test\mdc2test.exe test\memleaktest.exe test\modes_internal_test.exe test\namemap_internal_test.exe test\ocspapitest.exe test\ossl_store_test.exe test\packettest.exe test\param_build_test.exe test\params_api_test.exe test\params_conversion_test.exe test\params_test.exe test\pbelutest.exe test\pbetest.exe test\pem_read_depr_test.exe test\pemtest.exe test\pkcs12_format_test.exe test\pkcs7_test.exe test\pkey_meth_kdf_test.exe test\pkey_meth_test.exe test\poly1305_internal_test.exe test\property_test.exe test\prov_config_test.exe test\provfetchtest.exe test\provider_fallback_test.exe test\provider_internal_test.exe test\provider_pkey_test.exe test\provider_status_test.exe test\provider_test.exe test\rand_status_test.exe test\rand_test.exe test\rc2test.exe test\rc4test.exe test\rc5test.exe test\rdrand_sanitytest.exe test\recordlentest.exe test\rsa_complex.exe test\rsa_mp_test.exe test\rsa_sp800_56b_test.exe test\rsa_test.exe test\sanitytest.exe test\secmemtest.exe test\servername_test.exe test\sha_test.exe test\siphash_internal_test.exe test\sm2_internal_test.exe test\sm3_internal_test.exe test\sm4_internal_test.exe test\sparse_array_test.exe test\srptest.exe test\ssl_cert_table_internal_test.exe test\ssl_ctx_test.exe test\ssl_old_test.exe test\ssl_test.exe test\ssl_test_ctx_test.exe test\sslapitest.exe test\sslbuffertest.exe test\sslcorrupttest.exe test\stack_test.exe test\sysdefaulttest.exe test\test_test.exe test\threadstest.exe test\threadstest_fips.exe test\time_offset_test.exe test\tls13ccstest.exe test\tls13encryptiontest.exe test\uitest.exe test\upcallstest.exe test\user_property_test.exe test\v3ext.exe test\v3nametest.exe test\verify_extra_test.exe test\versions.exe test\wpackettest.exe test\x509_check_cert_pkey_test.exe test\x509_dup_cert_test.exe test\x509_internal_test.exe test\x509_time_test.exe test\x509aux.exe
+PROGRAMPDBS=apps\openssl.pdb fuzz\asn1-test.pdb fuzz\asn1parse-test.pdb fuzz\bignum-test.pdb fuzz\bndiv-test.pdb fuzz\client-test.pdb fuzz\cmp-test.pdb fuzz\cms-test.pdb fuzz\conf-test.pdb fuzz\crl-test.pdb fuzz\ct-test.pdb fuzz\server-test.pdb fuzz\x509-test.pdb test\aborttest.pdb test\acvp_test.pdb test\aesgcmtest.pdb test\afalgtest.pdb test\algorithmid_test.pdb test\asn1_decode_test.pdb test\asn1_dsa_internal_test.pdb test\asn1_encode_test.pdb test\asn1_internal_test.pdb test\asn1_string_table_test.pdb test\asn1_time_test.pdb test\asynciotest.pdb test\asynctest.pdb test\bad_dtls_test.pdb test\bftest.pdb test\bio_callback_test.pdb test\bio_core_test.pdb test\bio_enc_test.pdb test\bio_memleak_test.pdb test\bio_prefix_text.pdb test\bio_readbuffer_test.pdb test\bioprinttest.pdb test\bn_internal_test.pdb test\bntest.pdb test\buildtest_c_aes.pdb test\buildtest_c_async.pdb test\buildtest_c_blowfish.pdb test\buildtest_c_bn.pdb test\buildtest_c_buffer.pdb test\buildtest_c_camellia.pdb test\buildtest_c_cast.pdb test\buildtest_c_cmac.pdb test\buildtest_c_cmp_util.pdb test\buildtest_c_comp.pdb test\buildtest_c_conf_api.pdb test\buildtest_c_configuration.pdb test\buildtest_c_conftypes.pdb test\buildtest_c_core.pdb test\buildtest_c_core_dispatch.pdb test\buildtest_c_core_names.pdb test\buildtest_c_core_object.pdb test\buildtest_c_cryptoerr_legacy.pdb test\buildtest_c_decoder.pdb test\buildtest_c_des.pdb test\buildtest_c_dh.pdb test\buildtest_c_dsa.pdb test\buildtest_c_dtls1.pdb test\buildtest_c_e_os2.pdb test\buildtest_c_ebcdic.pdb test\buildtest_c_ec.pdb test\buildtest_c_ecdh.pdb test\buildtest_c_ecdsa.pdb test\buildtest_c_encoder.pdb test\buildtest_c_engine.pdb test\buildtest_c_evp.pdb test\buildtest_c_fips_names.pdb test\buildtest_c_hmac.pdb test\buildtest_c_http.pdb test\buildtest_c_kdf.pdb test\buildtest_c_macros.pdb test\buildtest_c_md2.pdb test\buildtest_c_md4.pdb test\buildtest_c_md5.pdb test\buildtest_c_modes.pdb test\buildtest_c_obj_mac.pdb test\buildtest_c_objects.pdb test\buildtest_c_ossl_typ.pdb test\buildtest_c_param_build.pdb test\buildtest_c_params.pdb test\buildtest_c_pem.pdb test\buildtest_c_pem2.pdb test\buildtest_c_prov_ssl.pdb test\buildtest_c_provider.pdb test\buildtest_c_rand.pdb test\buildtest_c_rc2.pdb test\buildtest_c_rc4.pdb test\buildtest_c_rc5.pdb test\buildtest_c_ripemd.pdb test\buildtest_c_rsa.pdb test\buildtest_c_seed.pdb test\buildtest_c_self_test.pdb test\buildtest_c_sha.pdb test\buildtest_c_srtp.pdb test\buildtest_c_ssl2.pdb test\buildtest_c_sslerr_legacy.pdb test\buildtest_c_stack.pdb test\buildtest_c_store.pdb test\buildtest_c_symhacks.pdb test\buildtest_c_tls1.pdb test\buildtest_c_ts.pdb test\buildtest_c_txt_db.pdb test\buildtest_c_types.pdb test\buildtest_c_whrlpool.pdb test\casttest.pdb test\chacha_internal_test.pdb test\cipher_overhead_test.pdb test\cipherbytes_test.pdb test\cipherlist_test.pdb test\ciphername_test.pdb test\clienthellotest.pdb test\cmactest.pdb test\cmp_asn_test.pdb test\cmp_client_test.pdb test\cmp_ctx_test.pdb test\cmp_hdr_test.pdb test\cmp_msg_test.pdb test\cmp_protect_test.pdb test\cmp_server_test.pdb test\cmp_status_test.pdb test\cmp_vfy_test.pdb test\cmsapitest.pdb test\conf_include_test.pdb test\confdump.pdb test\constant_time_test.pdb test\context_internal_test.pdb test\crltest.pdb test\ct_test.pdb test\ctype_internal_test.pdb test\curve448_internal_test.pdb test\d2i_test.pdb test\danetest.pdb test\defltfips_test.pdb test\destest.pdb test\dhtest.pdb test\drbgtest.pdb test\dsa_no_digest_size_test.pdb test\dsatest.pdb test\dtls_mtu_test.pdb test\dtlstest.pdb test\dtlsv1listentest.pdb test\ec_internal_test.pdb test\ecdsatest.pdb test\ecstresstest.pdb test\ectest.pdb test\endecode_test.pdb test\endecoder_legacy_test.pdb test\enginetest.pdb test\errtest.pdb test\evp_extra_test.pdb test\evp_extra_test2.pdb test\evp_fetch_prov_test.pdb test\evp_kdf_test.pdb test\evp_libctx_test.pdb test\evp_pkey_ctx_new_from_name.pdb test\evp_pkey_dparams_test.pdb test\evp_pkey_provided_test.pdb test\evp_test.pdb test\exdatatest.pdb test\exptest.pdb test\fatalerrtest.pdb test\ffc_internal_test.pdb test\gmdifftest.pdb test\hexstr_test.pdb test\hmactest.pdb test\http_test.pdb test\ideatest.pdb test\igetest.pdb test\keymgmt_internal_test.pdb test\lhash_test.pdb test\localetest.pdb test\mdc2test.pdb test\memleaktest.pdb test\modes_internal_test.pdb test\namemap_internal_test.pdb test\ocspapitest.pdb test\ossl_store_test.pdb test\packettest.pdb test\param_build_test.pdb test\params_api_test.pdb test\params_conversion_test.pdb test\params_test.pdb test\pbelutest.pdb test\pbetest.pdb test\pem_read_depr_test.pdb test\pemtest.pdb test\pkcs12_format_test.pdb test\pkcs7_test.pdb test\pkey_meth_kdf_test.pdb test\pkey_meth_test.pdb test\poly1305_internal_test.pdb test\property_test.pdb test\prov_config_test.pdb test\provfetchtest.pdb test\provider_fallback_test.pdb test\provider_internal_test.pdb test\provider_pkey_test.pdb test\provider_status_test.pdb test\provider_test.pdb test\rand_status_test.pdb test\rand_test.pdb test\rc2test.pdb test\rc4test.pdb test\rc5test.pdb test\rdrand_sanitytest.pdb test\recordlentest.pdb test\rsa_complex.pdb test\rsa_mp_test.pdb test\rsa_sp800_56b_test.pdb test\rsa_test.pdb test\sanitytest.pdb test\secmemtest.pdb test\servername_test.pdb test\sha_test.pdb test\siphash_internal_test.pdb test\sm2_internal_test.pdb test\sm3_internal_test.pdb test\sm4_internal_test.pdb test\sparse_array_test.pdb test\srptest.pdb test\ssl_cert_table_internal_test.pdb test\ssl_ctx_test.pdb test\ssl_old_test.pdb test\ssl_test.pdb test\ssl_test_ctx_test.pdb test\sslapitest.pdb test\sslbuffertest.pdb test\sslcorrupttest.pdb test\stack_test.pdb test\sysdefaulttest.pdb test\test_test.pdb test\threadstest.pdb test\threadstest_fips.pdb test\time_offset_test.pdb test\tls13ccstest.pdb test\tls13encryptiontest.pdb test\uitest.pdb test\upcallstest.pdb test\user_property_test.pdb test\v3ext.pdb test\v3nametest.pdb test\verify_extra_test.pdb test\versions.pdb test\wpackettest.pdb test\x509_check_cert_pkey_test.pdb test\x509_dup_cert_test.pdb test\x509_internal_test.pdb test\x509_time_test.pdb test\x509aux.pdb
 SCRIPTS=apps\CA.pl apps\tsget.pl tools\c_rehash.pl util\wrap.pl
 
-DEPS=crypto\pkcs7\libcrypto-lib-pk7_asn1.d fuzz\cms-test-bin-test-corpus.d test\sm2_internal_test-bin-sm2_internal_test.d crypto\evp\libcrypto-lib-legacy_ripemd.d providers\common\libcommon-lib-provider_err.d crypto\engine\libcrypto-lib-tb_digest.d apps\lib\libtestutil-lib-win32_init.d test\aborttest-bin-aborttest.d ssl\record\libssl-lib-rec_layer_s3.d crypto\x509\libcrypto-lib-v3_ncons.d crypto\asn1\libcrypto-lib-p5_pbe.d test\test_test-bin-test_test.d test\provider_pkey_test-bin-fake_rsaprov.d crypto\x509\libcrypto-lib-v3_ist.d test\cmp_hdr_test-bin-cmp_hdr_test.d test\testutil\libtestutil-lib-output.d ssl\record\libssl-lib-dtls1_bitmap.d crypto\evp\libcrypto-lib-legacy_md2.d crypto\cms\libcrypto-lib-cms_enc.d crypto\ess\libcrypto-lib-ess_asn1.d crypto\evp\libcrypto-lib-e_null.d test\evp_pkey_dparams_test-bin-evp_pkey_dparams_test.d crypto\ocsp\libcrypto-lib-ocsp_vfy.d test\rc2test-bin-rc2test.d crypto\bio\libcrypto-lib-bio_dump.d crypto\evp\libcrypto-lib-e_idea.d test\helpers\pkcs12_format_test-bin-pkcs12.d crypto\libcrypto-lib-core_algorithm.d providers\common\libcommon-lib-provider_ctx.d test\curve448_internal_test-bin-curve448_internal_test.d crypto\libcrypto-lib-o_time.d crypto\ffc\libcrypto-lib-ffc_params_generate.d fuzz\bndiv-test-bin-bndiv.d crypto\conf\libcrypto-lib-conf_err.d providers\common\der\libdefault-lib-der_sm2_key.d crypto\x509\libcrypto-lib-v3_prn.d test\rand_status_test-bin-rand_status_test.d apps\lib\libapps-lib-http_server.d crypto\store\libcrypto-lib-store_meth.d crypto\bio\libcrypto-lib-bf_lbuf.d crypto\asn1\libcrypto-lib-a_dup.d crypto\evp\libcrypto-lib-keymgmt_lib.d crypto\dh\libcrypto-lib-dh_backend.d crypto\bio\libcrypto-lib-bio_meth.d crypto\des\libcrypto-lib-cfb_enc.d test\helpers\cmp_msg_test-bin-cmp_testlib.d test\buildtest_c_types-bin-buildtest_types.d crypto\ct\libcrypto-lib-ct_sct.d test\prov_config_test-bin-prov_config_test.d crypto\ts\libcrypto-lib-ts_req_print.d crypto\async\arch\libcrypto-lib-async_win.d ssl\statem\libssl-lib-statem_lib.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_poly1305_hw.d providers\common\der\libcommon-lib-der_ec_gen.d crypto\md5\liblegacy-lib-md5_dgst.d crypto\bio\libcrypto-lib-bss_conn.d test\helpers\asynciotest-bin-ssltestlib.d crypto\evp\libcrypto-lib-e_old.d crypto\libcrypto-lib-threads_win.d test\versions-bin-versions.d crypto\ec\libcrypto-lib-ecp_oct.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ocb.d crypto\ocsp\libcrypto-lib-v3_ocsp.d crypto\x509\libcrypto-lib-x509_obj.d test\afalgtest-bin-afalgtest.d crypto\asn1\libcrypto-lib-asn1_parse.d apps\lib\libapps-lib-fmt.d crypto\asn1\libcrypto-lib-asn1_err.d test\buildtest_c_modes-bin-buildtest_modes.d crypto\cmp\libcrypto-lib-cmp_ctx.d crypto\libcrypto-lib-passphrase.d providers\implementations\keymgmt\libdefault-lib-mac_legacy_kmgmt.d crypto\pem\libcrypto-lib-pem_xaux.d test\sslapitest-bin-tls-provider.d test\asn1_time_test-bin-asn1_time_test.d crypto\x509\libcrypto-lib-t_req.d crypto\rc4\libcrypto-lib-rc4_skey.d apps\openssl-bin-fipsinstall.d providers\implementations\rands\libdefault-lib-drbg_hash.d crypto\des\libcrypto-lib-qud_cksm.d crypto\dh\libcrypto-lib-dh_gen.d crypto\cms\libcrypto-lib-cms_io.d crypto\asn1\libcrypto-lib-x_bignum.d ssl\libssl-lib-ssl_sess.d crypto\md2\libcrypto-lib-md2_dgst.d crypto\engine\libcrypto-lib-eng_table.d crypto\x509\libcrypto-lib-pcy_lib.d crypto\modes\libcrypto-lib-cfb128.d providers\common\libdefault-lib-digest_to_nid.d fuzz\server-test-bin-fuzz_rand.d providers\implementations\encode_decode\libdefault-lib-encode_key2blob.d crypto\des\libcrypto-lib-ofb64enc.d ssl\libssl-lib-ssl_txt.d test\ssl_test_ctx_test-bin-ssl_test_ctx_test.d crypto\x509\libcrypto-lib-pcy_cache.d crypto\des\libcrypto-lib-xcbc_enc.d crypto\lhash\libcrypto-lib-lh_stats.d crypto\libcrypto-lib-provider_conf.d crypto\x509\libcrypto-lib-v3_lib.d crypto\rsa\libcrypto-lib-rsa_mp_names.d crypto\dh\libcrypto-lib-dh_meth.d test\buildtest_c_e_os2-bin-buildtest_e_os2.d providers\implementations\macs\libdefault-lib-hmac_prov.d fuzz\asn1parse-test-bin-test-corpus.d ssl\record\libssl-lib-ssl3_record_tls13.d crypto\pkcs12\libcrypto-lib-p12_crt.d crypto\rc2\libcrypto-lib-rc2_cbc.d test\cmp_vfy_test-bin-cmp_vfy_test.d test\buildtest_c_dtls1-bin-buildtest_dtls1.d crypto\ct\libcrypto-lib-ct_log.d providers\implementations\kdfs\libdefault-lib-pbkdf2.d crypto\asn1\libcrypto-lib-tasn_new.d test\buildtest_c_macros-bin-buildtest_macros.d crypto\asn1\libcrypto-lib-a_object.d crypto\x509\libcrypto-lib-x509_cmp.d crypto\x509\libcrypto-lib-v3_pcons.d crypto\ec\libcrypto-lib-ecdsa_sign.d crypto\dh\libcrypto-lib-dh_prn.d crypto\camellia\libcrypto-lib-cmll_cbc.d test\ct_test-bin-ct_test.d crypto\libcrypto-lib-param_build_set.d crypto\x509\libcrypto-lib-x509_d2.d providers\implementations\ciphers\libdefault-lib-cipher_aria_hw.d crypto\conf\libcrypto-lib-conf_api.d crypto\asn1\libcrypto-lib-d2i_pr.d crypto\asn1\libcrypto-lib-t_bitst.d crypto\libcrypto-lib-threads_pthread.d test\buildtest_c_md4-bin-buildtest_md4.d crypto\bn\libcrypto-lib-bn_mont.d providers\common\der\libcommon-lib-der_ecx_gen.d crypto\libcrypto-lib-params_dup.d crypto\kdf\libcrypto-lib-kdf_err.d crypto\evp\libcrypto-lib-p_legacy.d test\helpers\tls13ccstest-bin-ssltestlib.d crypto\async\libcrypto-lib-async.d apps\openssl-bin-rsa.d crypto\dsa\libcrypto-lib-dsa_backend.d crypto\bio\libcrypto-lib-bss_acpt.d test\pbetest-bin-pbetest.d test\helpers\sslbuffertest-bin-ssltestlib.d crypto\dso\libcrypto-lib-dso_lib.d crypto\x509\libcrypto-lib-x_name.d crypto\dh\libcrypto-lib-dh_asn1.d crypto\ec\libcrypto-lib-ecdsa_ossl.d test\buildtest_c_rc2-bin-buildtest_rc2.d crypto\asn1\libcrypto-lib-a_digest.d crypto\ct\libcrypto-lib-ct_policy.d crypto\evp\libcrypto-lib-bio_ok.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts_hw.d providers\implementations\asymciphers\libdefault-lib-rsa_enc.d crypto\evp\libcrypto-lib-legacy_md4.d ssl\statem\libssl-lib-statem_clnt.d crypto\pem\libcrypto-lib-pem_oth.d apps\lib\libapps-lib-app_libctx.d test\buildtest_c_engine-bin-buildtest_engine.d ssl\libssl-lib-s3_lib.d providers\implementations\storemgmt\libdefault-lib-file_store.d crypto\asn1\libcrypto-lib-tasn_typ.d crypto\asn1\libcrypto-lib-tasn_dec.d test\helpers\dtlstest-bin-ssltestlib.d crypto\asn1\libcrypto-lib-tasn_prn.d test\provfetchtest-bin-provfetchtest.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4.d crypto\des\libcrypto-lib-des_enc.d test\testutil\libtestutil-lib-basic_output.d engines\libcrypto-lib-e_capi.d crypto\property\libcrypto-lib-property_string.d test\rc4test-bin-rc4test.d crypto\pkcs12\libcrypto-lib-p12_mutl.d crypto\pkcs7\libcrypto-lib-pk7_lib.d test\bio_core_test-bin-bio_core_test.d test\buildtest_c_des-bin-buildtest_des.d crypto\libcrypto-lib-threads_none.d crypto\ffc\libcrypto-lib-ffc_key_validate.d crypto\camellia\libcrypto-lib-cmll_ctr.d crypto\bn\libcrypto-lib-bn_sqr.d test\rand_test-bin-rand_test.d crypto\chacha\libcrypto-lib-chacha_enc.d crypto\pkcs12\libcrypto-lib-p12_sbag.d test\params_test-bin-params_test.d crypto\asn1\libcrypto-lib-nsseq.d crypto\aria\libcrypto-lib-aria.d apps\openssl-bin-info.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_wrap.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha.d providers\implementations\ciphers\liblegacy-lib-cipher_des_hw.d crypto\libcrypto-lib-getenv.d crypto\cms\libcrypto-lib-cms_cd.d crypto\rsa\libcrypto-lib-rsa_sp800_56b_gen.d crypto\pkcs12\libcrypto-lib-p12_asn.d providers\implementations\keymgmt\libdefault-lib-kdf_legacy_kmgmt.d apps\openssl-bin-cms.d crypto\pkcs7\libcrypto-lib-pk7_smime.d test\buildtest_c_fips_names-bin-buildtest_fips_names.d crypto\engine\libcrypto-lib-tb_eckey.d test\x509_internal_test-bin-x509_internal_test.d crypto\ts\libcrypto-lib-ts_lib.d test\pkey_meth_kdf_test-bin-pkey_meth_kdf_test.d test\threadstest_fips-bin-threadstest_fips.d crypto\evp\libcrypto-lib-legacy_sha.d crypto\ec\libcrypto-lib-ecx_backend.d test\provider_internal_test-bin-provider_internal_test.d crypto\sha\libcrypto-lib-sha1_one.d crypto\pem\libcrypto-lib-pem_pkey.d test\ssl_old_test-bin-ssl_old_test.d providers\implementations\ciphers\libdefault-lib-cipher_camellia_hw.d apps\openssl-bin-ec.d test\buildtest_c_camellia-bin-buildtest_camellia.d providers\implementations\rands\libdefault-lib-seed_src.d apps\openssl-bin-smime.d crypto\asn1\libcrypto-lib-a_gentm.d crypto\ec\libcrypto-lib-ec_oct.d providers\implementations\ciphers\libdefault-lib-cipher_aria_ccm.d providers\libcrypto-lib-defltprov.d crypto\ripemd\libcrypto-lib-rmd_dgst.d crypto\libcrypto-lib-cversion.d crypto\pkcs12\libcrypto-lib-p12_crpt.d crypto\ocsp\libcrypto-lib-ocsp_lib.d crypto\ec\curve448\libcrypto-lib-eddsa.d providers\implementations\macs\libdefault-lib-gmac_prov.d crypto\asn1\libcrypto-lib-a_print.d providers\common\der\libcommon-lib-der_dsa_gen.d test\params_conversion_test-bin-params_conversion_test.d test\buildtest_c_ec-bin-buildtest_ec.d apps\openssl-bin-pkcs7.d providers\implementations\ciphers\libdefault-lib-cipher_aes_siv_hw.d crypto\ec\libcrypto-lib-ec2_smpl.d crypto\evp\libcrypto-lib-cmeth_lib.d test\dtlsv1listentest-bin-dtlsv1listentest.d crypto\x509\libcrypto-lib-v3_asid.d providers\implementations\rands\libdefault-lib-drbg_hmac.d crypto\ct\libcrypto-lib-ct_b64.d crypto\asn1\libcrypto-lib-tasn_scn.d crypto\libcrypto-lib-punycode.d crypto\objects\libcrypto-lib-obj_lib.d test\provider_pkey_test-bin-provider_pkey_test.d crypto\x509\libcrypto-lib-by_file.d apps\openssl-bin-ocsp.d crypto\aes\libcrypto-lib-aes_cfb.d crypto\crmf\libcrypto-lib-crmf_err.d crypto\cms\libcrypto-lib-cms_err.d crypto\sha\libcrypto-lib-sha1dgst.d crypto\bn\libcrypto-lib-bn_shift.d test\buildtest_c_rsa-bin-buildtest_rsa.d ssl\statem\libssl-lib-statem_dtls.d crypto\bf\libcrypto-lib-bf_skey.d crypto\pem\libcrypto-lib-pem_all.d crypto\whrlpool\libcrypto-lib-wp_block.d crypto\des\libcrypto-lib-ecb3_enc.d providers\implementations\ciphers\libdefault-lib-cipher_aria_gcm.d crypto\x509\libcrypto-lib-pcy_data.d crypto\evp\libcrypto-lib-dsa_ctrl.d crypto\encode_decode\libcrypto-lib-decoder_lib.d crypto\dsa\libcrypto-lib-dsa_meth.d crypto\libcrypto-lib-info.d apps\lib\libapps-lib-apps_ui.d providers\common\der\libcommon-lib-der_dsa_key.d crypto\des\libcrypto-lib-fcrypt.d providers\implementations\signature\libdefault-lib-ecdsa_sig.d crypto\cms\libcrypto-lib-cms_pwri.d crypto\x509\libcrypto-lib-x509_r2x.d test\http_test-bin-http_test.d providers\implementations\macs\libdefault-lib-poly1305_prov.d crypto\pkcs7\libcrypto-lib-pk7_mime.d test\helpers\ssl_test-bin-ssl_test_ctx.d crypto\evp\libcrypto-lib-e_seed.d crypto\x509\libcrypto-lib-v3_bcons.d providers\common\der\libcommon-lib-der_wrap_gen.d crypto\bio\libcrypto-lib-bio_err.d test\gmdifftest-bin-gmdifftest.d apps\lib\libapps-lib-s_socket.d providers\implementations\macs\libdefault-lib-kmac_prov.d crypto\evp\libcrypto-lib-e_aes_cbc_hmac_sha1.d test\buildtest_c_aes-bin-buildtest_aes.d crypto\crmf\libcrypto-lib-crmf_lib.d crypto\ffc\libcrypto-lib-ffc_params_validate.d crypto\bn\libcrypto-lib-bn_asm.d fuzz\asn1-test-bin-test-corpus.d crypto\ct\libcrypto-lib-ct_oct.d test\x509_dup_cert_test-bin-x509_dup_cert_test.d crypto\bn\libcrypto-lib-bn_blind.d test\param_build_test-bin-param_build_test.d crypto\rc5\libcrypto-lib-rc5ofb64.d crypto\evp\libcrypto-lib-p_open.d test\bad_dtls_test-bin-bad_dtls_test.d crypto\asn1\libcrypto-lib-p5_scrypt.d crypto\bn\libcrypto-lib-bn_nist.d crypto\des\libcrypto-lib-ecb_enc.d test\bio_callback_test-bin-bio_callback_test.d crypto\ct\libcrypto-lib-ct_sct_ctx.d crypto\engine\libcrypto-lib-eng_all.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha256_hw.d providers\common\der\libcommon-lib-der_rsa_key.d crypto\camellia\libcrypto-lib-cmll_cfb.d crypto\bio\libcrypto-lib-bss_file.d crypto\libcrypto-lib-threads_lib.d test\helpers\cmp_ctx_test-bin-cmp_testlib.d providers\implementations\ciphers\liblegacy-lib-cipher_cast5.d test\ossl_store_test-bin-ossl_store_test.d providers\implementations\rands\libdefault-lib-drbg.d crypto\sha\libcrypto-lib-sha512.d crypto\store\libcrypto-lib-store_init.d test\bioprinttest-bin-bioprinttest.d crypto\rsa\libcrypto-lib-rsa_x931.d crypto\libcrypto-lib-provider_core.d crypto\x509\libcrypto-lib-v3_tlsf.d crypto\asn1\libcrypto-lib-a_type.d crypto\encode_decode\libcrypto-lib-encoder_err.d test\helpers\cmp_hdr_test-bin-cmp_testlib.d crypto\ec\libcrypto-lib-ec_pmeth.d crypto\dh\libcrypto-lib-dh_depr.d crypto\x509\libcrypto-lib-x509_v3.d test\provider_fallback_test-bin-provider_fallback_test.d providers\implementations\asymciphers\libdefault-lib-sm2_enc.d crypto\ec\libcrypto-lib-ecp_nist.d crypto\des\liblegacy-lib-des_enc.d crypto\rc2\libcrypto-lib-rc2ofb64.d providers\implementations\ciphers\liblegacy-lib-cipher_blowfish_hw.d crypto\ec\libcrypto-lib-ecx_meth.d fuzz\client-test-bin-client.d test\buildtest_c_obj_mac-bin-buildtest_obj_mac.d test\lhash_test-bin-lhash_test.d apps\openssl-bin-req.d crypto\x509\libcrypto-lib-x_all.d test\buildtest_c_rc5-bin-buildtest_rc5.d crypto\poly1305\libcrypto-lib-poly1305.d apps\openssl-bin-asn1parse.d crypto\bn\libcrypto-lib-bn_ctx.d providers\implementations\ciphers\liblegacy-lib-cipher_rc2.d crypto\conf\libcrypto-lib-conf_sap.d crypto\asn1\libcrypto-lib-a_time.d crypto\ts\libcrypto-lib-ts_asn1.d crypto\cms\libcrypto-lib-cms_ess.d crypto\evp\libcrypto-lib-pbe_scrypt.d crypto\asn1\libcrypto-lib-asn_pack.d crypto\modes\libcrypto-lib-gcm128.d providers\implementations\macs\libdefault-lib-blake2s_mac.d fuzz\conf-test-bin-conf.d crypto\evp\libcrypto-lib-ec_ctrl.d test\helpers\cmp_server_test-bin-cmp_testlib.d fuzz\x509-test-bin-test-corpus.d crypto\libcrypto-lib-param_build.d providers\implementations\ciphers\liblegacy-lib-cipher_desx.d providers\implementations\rands\seeding\libdefault-lib-rand_unix.d crypto\bn\libcrypto-lib-bn_srp.d test\testutil\libtestutil-lib-format_output.d crypto\cmp\libcrypto-lib-cmp_status.d providers\implementations\signature\libdefault-lib-mac_legacy_sig.d test\provider_test-bin-provider_test.d providers\implementations\kdfs\libdefault-lib-kbkdf.d test\p_test-dso-p_test.d crypto\cmp\libcrypto-lib-cmp_http.d crypto\rsa\libcrypto-lib-rsa_lib.d providers\implementations\signature\libdefault-lib-rsa_sig.d test\wpackettest-bin-wpackettest.d providers\implementations\rands\libdefault-lib-crngt.d crypto\rsa\libcrypto-lib-rsa_sign.d providers\implementations\ciphers\libdefault-lib-cipher_aes.d crypto\ec\curve448\libcrypto-lib-f_generic.d crypto\store\libcrypto-lib-store_err.d crypto\bio\libcrypto-lib-bf_null.d crypto\libcrypto-lib-cpt_err.d providers\implementations\ciphers\libdefault-lib-cipher_sm4.d crypto\asn1\libcrypto-lib-d2i_param.d test\clienthellotest-bin-clienthellotest.d test\helpers\fatalerrtest-bin-ssltestlib.d crypto\ct\libcrypto-lib-ct_err.d crypto\seed\libcrypto-lib-seed_cfb.d apps\lib\libapps-lib-columns.d test\buildtest_c_configuration-bin-buildtest_configuration.d crypto\sm2\libcrypto-lib-sm2_crypt.d crypto\md5\liblegacy-lib-md5_sha1.d apps\lib\libapps-lib-win32_init.d crypto\libcrypto-lib-self_test_core.d ssl\statem\libssl-lib-extensions_cust.d apps\openssl-bin-ca.d test\rsa_complex-bin-rsa_complex.d crypto\evp\libcrypto-lib-evp_key.d crypto\evp\libcrypto-lib-ec_support.d crypto\asn1\libcrypto-lib-a_utf8.d test\exdatatest-bin-exdatatest.d crypto\cast\libcrypto-lib-c_cfb64.d ssl\libssl-lib-ssl_rsa_legacy.d providers\implementations\keymgmt\libdefault-lib-dh_kmgmt.d providers\implementations\macs\libdefault-lib-siphash_prov.d crypto\md5\libcrypto-lib-md5_one.d crypto\bio\libcrypto-lib-bf_readbuff.d crypto\ec\libcrypto-lib-ec_lib.d providers\implementations\digests\libdefault-lib-sha2_prov.d test\buildtest_c_sha-bin-buildtest_sha.d crypto\bn\libcrypto-lib-bn_kron.d fuzz\bignum-test-bin-test-corpus.d providers\implementations\kem\libdefault-lib-rsa_kem.d crypto\asn1\libcrypto-lib-p5_pbev2.d test\buildtest_c_tls1-bin-buildtest_tls1.d test\rc5test-bin-rc5test.d crypto\conf\libcrypto-lib-conf_lib.d crypto\rsa\libcrypto-lib-rsa_chk.d crypto\cmac\libcrypto-lib-cmac.d test\conf_include_test-bin-conf_include_test.d crypto\evp\libcrypto-lib-p5_crpt.d ssl\libssl-lib-ssl_err.d test\buildtest_c_core_dispatch-bin-buildtest_core_dispatch.d crypto\seed\libcrypto-lib-seed_ofb.d crypto\ripemd\libcrypto-lib-rmd_one.d test\pkcs7_test-bin-pkcs7_test.d providers\implementations\ciphers\liblegacy-lib-cipher_rc5_hw.d crypto\camellia\libcrypto-lib-camellia.d ssl\libssl-lib-d1_srtp.d test\dsatest-bin-dsatest.d crypto\async\arch\libcrypto-lib-async_null.d crypto\x509\libcrypto-lib-t_x509.d crypto\http\libcrypto-lib-http_lib.d crypto\ec\libcrypto-lib-ec_ameth.d crypto\rsa\libcrypto-lib-rsa_oaep.d crypto\evp\libcrypto-lib-e_sm4.d test\stack_test-bin-stack_test.d test\buildtest_c_objects-bin-buildtest_objects.d crypto\evp\libcrypto-lib-evp_lib.d crypto\evp\libcrypto-lib-evp_pbe.d crypto\cmp\libcrypto-lib-cmp_server.d test\evp_extra_test2-bin-evp_extra_test2.d crypto\txt_db\libcrypto-lib-txt_db.d crypto\asn1\libcrypto-lib-bio_asn1.d providers\implementations\digests\libdefault-lib-md5_sha1_prov.d test\algorithmid_test-bin-algorithmid_test.d test\helpers\recordlentest-bin-ssltestlib.d crypto\rsa\libcrypto-lib-rsa_err.d ssl\libssl-lib-bio_ssl.d crypto\http\libcrypto-lib-http_err.d fuzz\cms-test-bin-cms.d providers\implementations\encode_decode\libdefault-lib-decode_msblob2key.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_common.d crypto\engine\libcrypto-lib-eng_list.d ssl\libssl-lib-s3_enc.d crypto\evp\libcrypto-lib-evp_cnf.d fuzz\asn1parse-test-bin-asn1parse.d fuzz\x509-test-bin-x509.d crypto\pem\libcrypto-lib-pem_err.d providers\implementations\encode_decode\libdefault-lib-decode_der2key.d test\pkey_meth_test-bin-pkey_meth_test.d test\buildtest_c_hmac-bin-buildtest_hmac.d crypto\evp\libcrypto-lib-evp_enc.d crypto\modes\libcrypto-lib-ctr128.d crypto\bio\libcrypto-lib-bss_null.d apps\openssl-bin-rand.d crypto\err\libcrypto-lib-err_all.d crypto\bn\libcrypto-lib-bn_mod.d crypto\bio\libcrypto-lib-bss_mem.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hw.d crypto\dso\libcrypto-lib-dso_dlfcn.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ccm.d crypto\x509\libcrypto-lib-x509_vpm.d crypto\ui\libcrypto-lib-ui_util.d crypto\dsa\libcrypto-lib-dsa_ossl.d crypto\evp\libcrypto-lib-p_sign.d test\buildtest_c_srtp-bin-buildtest_srtp.d crypto\x509\libcrypto-lib-x509_att.d crypto\evp\libcrypto-lib-legacy_wp.d crypto\bio\libcrypto-lib-bio_lib.d test\rsa_test-bin-rsa_test.d providers\implementations\ciphers\libdefault-lib-cipher_camellia.d ssl\libssl-lib-d1_lib.d providers\implementations\digests\libdefault-lib-blake2b_prov.d test\buildtest_c_blowfish-bin-buildtest_blowfish.d test\buildtest_c_symhacks-bin-buildtest_symhacks.d crypto\ec\curve448\libcrypto-lib-curve448.d crypto\libcrypto-lib-mem.d crypto\evp\libcrypto-lib-evp_utils.d providers\implementations\digests\liblegacy-lib-md2_prov.d providers\implementations\encode_decode\libdefault-lib-encode_key2text.d test\enginetest-bin-enginetest.d apps\openssl-bin-pkcs8.d test\fatalerrtest-bin-fatalerrtest.d test\evp_kdf_test-bin-evp_kdf_test.d test\evp_libctx_test-bin-evp_libctx_test.d crypto\dh\libcrypto-lib-dh_ameth.d test\hmactest-bin-hmactest.d apps\openssl-bin-srp.d crypto\dso\libcrypto-lib-dso_openssl.d crypto\x509\libcrypto-lib-v3_info.d test\mdc2test-bin-mdc2test.d test\tls13encryptiontest-bin-tls13encryptiontest.d test\sanitytest-bin-sanitytest.d crypto\asn1\libcrypto-lib-x_info.d providers\implementations\ciphers\liblegacy-lib-cipher_des.d test\crltest-bin-crltest.d providers\implementations\encode_decode\libdefault-lib-decode_pem2der.d crypto\rsa\libcrypto-lib-rsa_meth.d crypto\rc2\libcrypto-lib-rc2_skey.d crypto\pkcs12\libcrypto-lib-p12_add.d ssl\statem\libssl-lib-extensions.d crypto\evp\libcrypto-lib-encode.d apps\openssl-bin-sess_id.d crypto\rand\libcrypto-lib-randfile.d crypto\bn\libcrypto-lib-bn_add.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_hw.d crypto\ct\libcrypto-lib-ct_prn.d test\buildtest_c_cast-bin-buildtest_cast.d test\buildtest_c_core-bin-buildtest_core.d test\buildtest_c_core_object-bin-buildtest_core_object.d providers\implementations\ciphers\liblegacy-lib-cipher_seed_hw.d providers\implementations\macs\libdefault-lib-blake2b_mac.d ssl\libssl-lib-ssl_asn1.d providers\implementations\signature\libdefault-lib-sm2_sig.d providers\implementations\rands\libdefault-lib-drbg_ctr.d crypto\ec\libcrypto-lib-ecx_key.d crypto\evp\libcrypto-lib-p_lib.d crypto\ocsp\libcrypto-lib-ocsp_err.d crypto\ocsp\libcrypto-lib-ocsp_http.d crypto\aes\libcrypto-lib-aes_ige.d test\bntest-bin-bntest.d crypto\ec\libcrypto-lib-ec_check.d crypto\dsa\libcrypto-lib-dsa_err.d crypto\aes\libcrypto-lib-aes_wrap.d crypto\dh\libcrypto-lib-dh_kdf.d providers\libcrypto-lib-baseprov.d providers\implementations\digests\libdefault-lib-blake2s_prov.d crypto\ocsp\libcrypto-lib-ocsp_cl.d providers\implementations\ciphers\liblegacy-lib-cipher_rc5.d test\time_offset_test-bin-time_offset_test.d crypto\x509\libcrypto-lib-x509rset.d crypto\evp\libcrypto-lib-evp_rand.d test\evp_pkey_provided_test-bin-evp_pkey_provided_test.d test\bftest-bin-bftest.d crypto\evp\libcrypto-lib-e_des3.d test\endecode_test-bin-endecode_test.d apps\openssl-bin-ciphers.d crypto\libcrypto-lib-o_str.d test\testutil\libtestutil-lib-fake_random.d providers\implementations\exchange\libdefault-lib-kdf_exch.d crypto\x509\libcrypto-lib-pcy_map.d crypto\bn\libcrypto-lib-bn_mpi.d crypto\x509\libcrypto-lib-v3_sxnet.d crypto\libcrypto-lib-provider_predefined.d crypto\bn\libcrypto-lib-bn_gcd.d crypto\lhash\libcrypto-lib-lhash.d crypto\bf\libcrypto-lib-bf_enc.d apps\lib\libapps-lib-s_cb.d test\recordlentest-bin-recordlentest.d crypto\rsa\libcrypto-lib-rsa_pmeth.d providers\common\der\libcommon-lib-der_ec_sig.d crypto\ec\libcrypto-lib-ecdsa_vrf.d crypto\ts\libcrypto-lib-ts_rsp_print.d test\buildtest_c_kdf-bin-buildtest_kdf.d test\buildtest_c_ripemd-bin-buildtest_ripemd.d crypto\rsa\libcrypto-lib-rsa_gen.d providers\implementations\ciphers\libdefault-lib-cipher_aria.d crypto\dsa\libcrypto-lib-dsa_vrf.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ocb_hw.d crypto\evp\libcrypto-lib-keymgmt_meth.d providers\implementations\rands\seeding\libdefault-lib-rand_cpu_x86.d crypto\evp\libcrypto-lib-pmeth_check.d test\sslcorrupttest-bin-sslcorrupttest.d test\asn1_decode_test-bin-asn1_decode_test.d crypto\md5\liblegacy-lib-md5_one.d test\bio_prefix_text-bin-bio_prefix_text.d crypto\seed\libcrypto-lib-seed.d crypto\engine\libcrypto-lib-tb_cipher.d crypto\md4\libcrypto-lib-md4_dgst.d providers\implementations\ciphers\liblegacy-lib-cipher_blowfish.d crypto\rc5\libcrypto-lib-rc5_ecb.d crypto\pkcs12\libcrypto-lib-p12_npas.d fuzz\client-test-bin-fuzz_rand.d crypto\camellia\libcrypto-lib-cmll_ecb.d crypto\libcrypto-lib-core_fetch.d test\testutil\libtestutil-lib-load.d crypto\asn1\libcrypto-lib-a_sign.d crypto\bio\libcrypto-lib-bio_sock.d crypto\conf\libcrypto-lib-conf_mall.d fuzz\x509-test-bin-fuzz_rand.d crypto\pkcs12\libcrypto-lib-p12_p8d.d crypto\dso\libcrypto-lib-dso_win32.d test\buildtest_c_bn-bin-buildtest_bn.d crypto\pkcs12\libcrypto-lib-p12_kiss.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_wrap_hw.d test\testutil\libtestutil-lib-provider.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5_hw.d crypto\aes\libcrypto-lib-aes_misc.d providers\implementations\digests\libdefault-lib-null_prov.d crypto\evp\libcrypto-lib-legacy_blake2.d crypto\encode_decode\libcrypto-lib-decoder_err.d apps\lib\libapps-lib-tlssrp_depr.d test\testutil\libtestutil-lib-options.d crypto\ct\libcrypto-lib-ct_x509v3.d test\servername_test-bin-servername_test.d crypto\engine\libcrypto-lib-tb_rsa.d crypto\des\libcrypto-lib-cfb64ede.d apps\openssl-bin-openssl.d crypto\x509\libcrypto-lib-v3_pcia.d fuzz\asn1-test-bin-asn1.d test\helpers\ssl_old_test-bin-predefined_dhparams.d test\property_test-bin-property_test.d crypto\evp\libcrypto-lib-e_rc4.d apps\openssl-bin-rehash.d crypto\des\libcrypto-lib-ofb_enc.d crypto\x509\libcrypto-lib-t_crl.d crypto\pem\libcrypto-lib-pvkfmt.d crypto\modes\libcrypto-lib-cts128.d test\siphash_internal_test-bin-siphash_internal_test.d test\buildtest_c_cryptoerr_legacy-bin-buildtest_cryptoerr_legacy.d test\cmp_server_test-bin-cmp_server_test.d crypto\x509\libcrypto-lib-v3_pci.d test\buildtest_c_rand-bin-buildtest_rand.d providers\implementations\digests\liblegacy-lib-md4_prov.d test\testutil\libtestutil-lib-cb.d test\buildtest_c_core_names-bin-buildtest_core_names.d crypto\dsa\libcrypto-lib-dsa_ameth.d providers\implementations\keymgmt\libdefault-lib-rsa_kmgmt.d test\asn1_internal_test-bin-asn1_internal_test.d crypto\engine\libcrypto-lib-tb_dh.d crypto\rc5\libcrypto-lib-rc5_skey.d crypto\property\libcrypto-lib-property_err.d test\sslbuffertest-bin-sslbuffertest.d crypto\x509\libcrypto-lib-v3_int.d crypto\x509\libcrypto-lib-v3_admis.d ssl\statem\libssl-lib-statem.d crypto\srp\libcrypto-lib-srp_lib.d crypto\engine\libcrypto-lib-eng_dyn.d crypto\ec\libcrypto-lib-ec_cvt.d test\packettest-bin-packettest.d crypto\ec\libcrypto-lib-ecdh_ossl.d crypto\ec\libcrypto-lib-ec2_oct.d crypto\engine\libcrypto-lib-tb_rand.d test\verify_extra_test-bin-verify_extra_test.d crypto\libcrypto-lib-bsearch.d test\sysdefaulttest-bin-sysdefaulttest.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_poly1305.d apps\lib\libapps-lib-apps.d crypto\objects\libcrypto-lib-o_names.d crypto\libcrypto-lib-mem_sec.d crypto\cmp\libcrypto-lib-cmp_protect.d crypto\md4\libcrypto-lib-md4_one.d providers\common\libdefault-lib-provider_util.d crypto\asn1\libcrypto-lib-a_octet.d test\helpers\cmp_protect_test-bin-cmp_testlib.d crypto\x509\libcrypto-lib-v3err.d test\testutil\libtestutil-lib-apps_shims.d providers\implementations\ciphers\libdefault-lib-cipher_null.d apps\openssl-bin-mac.d crypto\store\libcrypto-lib-store_strings.d crypto\encode_decode\libcrypto-lib-encoder_meth.d test\endecoder_legacy_test-bin-endecoder_legacy_test.d test\dtls_mtu_test-bin-dtls_mtu_test.d crypto\bio\libcrypto-lib-bss_fd.d providers\implementations\ciphers\liblegacy-lib-cipher_seed.d fuzz\crl-test-bin-test-corpus.d test\sslapitest-bin-filterprov.d crypto\x509\libcrypto-lib-v3_san.d crypto\libcrypto-lib-init.d test\ctype_internal_test-bin-ctype_internal_test.d crypto\engine\libcrypto-lib-eng_rdrand.d providers\implementations\ciphers\liblegacy-lib-cipher_cast5_hw.d crypto\evp\libcrypto-lib-e_cast.d crypto\objects\libcrypto-lib-obj_dat.d test\testutil\libtestutil-lib-main.d crypto\asn1\libcrypto-lib-bio_ndef.d test\provider_status_test-bin-provider_status_test.d providers\common\libdefault-lib-capabilities.d test\defltfips_test-bin-defltfips_test.d crypto\evp\libcrypto-lib-e_des.d apps\openssl-bin-pkcs12.d test\helpers\dtls_mtu_test-bin-ssltestlib.d test\cmsapitest-bin-cmsapitest.d crypto\libcrypto-lib-cpuid.d crypto\evp\libcrypto-lib-p5_crpt2.d crypto\engine\libcrypto-lib-eng_lib.d test\helpers\endecode_test-bin-predefined_dhparams.d crypto\evp\libcrypto-lib-e_xcbc_d.d apps\openssl-bin-pkeyparam.d apps\openssl-bin-ts.d crypto\objects\libcrypto-lib-obj_err.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts_fips.d crypto\dh\libcrypto-lib-dh_pmeth.d test\buildtest_c_evp-bin-buildtest_evp.d crypto\bn\libcrypto-lib-bn_dh.d crypto\cast\libcrypto-lib-c_ecb.d crypto\x509\libcrypto-lib-x509_set.d test\sm3_internal_test-bin-sm3_internal_test.d crypto\encode_decode\libcrypto-lib-encoder_pkey.d crypto\engine\libcrypto-lib-tb_asnmth.d crypto\modes\libcrypto-lib-wrap128.d fuzz\crl-test-bin-crl.d crypto\cms\libcrypto-lib-cms_att.d crypto\rsa\libcrypto-lib-rsa_crpt.d crypto\asn1\libcrypto-lib-a_i2d_fp.d crypto\x509\libcrypto-lib-v3_extku.d test\x509aux-bin-x509aux.d test\buildtest_c_prov_ssl-bin-buildtest_prov_ssl.d crypto\asn1\libcrypto-lib-tasn_utl.d crypto\ui\libcrypto-lib-ui_null.d crypto\dh\libcrypto-lib-dh_key.d crypto\libcrypto-lib-sparse_array.d crypto\crmf\libcrypto-lib-crmf_pbm.d crypto\evp\libcrypto-lib-legacy_md5.d crypto\libcrypto-lib-params.d ssl\libssl-lib-tls_srp.d fuzz\cmp-test-bin-cmp.d crypto\asn1\libcrypto-lib-a_verify.d providers\implementations\ciphers\libdefault-lib-cipher_tdes.d crypto\evp\libcrypto-lib-dh_support.d crypto\dsa\libcrypto-lib-dsa_gen.d crypto\x509\libcrypto-lib-x509_trust.d crypto\rsa\libcrypto-lib-rsa_saos.d test\buildtest_c_ssl2-bin-buildtest_ssl2.d test\rsa_mp_test-bin-rsa_mp_test.d providers\implementations\digests\libcommon-lib-digestcommon.d test\ecstresstest-bin-ecstresstest.d test\helpers\cmp_asn_test-bin-cmp_testlib.d crypto\dso\libcrypto-lib-dso_vms.d crypto\pem\libcrypto-lib-pem_sign.d ssl\libdefault-lib-s3_cbc.d test\ideatest-bin-ideatest.d crypto\des\liblegacy-lib-fcrypt_b.d crypto\modes\libcrypto-lib-siv128.d crypto\rsa\libcrypto-lib-rsa_backend.d crypto\dsa\libcrypto-lib-dsa_sign.d crypto\asn1\libcrypto-lib-asn_mstbl.d crypto\encode_decode\libcrypto-lib-encoder_lib.d test\context_internal_test-bin-context_internal_test.d test\errtest-bin-errtest.d providers\implementations\encode_decode\libdefault-lib-endecoder_common.d crypto\rsa\libcrypto-lib-rsa_asn1.d crypto\asn1\libcrypto-lib-a_utctm.d crypto\rc5\libcrypto-lib-rc5_enc.d crypto\ec\libcrypto-lib-ec_key.d test\cipher_overhead_test-bin-cipher_overhead_test.d crypto\ec\libcrypto-lib-ec_asn1.d test\cmp_msg_test-bin-cmp_msg_test.d crypto\bio\libcrypto-lib-bss_log.d apps\openssl-bin-s_client.d crypto\x509\libcrypto-lib-v3_utl.d fuzz\server-test-bin-test-corpus.d crypto\aes\libcrypto-lib-aes_ofb.d fuzz\ct-test-bin-test-corpus.d test\ecdsatest-bin-ecdsatest.d crypto\store\libcrypto-lib-store_register.d crypto\asn1\libcrypto-lib-f_int.d test\provider_internal_test-bin-p_test.d crypto\x509\libcrypto-lib-x_exten.d apps\openssl-bin-dsaparam.d crypto\rc4\libcrypto-lib-rc4_enc.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_default_hw.d fuzz\conf-test-bin-test-corpus.d ssl\libssl-lib-ssl_init.d crypto\asn1\libcrypto-lib-x_pkey.d crypto\ec\curve448\libcrypto-lib-curve448_tables.d crypto\pkcs12\libcrypto-lib-p12_attr.d crypto\dso\libcrypto-lib-dso_err.d crypto\buffer\libcrypto-lib-buffer.d apps\openssl-bin-genrsa.d crypto\hmac\libcrypto-lib-hmac.d crypto\rand\libcrypto-lib-rand_pool.d crypto\comp\libcrypto-lib-comp_lib.d crypto\evp\libcrypto-lib-c_allc.d crypto\cmp\libcrypto-lib-cmp_asn.d test\buildtest_c_params-bin-buildtest_params.d crypto\des\libcrypto-lib-set_key.d apps\lib\libapps-lib-engine_loader.d crypto\bf\libcrypto-lib-bf_ofb64.d test\buildtest_c_ts-bin-buildtest_ts.d crypto\libcrypto-lib-ctype.d apps\openssl-bin-gendsa.d crypto\libcrypto-lib-mem_clr.d test\bio_enc_test-bin-bio_enc_test.d crypto\srp\libcrypto-lib-srp_vfy.d test\keymgmt_internal_test-bin-keymgmt_internal_test.d apps\lib\libapps-lib-app_params.d apps\openssl-bin-nseq.d crypto\ui\libcrypto-lib-ui_err.d crypto\asn1\libcrypto-lib-asn_mime.d crypto\engine\libcrypto-lib-eng_pkey.d crypto\libcrypto-lib-o_fopen.d test\cmp_client_test-bin-cmp_client_test.d crypto\sm2\libcrypto-lib-sm2_sign.d test\helpers\sslcorrupttest-bin-ssltestlib.d crypto\pkcs12\libcrypto-lib-p12_init.d crypto\evp\libcrypto-lib-bio_b64.d crypto\asn1\libcrypto-lib-t_pkey.d test\ssl_ctx_test-bin-ssl_ctx_test.d crypto\dh\libcrypto-lib-dh_lib.d crypto\bio\libcrypto-lib-bf_buff.d ssl\libssl-lib-ssl_err_legacy.d ssl\record\libssl-lib-ssl3_record.d test\hexstr_test-bin-hexstr_test.d test\memleaktest-bin-memleaktest.d test\buildtest_c_txt_db-bin-buildtest_txt_db.d apps\openssl-bin-spkac.d crypto\des\libcrypto-lib-cbc_cksm.d test\chacha_internal_test-bin-chacha_internal_test.d crypto\des\libcrypto-lib-cfb64enc.d crypto\aes\libcrypto-lib-aes_ecb.d ssl\libssl-lib-methods.d crypto\crmf\libcrypto-lib-crmf_asn.d crypto\ec\curve448\arch_64\libcrypto-lib-f_impl64.d crypto\ui\libcrypto-lib-ui_openssl.d providers\implementations\ciphers\libdefault-lib-cipher_aes_gcm_hw.d test\buildtest_c_rc4-bin-buildtest_rc4.d crypto\aes\libcrypto-lib-aes_core.d test\v3ext-bin-v3ext.d test\buildtest_c_encoder-bin-buildtest_encoder.d test\igetest-bin-igetest.d test\v3nametest-bin-v3nametest.d test\bio_memleak_test-bin-bio_memleak_test.d test\buildtest_c_conftypes-bin-buildtest_conftypes.d crypto\asn1\libcrypto-lib-a_bitstr.d providers\implementations\kdfs\libdefault-lib-scrypt.d test\pem_read_depr_test-bin-pem_read_depr_test.d crypto\bio\libcrypto-lib-bio_print.d crypto\sha\libcrypto-lib-sha3.d crypto\x509\libcrypto-lib-x509_vfy.d fuzz\ct-test-bin-ct.d crypto\conf\libcrypto-lib-conf_ssl.d crypto\dh\libcrypto-lib-dh_rfc5114.d crypto\rand\libcrypto-lib-rand_lib.d apps\openssl-bin-crl.d crypto\libcrypto-lib-asn1_dsa.d test\cipherbytes_test-bin-cipherbytes_test.d test\buildtest_c_seed-bin-buildtest_seed.d ssl\libssl-lib-tls13_enc.d crypto\asn1\libcrypto-lib-ameth_lib.d crypto\ec\curve448\libcrypto-lib-scalar.d crypto\asn1\libcrypto-lib-asn_moid.d crypto\aes\libcrypto-lib-aes_cbc.d crypto\bio\libcrypto-lib-bss_sock.d crypto\asn1\libcrypto-lib-x_algor.d ssl\libssl-lib-t1_lib.d apps\lib\libapps-lib-opt.d providers\implementations\kdfs\libdefault-lib-krb5kdf.d apps\lib\cmp_client_test-bin-cmp_mock_srv.d test\buildtest_c_md2-bin-buildtest_md2.d crypto\libcrypto-lib-o_init.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha1_hw.d ssl\statem\libssl-lib-extensions_srvr.d crypto\cmp\libcrypto-lib-cmp_hdr.d crypto\ec\libcrypto-lib-eck_prn.d crypto\cast\libcrypto-lib-c_ofb64.d test\ssl_cert_table_internal_test-bin-ssl_cert_table_internal_test.d test\buildtest_c_param_build-bin-buildtest_param_build.d crypto\x509\libcrypto-lib-x_crl.d crypto\x509\libcrypto-lib-x_req.d crypto\bn\libcrypto-lib-bn_const.d providers\implementations\ciphers\libdefault-lib-cipher_aes_gcm.d test\testutil\libtestutil-lib-tests.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_default.d ssl\libssl-lib-ssl_utst.d test\evp_pkey_ctx_new_from_name-bin-evp_pkey_ctx_new_from_name.d crypto\x509\libcrypto-lib-x509_txt.d test\buildtest_c_decoder-bin-buildtest_decoder.d crypto\des\libcrypto-lib-ofb64ede.d test\buildtest_c_async-bin-buildtest_async.d crypto\evp\libcrypto-lib-mac_meth.d test\buildtest_c_ecdh-bin-buildtest_ecdh.d ssl\record\libcommon-lib-tls_pad.d crypto\sm2\libcrypto-lib-sm2_key.d crypto\sm2\libcrypto-lib-sm2_err.d crypto\sm3\libcrypto-lib-sm3.d crypto\pem\libcrypto-lib-pem_lib.d crypto\whrlpool\libcrypto-lib-wp_dgst.d crypto\pkcs7\libcrypto-lib-pk7_attr.d apps\openssl-bin-errstr.d crypto\modes\libcrypto-lib-cbc128.d test\pbelutest-bin-pbelutest.d apps\openssl-bin-verify.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5.d crypto\cms\libcrypto-lib-cms_dh.d crypto\evp\libcrypto-lib-bio_enc.d providers\implementations\kdfs\libdefault-lib-x942kdf.d crypto\evp\libcrypto-lib-kem.d apps\openssl-bin-rsautl.d crypto\pem\libcrypto-lib-pem_pk8.d crypto\des\libcrypto-lib-cbc_enc.d crypto\rsa\libcrypto-lib-rsa_pk1.d crypto\x509\libcrypto-lib-v3_ia5.d crypto\bn\libcrypto-lib-bn_rsa_fips186_4.d test\asn1_encode_test-bin-asn1_encode_test.d test\helpers\ssl_test-bin-handshake_srp.d providers\implementations\ciphers\libdefault-lib-cipher_aes_wrp.d test\helpers\cmp_vfy_test-bin-cmp_testlib.d test\ocspapitest-bin-ocspapitest.d crypto\bio\libcrypto-lib-bf_nbio.d crypto\libcrypto-lib-params_from_text.d crypto\x509\libcrypto-lib-pcy_node.d crypto\http\libcrypto-lib-http_client.d crypto\asn1\libcrypto-lib-x_int64.d crypto\dso\libcrypto-lib-dso_dl.d crypto\evp\libcrypto-lib-asymcipher.d crypto\pem\libcrypto-lib-pem_info.d crypto\asn1\libcrypto-lib-n_pkey.d crypto\pem\libcrypto-lib-pem_x509.d ssl\libssl-lib-ssl_ciph.d crypto\rand\libcrypto-lib-rand_deprecated.d crypto\property\libcrypto-lib-defn_cache.d crypto\bn\libcrypto-lib-bn_intern.d crypto\evp\libcrypto-lib-c_alld.d test\buildtest_c_sslerr_legacy-bin-buildtest_sslerr_legacy.d crypto\rsa\libcrypto-lib-rsa_ameth.d test\rdrand_sanitytest-bin-rdrand_sanitytest.d providers\implementations\encode_decode\libdefault-lib-encode_key2any.d providers\implementations\digests\libdefault-lib-sm3_prov.d test\bio_readbuffer_test-bin-bio_readbuffer_test.d crypto\x509\libcrypto-lib-x509_ext.d providers\implementations\ciphers\liblegacy-lib-cipher_desx_hw.d crypto\md2\libcrypto-lib-md2_one.d apps\openssl-bin-progs.d crypto\seed\libcrypto-lib-seed_ecb.d test\cmp_ctx_test-bin-cmp_ctx_test.d apps\openssl-bin-engine.d crypto\x509\libcrypto-lib-x_attrib.d crypto\err\libcrypto-lib-err.d apps\lib\libtestutil-lib-opt.d providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm_hw.d crypto\dsa\libcrypto-lib-dsa_lib.d providers\implementations\kdfs\libdefault-lib-pbkdf2_fips.d ssl\libssl-lib-ssl_stat.d crypto\evp\libcrypto-lib-digest.d crypto\cms\libcrypto-lib-cms_lib.d ssl\libssl-lib-ssl_rsa.d crypto\bn\libcrypto-lib-bn_sqrt.d crypto\bn\libcrypto-lib-bn_mul.d test\sparse_array_test-bin-sparse_array_test.d test\buildtest_c_dh-bin-buildtest_dh.d crypto\x509\libcrypto-lib-v3_conf.d crypto\libcrypto-lib-trace.d crypto\bio\libcrypto-lib-bf_prefix.d apps\openssl-bin-version.d crypto\rsa\libcrypto-lib-rsa_schemes.d crypto\ts\libcrypto-lib-ts_rsp_sign.d crypto\ts\libcrypto-lib-ts_conf.d crypto\x509\libcrypto-lib-x509_meth.d crypto\ts\libcrypto-lib-ts_rsp_verify.d crypto\evp\libcrypto-lib-kdf_lib.d crypto\bn\libcrypto-lib-bn_exp2.d test\ectest-bin-ectest.d crypto\x509\libcrypto-lib-v3_crld.d test\buildtest_c_cmac-bin-buildtest_cmac.d test\asynctest-bin-asynctest.d crypto\sm3\libcrypto-lib-legacy_sm3.d test\buildtest_c_ebcdic-bin-buildtest_ebcdic.d crypto\dh\libcrypto-lib-dh_err.d crypto\ts\libcrypto-lib-ts_rsp_utils.d ssl\record\libssl-lib-rec_layer_d1.d apps\openssl-bin-dhparam.d crypto\rc2\libcrypto-lib-rc2cfb64.d crypto\bn\libcrypto-lib-bn_err.d crypto\ffc\libcrypto-lib-ffc_backend.d providers\implementations\encode_decode\libdefault-lib-decode_pvk2key.d crypto\x509\libcrypto-lib-v3_cpols.d test\buildtest_c_cmp_util-bin-buildtest_cmp_util.d fuzz\server-test-bin-server.d test\sha_test-bin-sha_test.d crypto\rsa\libcrypto-lib-rsa_mp.d providers\implementations\ciphers\libdefault-lib-cipher_aes_siv.d test\exptest-bin-exptest.d test\sm4_internal_test-bin-sm4_internal_test.d test\modes_internal_test-bin-modes_internal_test.d crypto\evp\libcrypto-lib-legacy_md5_sha1.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20.d crypto\ffc\libcrypto-lib-ffc_key_generate.d test\ssl_test-bin-ssl_test.d test\confdump-bin-confdump.d test\buildtest_c_ossl_typ-bin-buildtest_ossl_typ.d providers\liblegacy-lib-prov_running.d crypto\evp\libcrypto-lib-e_rc2.d test\pemtest-bin-pemtest.d crypto\pkcs12\libcrypto-lib-p12_decr.d crypto\modes\libcrypto-lib-ocb128.d apps\openssl-bin-genpkey.d test\helpers\cmp_client_test-bin-cmp_testlib.d crypto\evp\libcrypto-lib-names.d crypto\bio\libcrypto-lib-bio_cb.d crypto\engine\libcrypto-lib-tb_pkmeth.d crypto\cms\libcrypto-lib-cms_kari.d crypto\dh\libcrypto-lib-dh_check.d providers\legacy-dso-legacyprov.d providers\implementations\ciphers\libdefault-lib-cipher_cts.d crypto\x509\libcrypto-lib-x509name.d crypto\asn1\libcrypto-lib-d2i_pu.d crypto\evp\libcrypto-lib-e_rc5.d crypto\ct\libcrypto-lib-ct_vfy.d crypto\pkcs7\libcrypto-lib-pkcs7err.d providers\implementations\signature\libdefault-lib-dsa_sig.d crypto\seed\libcrypto-lib-seed_cbc.d crypto\bio\libcrypto-lib-bio_sock2.d crypto\ec\libcrypto-lib-ec_print.d crypto\rc5\libcrypto-lib-rc5cfb64.d providers\implementations\rands\libdefault-lib-test_rng.d crypto\ec\libcrypto-lib-curve25519.d ssl\statem\libssl-lib-extensions_clnt.d crypto\md5\libcrypto-lib-md5_dgst.d crypto\bio\libcrypto-lib-bss_dgram.d crypto\libcrypto-lib-context.d providers\implementations\digests\libdefault-lib-md5_prov.d test\tls13ccstest-bin-tls13ccstest.d crypto\cms\libcrypto-lib-cms_dd.d providers\implementations\encode_decode\libdefault-lib-decode_spki2typespki.d providers\implementations\encode_decode\libdefault-lib-decode_epki2pki.d apps\openssl-bin-enc.d test\drbgtest-bin-drbgtest.d crypto\evp\libcrypto-lib-e_camellia.d crypto\cmp\libcrypto-lib-cmp_vfy.d apps\lib\libapps-lib-engine.d crypto\encode_decode\libcrypto-lib-decoder_meth.d test\testutil\libtestutil-lib-test_options.d crypto\bio\libcrypto-lib-bio_addr.d crypto\siphash\libcrypto-lib-siphash.d crypto\engine\libcrypto-lib-eng_ctrl.d apps\openssl-bin-s_server.d crypto\dsa\libcrypto-lib-dsa_check.d crypto\evp\libcrypto-lib-kdf_meth.d crypto\asn1\libcrypto-lib-t_spki.d crypto\libcrypto-lib-der_writer.d test\dsa_no_digest_size_test-bin-dsa_no_digest_size_test.d test\buildtest_c_comp-bin-buildtest_comp.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts.d providers\implementations\ciphers\liblegacy-lib-cipher_tdes_common.d crypto\pkcs12\libcrypto-lib-pk12err.d crypto\x509\libcrypto-lib-x509_lu.d crypto\err\libcrypto-lib-err_prn.d providers\common\der\libcommon-lib-der_digests_gen.d crypto\dsa\libcrypto-lib-dsa_prn.d crypto\evp\libcrypto-lib-evp_pkey.d test\buildtest_c_provider-bin-buildtest_provider.d test\helpers\sslapitest-bin-ssltestlib.d crypto\asn1\libcrypto-lib-x_val.d crypto\asn1\libcrypto-lib-tasn_fre.d crypto\x509\libcrypto-lib-x509_def.d providers\implementations\digests\liblegacy-lib-wp_prov.d crypto\modes\libcrypto-lib-xts128.d crypto\x509\libcrypto-lib-v3_purp.d providers\implementations\kdfs\liblegacy-lib-pbkdf1.d providers\implementations\exchange\libdefault-lib-ecx_exch.d test\poly1305_internal_test-bin-poly1305_internal_test.d ssl\libssl-lib-ssl_mcnf.d test\srptest-bin-srptest.d ssl\libssl-lib-d1_msg.d crypto\rsa\libcrypto-lib-rsa_sp800_56b_check.d crypto\asn1\libcrypto-lib-a_strnid.d crypto\rand\libcrypto-lib-rand_err.d crypto\engine\libcrypto-lib-eng_openssl.d crypto\asn1\libcrypto-lib-i2d_evp.d crypto\x509\libcrypto-lib-x509_err.d crypto\evp\libcrypto-lib-e_aria.d crypto\x509\libcrypto-lib-v3_pku.d crypto\pkcs7\libcrypto-lib-pk7_doit.d crypto\dsa\libcrypto-lib-dsa_depr.d crypto\property\libcrypto-lib-property_query.d crypto\des\libcrypto-lib-str2key.d crypto\engine\libcrypto-lib-tb_dsa.d crypto\bn\libcrypto-lib-bn_depr.d test\buildtest_c_store-bin-buildtest_store.d test\buildtest_c_pem2-bin-buildtest_pem2.d crypto\cms\libcrypto-lib-cms_rsa.d test\dtlstest-bin-dtlstest.d test\buildtest_c_stack-bin-buildtest_stack.d fuzz\bignum-test-bin-bignum.d providers\common\libdefault-lib-securitycheck.d crypto\x509\libcrypto-lib-v3_pmaps.d crypto\rand\libcrypto-lib-rand_meth.d crypto\evp\libcrypto-lib-mac_lib.d crypto\cmp\libcrypto-lib-cmp_util.d crypto\cmp\libcrypto-lib-cmp_client.d providers\implementations\kdfs\libdefault-lib-sshkdf.d providers\implementations\kdfs\libdefault-lib-pkcs12kdf.d providers\common\libdefault-lib-securitycheck_default.d crypto\libcrypto-lib-ebcdic.d crypto\evp\libcrypto-lib-pmeth_lib.d test\x509_time_test-bin-x509_time_test.d crypto\pkcs12\libcrypto-lib-p12_utl.d crypto\property\libcrypto-lib-property.d test\localetest-bin-localetest.d apps\openssl-bin-dsa.d providers\implementations\exchange\libdefault-lib-dh_exch.d providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm_hw.d test\constant_time_test-bin-constant_time_test.d apps\lib\libapps-lib-app_provider.d ssl\libssl-lib-t1_enc.d crypto\sha\libcrypto-lib-keccak1600.d crypto\camellia\libcrypto-lib-cmll_ofb.d crypto\evp\libcrypto-lib-p_seal.d test\ciphername_test-bin-ciphername_test.d test\bn_internal_test-bin-bn_internal_test.d crypto\async\arch\libcrypto-lib-async_posix.d crypto\asn1\libcrypto-lib-x_sig.d test\asn1_string_table_test-bin-asn1_string_table_test.d crypto\x509\libcrypto-lib-by_store.d providers\implementations\ciphers\libdefault-lib-cipher_aria_gcm_hw.d apps\openssl-bin-crl2pkcs7.d apps\openssl-bin-dgst.d crypto\x509\libcrypto-lib-x_pubkey.d test\buildtest_c_http-bin-buildtest_http.d crypto\evp\libcrypto-lib-m_null.d providers\common\der\libdefault-lib-der_sm2_sig.d providers\common\der\libcommon-lib-der_ec_key.d providers\libcrypto-lib-nullprov.d providers\implementations\rands\seeding\libdefault-lib-rand_tsc.d providers\implementations\macs\libdefault-lib-cmac_prov.d crypto\cms\libcrypto-lib-cms_sd.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ccm_hw.d crypto\x509\libcrypto-lib-x509_req.d crypto\bf\libcrypto-lib-bf_cfb64.d crypto\evp\libcrypto-lib-e_chacha20_poly1305.d test\testutil\libtestutil-lib-driver.d crypto\ui\libcrypto-lib-ui_lib.d crypto\x509\libcrypto-lib-x_x509.d engines\libcrypto-lib-e_padlock.d crypto\async\libcrypto-lib-async_err.d providers\implementations\ciphers\libdefault-lib-cipher_aes_hw.d providers\libcrypto-lib-prov_running.d crypto\ec\libcrypto-lib-ec_mult.d fuzz\client-test-bin-test-corpus.d providers\implementations\ciphers\libcommon-lib-ciphercommon_hw.d crypto\bn\libcrypto-lib-bn_lib.d crypto\comp\libcrypto-lib-c_zlib.d crypto\cms\libcrypto-lib-cms_asn1.d crypto\cmp\libcrypto-lib-cmp_msg.d test\buildtest_c_dsa-bin-buildtest_dsa.d ssl\libssl-lib-ssl_conf.d crypto\dh\libcrypto-lib-dh_group_params.d test\buildtest_c_self_test-bin-buildtest_self_test.d crypto\err\libcrypto-lib-err_all_legacy.d crypto\asn1\libcrypto-lib-a_mbstr.d crypto\evp\libcrypto-lib-evp_fetch.d test\sslapitest-bin-sslapitest.d crypto\ec\libcrypto-lib-ecdh_kdf.d crypto\ec\libcrypto-lib-ec_curve.d crypto\x509\libcrypto-lib-x509type.d test\cmactest-bin-cmactest.d apps\openssl-bin-prime.d apps\openssl-bin-x509.d crypto\bn\libcrypto-lib-bn_prime.d crypto\rc2\libcrypto-lib-rc2_ecb.d providers\implementations\digests\libdefault-lib-sha3_prov.d crypto\ec\libcrypto-lib-ec_deprecated.d crypto\buffer\libcrypto-lib-buf_err.d crypto\err\libcrypto-lib-err_blocks.d apps\lib\openssl-bin-cmp_mock_srv.d crypto\bio\libcrypto-lib-bss_bio.d test\evp_extra_test-bin-evp_extra_test.d test\rsa_sp800_56b_test-bin-rsa_sp800_56b_test.d crypto\x509\libcrypto-lib-v3_genn.d test\helpers\servername_test-bin-ssltestlib.d fuzz\asn1-test-bin-fuzz_rand.d crypto\x509\libcrypto-lib-x_x509a.d test\namemap_internal_test-bin-namemap_internal_test.d test\buildtest_c_md5-bin-buildtest_md5.d crypto\evp\libcrypto-lib-exchange.d crypto\asn1\libcrypto-lib-a_d2i_fp.d test\buildtest_c_conf_api-bin-buildtest_conf_api.d crypto\ts\libcrypto-lib-ts_verify_ctx.d crypto\asn1\libcrypto-lib-a_strex.d apps\openssl-bin-pkeyutl.d test\destest-bin-destest.d crypto\comp\libcrypto-lib-comp_err.d test\helpers\ssl_test_ctx_test-bin-ssl_test_ctx.d test\secmemtest-bin-secmemtest.d crypto\conf\libcrypto-lib-conf_mod.d ssl\libssl-lib-tls_depr.d test\threadstest-bin-threadstest.d crypto\pkcs7\libcrypto-lib-bio_pk7.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_hw.d crypto\libcrypto-lib-packet.d providers\implementations\exchange\libdefault-lib-ecdh_exch.d crypto\sm4\libcrypto-lib-sm4.d crypto\dsa\libcrypto-lib-dsa_pmeth.d providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm.d crypto\libcrypto-lib-provider_child.d crypto\asn1\libcrypto-lib-evp_asn1.d crypto\asn1\libcrypto-lib-x_spki.d crypto\des\libcrypto-lib-fcrypt_b.d test\helpers\cmp_status_test-bin-cmp_testlib.d test\testutil\libtestutil-lib-testutil_init.d crypto\rsa\libcrypto-lib-rsa_pss.d crypto\libcrypto-lib-uid.d providers\implementations\ciphers\libcommon-lib-ciphercommon.d test\buildtest_c_ecdsa-bin-buildtest_ecdsa.d apps\openssl-bin-ecparam.d ssl\libssl-lib-pqueue.d test\testutil\libtestutil-lib-random.d crypto\bf\libcrypto-lib-bf_ecb.d test\upcallstest-bin-upcallstest.d crypto\x509\libcrypto-lib-v3_bitst.d crypto\bio\libcrypto-lib-bss_core.d test\testutil\libtestutil-lib-stanza.d crypto\evp\libcrypto-lib-e_bf.d apps\openssl-bin-cmp.d crypto\pkcs12\libcrypto-lib-p12_p8e.d ssl\libssl-lib-t1_trce.d crypto\libcrypto-lib-provider.d crypto\evp\libcrypto-lib-e_aes_cbc_hmac_sha256.d crypto\libcrypto-lib-initthread.d crypto\asn1\libcrypto-lib-f_string.d crypto\ffc\libcrypto-lib-ffc_params.d test\pkcs12_format_test-bin-pkcs12_format_test.d crypto\pkcs12\libcrypto-lib-p12_key.d test\user_property_test-bin-user_property_test.d apps\lib\uitest-bin-apps_ui.d crypto\evp\libcrypto-lib-dh_ctrl.d crypto\modes\libcrypto-lib-ccm128.d test\provider_test-bin-p_test.d crypto\bn\libcrypto-lib-bn_print.d crypto\ess\libcrypto-lib-ess_lib.d crypto\property\libcrypto-lib-property_parse.d crypto\store\libcrypto-lib-store_result.d crypto\evp\libcrypto-lib-p_verify.d providers\implementations\keymgmt\libdefault-lib-ecx_kmgmt.d test\cmp_status_test-bin-cmp_status_test.d providers\common\der\libcommon-lib-der_rsa_gen.d ssl\statem\libssl-lib-statem_srvr.d crypto\ec\libcrypto-lib-ec_kmeth.d crypto\x509\libcrypto-lib-by_dir.d providers\implementations\ciphers\liblegacy-lib-cipher_rc2_hw.d providers\common\der\libdefault-lib-der_rsa_sig.d providers\implementations\ciphers\libdefault-lib-cipher_sm4_hw.d crypto\bn\libcrypto-lib-bn_gf2m.d crypto\ec\libcrypto-lib-ecp_mont.d fuzz\cmp-test-bin-fuzz_rand.d test\casttest-bin-casttest.d fuzz\cmp-test-bin-test-corpus.d crypto\x509\libcrypto-lib-v3_akid.d crypto\ocsp\libcrypto-lib-ocsp_prn.d crypto\engine\libcrypto-lib-eng_cnf.d crypto\store\libcrypto-lib-store_lib.d crypto\dsa\libcrypto-lib-dsa_asn1.d apps\lib\libapps-lib-app_x509.d crypto\sha\libcrypto-lib-sha256.d ssl\libssl-lib-ssl_lib.d crypto\rsa\libcrypto-lib-rsa_x931g.d ssl\record\libssl-lib-ssl3_buffer.d providers\implementations\kdfs\libdefault-lib-sskdf.d crypto\bn\libcrypto-lib-bn_div.d providers\implementations\signature\libdefault-lib-eddsa_sig.d crypto\ts\libcrypto-lib-ts_err.d crypto\engine\libcrypto-lib-eng_init.d crypto\evp\libcrypto-lib-e_aes.d crypto\x509\libcrypto-lib-v3_skid.d crypto\evp\libcrypto-lib-ctrl_params_translate.d test\cipherlist_test-bin-cipherlist_test.d providers\implementations\encode_decode\libdefault-lib-encode_key2ms.d providers\common\der\libcommon-lib-der_ecx_key.d apps\openssl-bin-pkey.d test\evp_test-bin-evp_test.d crypto\cmp\libcrypto-lib-cmp_err.d crypto\engine\libcrypto-lib-eng_err.d crypto\bio\libcrypto-lib-ossl_core_bio.d crypto\asn1\libcrypto-lib-tasn_enc.d ssl\libssl-lib-ssl_cert.d crypto\libcrypto-lib-o_dir.d crypto\ec\curve448\arch_32\libcrypto-lib-f_impl32.d apps\openssl-bin-passwd.d providers\implementations\keymgmt\libdefault-lib-dsa_kmgmt.d crypto\cms\libcrypto-lib-cms_env.d providers\implementations\kdfs\libdefault-lib-hkdf.d crypto\rsa\libcrypto-lib-rsa_none.d test\x509_check_cert_pkey_test-bin-x509_check_cert_pkey_test.d providers\implementations\rands\seeding\libdefault-lib-rand_win.d crypto\md5\libcrypto-lib-md5_sha1.d test\cmp_asn_test-bin-cmp_asn_test.d test\params_api_test-bin-params_api_test.d crypto\ess\libcrypto-lib-ess_err.d test\buildtest_c_pem-bin-buildtest_pem.d crypto\x509\libcrypto-lib-pcy_tree.d test\testutil\libtestutil-lib-test_cleanup.d crypto\async\libcrypto-lib-async_wait.d crypto\conf\libcrypto-lib-conf_def.d crypto\ts\libcrypto-lib-ts_req_utils.d crypto\x509\libcrypto-lib-v3_enum.d providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm.d crypto\rsa\libcrypto-lib-rsa_ossl.d crypto\ec\libcrypto-lib-ec_err.d test\cmp_protect_test-bin-cmp_protect_test.d crypto\bn\liblegacy-lib-bn_asm.d fuzz\bndiv-test-bin-test-corpus.d test\dhtest-bin-dhtest.d crypto\bn\libcrypto-lib-bn_rand.d providers\implementations\digests\liblegacy-lib-ripemd_prov.d crypto\objects\libcrypto-lib-obj_xref.d providers\implementations\storemgmt\libdefault-lib-file_store_any2obj.d crypto\ocsp\libcrypto-lib-ocsp_srv.d crypto\evp\libcrypto-lib-evp_err.d crypto\cms\libcrypto-lib-cms_ec.d providers\common\der\libdefault-lib-der_sm2_gen.d test\buildtest_c_buffer-bin-buildtest_buffer.d crypto\modes\libcrypto-lib-ofb128.d crypto\evp\libcrypto-lib-m_sigver.d crypto\bn\libcrypto-lib-bn_word.d ssl\libssl-lib-s3_msg.d test\evp_fetch_prov_test-bin-evp_fetch_prov_test.d providers\implementations\ciphers\libcommon-lib-ciphercommon_block.d crypto\evp\libcrypto-lib-bio_md.d crypto\ec\libcrypto-lib-ec_backend.d crypto\dsa\libcrypto-lib-dsa_key.d crypto\rsa\libcrypto-lib-rsa_prn.d crypto\asn1\libcrypto-lib-asn1_lib.d crypto\bn\libcrypto-lib-bn_recp.d crypto\x509\libcrypto-lib-v3_utf8.d crypto\ocsp\libcrypto-lib-ocsp_ext.d crypto\camellia\libcrypto-lib-cmll_misc.d test\helpers\ssl_test-bin-handshake.d crypto\libcrypto-lib-cryptlib.d test\d2i_test-bin-d2i_test.d apps\openssl-bin-storeutl.d crypto\encode_decode\libcrypto-lib-decoder_pkey.d crypto\evp\libcrypto-lib-e_rc4_hmac_md5.d crypto\asn1\libcrypto-lib-x_long.d providers\implementations\kdfs\libdefault-lib-tls1_prf.d apps\openssl-bin-speed.d crypto\libcrypto-lib-core_namemap.d crypto\evp\libcrypto-lib-p_enc.d crypto\des\libcrypto-lib-pcbc_enc.d crypto\x509\libcrypto-lib-v3_akeya.d providers\common\libdefault-lib-bio_prov.d crypto\bn\libcrypto-lib-bn_conv.d providers\common\libdefault-lib-provider_seeding.d crypto\cast\libcrypto-lib-c_enc.d test\asynciotest-bin-asynciotest.d test\ffc_internal_test-bin-ffc_internal_test.d test\buildtest_c_whrlpool-bin-buildtest_whrlpool.d crypto\asn1\libcrypto-lib-p8_pkey.d crypto\cast\libcrypto-lib-c_skey.d crypto\asn1\libcrypto-lib-a_int.d crypto\rand\libcrypto-lib-prov_seed.d crypto\stack\libcrypto-lib-stack.d providers\common\der\libcommon-lib-der_dsa_sig.d crypto\x509\libcrypto-lib-x509cset.d crypto\ec\libcrypto-lib-ecp_smpl.d crypto\des\libcrypto-lib-rand_key.d providers\implementations\digests\libdefault-lib-blake2_prov.d test\aesgcmtest-bin-aesgcmtest.d crypto\asn1\libcrypto-lib-asn1_item_list.d crypto\ffc\libcrypto-lib-ffc_dh.d crypto\x509\libcrypto-lib-x509spki.d crypto\x509\libcrypto-lib-v3_addr.d crypto\libcrypto-lib-ex_data.d crypto\evp\libcrypto-lib-signature.d crypto\engine\libcrypto-lib-eng_fat.d crypto\evp\libcrypto-lib-p_dec.d apps\openssl-bin-kdf.d crypto\asn1\libcrypto-lib-asn1_gen.d crypto\evp\libcrypto-lib-pmeth_gn.d test\ec_internal_test-bin-ec_internal_test.d providers\implementations\keymgmt\libdefault-lib-ec_kmgmt.d crypto\rsa\libcrypto-lib-rsa_depr.d test\asn1_dsa_internal_test-bin-asn1_dsa_internal_test.d crypto\ocsp\libcrypto-lib-ocsp_asn.d crypto\cms\libcrypto-lib-cms_smime.d providers\implementations\ciphers\libdefault-lib-cipher_aria_ccm_hw.d crypto\bn\libcrypto-lib-bn_exp.d test\uitest-bin-uitest.d apps\lib\libapps-lib-app_rand.d apps\openssl-bin-s_time.d test\danetest-bin-danetest.d apps\openssl-bin-list.d apps\lib\libapps-lib-names.d crypto\bn\libcrypto-lib-bn_x931p.d
+DEPS=crypto\libcrypto-lib-sparse_array.d test\fatalerrtest-bin-fatalerrtest.d crypto\rsa\libfips-lib-rsa_sign.d providers\fips\libfips-lib-fipsprov.d test\buildtest_c_symhacks-bin-buildtest_symhacks.d crypto\ec\libfips-lib-ecdh_ossl.d test\params_conversion_test-bin-params_conversion_test.d crypto\evp\libcrypto-lib-cmeth_lib.d crypto\sm2\libcrypto-lib-sm2_err.d test\d2i_test-bin-d2i_test.d crypto\ec\libfips-lib-ecdh_kdf.d crypto\cmp\libcrypto-lib-cmp_util.d crypto\err\libcrypto-lib-err_all.d crypto\rc4\libcrypto-lib-rc4_skey.d crypto\evp\libcrypto-lib-evp_cnf.d crypto\x509\libcrypto-lib-v3_bcons.d crypto\aes\libcrypto-lib-aes_ofb.d crypto\asn1\libcrypto-lib-a_time.d providers\implementations\ciphers\libdefault-lib-cipher_cts.d crypto\libfips-lib-self_test_core.d test\defltfips_test-bin-defltfips_test.d crypto\bf\libcrypto-lib-bf_cfb64.d crypto\property\libfips-lib-property_parse.d fuzz\cmp-test-bin-test-corpus.d test\cmactest-bin-cmactest.d crypto\bn\libfips-lib-bn_rand.d crypto\ct\libcrypto-lib-ct_policy.d providers\implementations\ciphers\libdefault-lib-cipher_aria_gcm.d crypto\bn\libcrypto-lib-bn_err.d test\testutil\libtestutil-lib-output.d crypto\ec\libcrypto-lib-ecdsa_ossl.d providers\implementations\exchange\libfips-lib-ecx_exch.d crypto\rc2\libcrypto-lib-rc2cfb64.d test\buildtest_c_srtp-bin-buildtest_srtp.d crypto\ec\libfips-lib-ec_check.d apps\openssl-bin-srp.d apps\openssl-bin-dsaparam.d crypto\comp\libcrypto-lib-comp_lib.d crypto\evp\libcrypto-lib-e_chacha20_poly1305.d crypto\asn1\libcrypto-lib-p5_pbev2.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts_hw.d providers\common\libdefault-lib-securitycheck_default.d crypto\x509\libcrypto-lib-x509_err.d crypto\x509\libcrypto-lib-v3_pcia.d crypto\asn1\libcrypto-lib-n_pkey.d test\modes_internal_test-bin-modes_internal_test.d test\user_property_test-bin-user_property_test.d providers\implementations\kdfs\libfips-lib-tls1_prf.d apps\lib\libapps-lib-http_server.d apps\lib\libapps-lib-app_rand.d test\buildtest_c_md5-bin-buildtest_md5.d crypto\asn1\libcrypto-lib-asn1_parse.d crypto\txt_db\libcrypto-lib-txt_db.d test\sm3_internal_test-bin-sm3_internal_test.d crypto\rsa\libcrypto-lib-rsa_pk1.d crypto\ec\libcrypto-lib-eck_prn.d crypto\ec\libcrypto-lib-ecdsa_sign.d test\buildtest_c_core_object-bin-buildtest_core_object.d crypto\ec\libcrypto-lib-ec_deprecated.d test\clienthellotest-bin-clienthellotest.d crypto\x509\libcrypto-lib-x509_vpm.d test\testutil\libtestutil-lib-basic_output.d crypto\evp\libcrypto-lib-e_aes_cbc_hmac_sha1.d crypto\ts\libcrypto-lib-ts_verify_ctx.d providers\implementations\ciphers\libdefault-lib-cipher_null.d ssl\libssl-lib-tls_depr.d test\sslapitest-bin-sslapitest.d crypto\evp\libcrypto-lib-kem.d crypto\x509\libcrypto-lib-by_file.d test\bioprinttest-bin-bioprinttest.d crypto\aes\libcrypto-lib-aes_misc.d providers\common\libcommon-lib-provider_ctx.d apps\lib\uitest-bin-apps_ui.d test\testutil\libtestutil-lib-stanza.d test\tls13ccstest-bin-tls13ccstest.d test\helpers\fatalerrtest-bin-ssltestlib.d crypto\pem\libcrypto-lib-pem_xaux.d crypto\asn1\libcrypto-lib-a_verify.d crypto\rsa\libfips-lib-rsa_pk1.d crypto\seed\libcrypto-lib-seed_cfb.d crypto\bn\libfips-lib-bn_gf2m.d test\testutil\libtestutil-lib-cb.d crypto\bn\libfips-lib-bn_blind.d crypto\evp\libcrypto-lib-mac_lib.d test\ecdsatest-bin-ecdsatest.d providers\implementations\ciphers\libdefault-lib-cipher_aria_gcm_hw.d crypto\evp\libcrypto-lib-e_null.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_default_hw.d crypto\evp\libcrypto-lib-p_lib.d crypto\ct\libcrypto-lib-ct_oct.d test\buildtest_c_store-bin-buildtest_store.d crypto\evp\libcrypto-lib-ec_ctrl.d crypto\engine\libcrypto-lib-eng_dyn.d test\buildtest_c_rc4-bin-buildtest_rc4.d apps\openssl-bin-pkcs8.d test\ectest-bin-ectest.d test\http_test-bin-http_test.d crypto\x509\libcrypto-lib-v3_skid.d test\bftest-bin-bftest.d crypto\dsa\libcrypto-lib-dsa_meth.d crypto\libcrypto-lib-init.d providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.d crypto\bn\libfips-lib-bn_div.d providers\fips\libfips-lib-self_test_kats.d crypto\async\arch\libcrypto-lib-async_posix.d crypto\x509\libcrypto-lib-t_req.d providers\implementations\digests\libdefault-lib-blake2b_prov.d crypto\rsa\libcrypto-lib-rsa_backend.d fuzz\bndiv-test-bin-bndiv.d crypto\bn\libfips-lib-bn_mont.d crypto\x509\libcrypto-lib-x_attrib.d crypto\bio\libcrypto-lib-bss_core.d crypto\cms\libcrypto-lib-cms_smime.d crypto\rsa\libfips-lib-rsa_x931.d crypto\objects\libcrypto-lib-obj_lib.d crypto\asn1\libcrypto-lib-i2d_evp.d crypto\x509\libcrypto-lib-v3_ist.d providers\implementations\kdfs\libfips-lib-pbkdf2.d providers\implementations\macs\libdefault-lib-blake2b_mac.d crypto\dh\libcrypto-lib-dh_pmeth.d test\buildtest_c_md4-bin-buildtest_md4.d crypto\sha\libfips-lib-sha3.d ssl\libssl-lib-ssl_stat.d crypto\dh\libfips-lib-dh_backend.d apps\lib\openssl-bin-cmp_mock_srv.d crypto\evp\libfips-lib-exchange.d crypto\bio\libcrypto-lib-bio_dump.d crypto\asn1\libcrypto-lib-x_long.d test\evp_fetch_prov_test-bin-evp_fetch_prov_test.d apps\openssl-bin-info.d apps\lib\libapps-lib-app_x509.d crypto\libcrypto-lib-params.d crypto\modes\libfips-lib-wrap128.d providers\implementations\macs\libfips-lib-hmac_prov.d crypto\store\libcrypto-lib-store_strings.d crypto\ripemd\libcrypto-lib-rmd_dgst.d apps\openssl-bin-pkeyparam.d crypto\bn\libfips-lib-bn_intern.d crypto\evp\libcrypto-lib-legacy_ripemd.d crypto\evp\libcrypto-lib-p_sign.d test\pem_read_depr_test-bin-pem_read_depr_test.d crypto\ec\curve448\libcrypto-lib-f_generic.d crypto\libcrypto-lib-o_fopen.d test\buildtest_c_dsa-bin-buildtest_dsa.d crypto\sm2\libcrypto-lib-sm2_sign.d providers\implementations\rands\libdefault-lib-test_rng.d crypto\ocsp\libcrypto-lib-ocsp_err.d crypto\des\libfips-lib-ecb3_enc.d test\exdatatest-bin-exdatatest.d providers\implementations\ciphers\libdefault-lib-cipher_aes_gcm.d providers\implementations\keymgmt\libdefault-lib-rsa_kmgmt.d crypto\evp\libfips-lib-evp_utils.d test\buildtest_c_engine-bin-buildtest_engine.d providers\common\libdefault-lib-provider_util.d test\buildtest_c_dh-bin-buildtest_dh.d crypto\md2\libcrypto-lib-md2_dgst.d providers\common\libdefault-lib-provider_seeding.d crypto\ec\libfips-lib-ecp_nist.d providers\implementations\kdfs\libdefault-lib-tls1_prf.d crypto\ts\libcrypto-lib-ts_rsp_sign.d test\param_build_test-bin-param_build_test.d crypto\seed\libcrypto-lib-seed.d providers\implementations\kdfs\liblegacy-lib-pbkdf1.d crypto\bio\libcrypto-lib-ossl_core_bio.d crypto\libfips-lib-core_fetch.d providers\implementations\kdfs\libdefault-lib-pkcs12kdf.d test\property_test-bin-property_test.d test\ec_internal_test-bin-ec_internal_test.d crypto\ec\libfips-lib-ecp_oct.d crypto\sm2\libcrypto-lib-sm2_key.d crypto\libcrypto-lib-cversion.d crypto\bn\liblegacy-lib-bn_asm.d test\localetest-bin-localetest.d ssl\libdefault-lib-s3_cbc.d crypto\evp\libcrypto-lib-bio_enc.d crypto\rc5\libcrypto-lib-rc5_ecb.d providers\implementations\ciphers\liblegacy-lib-cipher_seed.d crypto\des\libcrypto-lib-cbc_enc.d apps\lib\libtestutil-lib-opt.d test\drbgtest-bin-drbgtest.d test\buildtest_c_rc2-bin-buildtest_rc2.d crypto\libcrypto-lib-cpuid.d crypto\x509\libcrypto-lib-x509_txt.d crypto\x509\libcrypto-lib-t_crl.d test\algorithmid_test-bin-algorithmid_test.d test\buildtest_c_rsa-bin-buildtest_rsa.d crypto\ffc\libfips-lib-ffc_params.d crypto\ct\libcrypto-lib-ct_prn.d crypto\asn1\libcrypto-lib-x_algor.d test\buildtest_c_camellia-bin-buildtest_camellia.d ssl\libssl-lib-ssl_err.d providers\implementations\ciphers\liblegacy-lib-cipher_blowfish.d crypto\libfips-lib-provider_core.d crypto\bf\libcrypto-lib-bf_ofb64.d providers\implementations\kdfs\libfips-lib-x942kdf.d crypto\bn\libcrypto-lib-bn_ctx.d ssl\libssl-lib-ssl_asn1.d test\bntest-bin-bntest.d ssl\record\libssl-lib-rec_layer_d1.d test\helpers\cmp_status_test-bin-cmp_testlib.d providers\fips\fips-dso-fips_entry.d crypto\http\libcrypto-lib-http_client.d crypto\bn\libcrypto-lib-bn_recp.d test\buildtest_c_cmp_util-bin-buildtest_cmp_util.d crypto\aes\libcrypto-lib-aes_ecb.d test\buildtest_c_encoder-bin-buildtest_encoder.d crypto\bn\libcrypto-lib-bn_rand.d providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.d providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.d ssl\record\libssl-lib-ssl3_record.d crypto\rc2\libcrypto-lib-rc2_skey.d crypto\libcrypto-lib-passphrase.d crypto\cms\libcrypto-lib-cms_pwri.d crypto\ec\libfips-lib-ecp_mont.d crypto\bn\libcrypto-lib-bn_word.d crypto\async\libcrypto-lib-async.d crypto\ec\curve448\libcrypto-lib-scalar.d providers\implementations\signature\libdefault-lib-sm2_sig.d test\aesgcmtest-bin-aesgcmtest.d crypto\cmp\libcrypto-lib-cmp_protect.d crypto\bn\libfips-lib-bn_kron.d crypto\asn1\libcrypto-lib-x_info.d crypto\libcrypto-lib-mem_clr.d crypto\sha\libfips-lib-sha256.d apps\openssl-bin-mac.d crypto\evp\libcrypto-lib-e_rc4.d crypto\x509\libcrypto-lib-x_name.d crypto\asn1\libcrypto-lib-evp_asn1.d crypto\modes\libcrypto-lib-wrap128.d crypto\cms\libcrypto-lib-cms_dd.d crypto\ts\libcrypto-lib-ts_rsp_utils.d crypto\rand\libcrypto-lib-rand_deprecated.d providers\implementations\encode_decode\libdefault-lib-decode_epki2pki.d crypto\evp\libfips-lib-pmeth_gn.d test\asn1_dsa_internal_test-bin-asn1_dsa_internal_test.d crypto\crmf\libcrypto-lib-crmf_lib.d ssl\statem\libssl-lib-statem_clnt.d crypto\libfips-lib-core_algorithm.d crypto\store\libcrypto-lib-store_lib.d crypto\libfips-lib-mem_clr.d apps\openssl-bin-verify.d crypto\dh\libfips-lib-dh_group_params.d ssl\libssl-lib-ssl_txt.d crypto\x509\libcrypto-lib-x509_v3.d test\rand_status_test-bin-rand_status_test.d crypto\camellia\libcrypto-lib-cmll_ctr.d crypto\des\libcrypto-lib-str2key.d crypto\crmf\libcrypto-lib-crmf_err.d providers\common\der\libcommon-lib-der_dsa_sig.d providers\implementations\signature\libfips-lib-mac_legacy_sig.d providers\implementations\macs\libdefault-lib-poly1305_prov.d apps\openssl-bin-s_time.d crypto\x509\libcrypto-lib-x_x509a.d test\testutil\libtestutil-lib-test_cleanup.d crypto\cms\libcrypto-lib-cms_enc.d crypto\libfips-lib-packet.d crypto\sm3\libcrypto-lib-sm3.d test\helpers\cmp_ctx_test-bin-cmp_testlib.d crypto\x509\libcrypto-lib-x_req.d crypto\dh\libfips-lib-dh_gen.d ssl\libfips-lib-s3_cbc.d crypto\ocsp\libcrypto-lib-ocsp_lib.d crypto\bn\libfips-lib-bn_exp2.d crypto\ec\libcrypto-lib-ecp_nist.d crypto\evp\libcrypto-lib-e_seed.d crypto\ocsp\libcrypto-lib-ocsp_asn.d crypto\ec\libcrypto-lib-ec_ameth.d crypto\libcrypto-lib-provider_core.d crypto\bn\libcrypto-lib-bn_add.d crypto\bio\libcrypto-lib-bss_acpt.d providers\fips\libfips-lib-self_test.d crypto\evp\libcrypto-lib-pmeth_gn.d crypto\property\libfips-lib-property_query.d crypto\encode_decode\libcrypto-lib-encoder_err.d crypto\rsa\libcrypto-lib-rsa_oaep.d ssl\statem\libssl-lib-extensions.d test\pkey_meth_kdf_test-bin-pkey_meth_kdf_test.d crypto\aes\libcrypto-lib-aes_cfb.d crypto\libcrypto-lib-param_build.d test\buildtest_c_ebcdic-bin-buildtest_ebcdic.d apps\openssl-bin-gendsa.d crypto\comp\libcrypto-lib-c_zlib.d providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm.d crypto\pem\libcrypto-lib-pem_err.d crypto\ec\libcrypto-lib-ec_key.d apps\openssl-bin-ciphers.d providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm_hw.d crypto\rsa\libcrypto-lib-rsa_sign.d crypto\conf\libcrypto-lib-conf_sap.d test\threadstest_fips-bin-threadstest_fips.d crypto\ts\libcrypto-lib-ts_req_utils.d apps\lib\libapps-lib-names.d crypto\bn\libcrypto-lib-bn_print.d fuzz\cmp-test-bin-fuzz_rand.d test\cipherbytes_test-bin-cipherbytes_test.d test\evp_extra_test-bin-evp_extra_test.d crypto\rsa\libcrypto-lib-rsa_lib.d crypto\evp\libcrypto-lib-evp_rand.d apps\openssl-bin-ts.d providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.d test\buildtest_c_obj_mac-bin-buildtest_obj_mac.d apps\openssl-bin-dhparam.d crypto\des\libcrypto-lib-ofb_enc.d test\buildtest_c_decoder-bin-buildtest_decoder.d crypto\rsa\libfips-lib-rsa_sp800_56b_gen.d test\helpers\ssl_old_test-bin-predefined_dhparams.d test\sslcorrupttest-bin-sslcorrupttest.d crypto\bio\libcrypto-lib-bss_sock.d crypto\x509\libcrypto-lib-x509_r2x.d crypto\libcrypto-lib-params_from_text.d crypto\ess\libcrypto-lib-ess_lib.d crypto\evp\libcrypto-lib-m_null.d crypto\ec\libcrypto-lib-ecp_smpl.d crypto\hmac\libfips-lib-hmac.d crypto\rsa\libcrypto-lib-rsa_prn.d crypto\asn1\libcrypto-lib-t_spki.d test\secmemtest-bin-secmemtest.d fuzz\cms-test-bin-test-corpus.d crypto\rsa\libfips-lib-rsa_acvp_test_params.d test\buildtest_c_ssl2-bin-buildtest_ssl2.d test\testutil\libtestutil-lib-tests.d providers\implementations\rands\seeding\libdefault-lib-rand_tsc.d test\testutil\libtestutil-lib-driver.d crypto\ct\libcrypto-lib-ct_x509v3.d fuzz\bndiv-test-bin-test-corpus.d crypto\evp\libcrypto-lib-exchange.d test\buildtest_c_aes-bin-buildtest_aes.d crypto\cms\libcrypto-lib-cms_err.d providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.d crypto\asn1\libcrypto-lib-bio_ndef.d crypto\libcrypto-lib-self_test_core.d crypto\des\libcrypto-lib-cfb64ede.d crypto\asn1\libcrypto-lib-t_pkey.d crypto\ec\curve448\arch_64\libfips-lib-f_impl64.d ssl\statem\libssl-lib-extensions_srvr.d test\buildtest_c_core-bin-buildtest_core.d fuzz\crl-test-bin-test-corpus.d providers\implementations\encode_decode\libdefault-lib-decode_pem2der.d apps\openssl-bin-sess_id.d crypto\dh\libcrypto-lib-dh_ameth.d crypto\lhash\libfips-lib-lhash.d test\verify_extra_test-bin-verify_extra_test.d crypto\asn1\libcrypto-lib-tasn_dec.d providers\implementations\digests\libdefault-lib-null_prov.d crypto\engine\libcrypto-lib-tb_cipher.d apps\openssl-bin-pkey.d crypto\sha\libfips-lib-sha1dgst.d crypto\cmp\libcrypto-lib-cmp_ctx.d providers\implementations\ciphers\libfips-lib-cipher_tdes.d providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.d crypto\ec\libfips-lib-ec_kmeth.d crypto\bio\libcrypto-lib-bio_meth.d crypto\bn\libcrypto-lib-bn_exp2.d crypto\pem\libcrypto-lib-pem_sign.d crypto\objects\libcrypto-lib-o_names.d ssl\libssl-lib-ssl_lib.d crypto\camellia\libcrypto-lib-cmll_cbc.d crypto\evp\libfips-lib-kdf_meth.d test\danetest-bin-danetest.d apps\lib\libapps-lib-app_params.d crypto\dsa\libcrypto-lib-dsa_ossl.d providers\implementations\kdfs\libfips-lib-hkdf.d crypto\dso\libcrypto-lib-dso_lib.d crypto\cmp\libcrypto-lib-cmp_status.d providers\implementations\kdfs\libdefault-lib-sshkdf.d apps\openssl-bin-asn1parse.d crypto\x509\libcrypto-lib-v3_akeya.d test\asn1_decode_test-bin-asn1_decode_test.d crypto\dh\libcrypto-lib-dh_rfc5114.d crypto\async\libcrypto-lib-async_wait.d crypto\ripemd\libcrypto-lib-rmd_one.d crypto\pkcs7\libcrypto-lib-pkcs7err.d test\ssl_cert_table_internal_test-bin-ssl_cert_table_internal_test.d providers\implementations\digests\libdefault-lib-sha3_prov.d test\testutil\libtestutil-lib-test_options.d apps\lib\libapps-lib-columns.d test\conf_include_test-bin-conf_include_test.d apps\lib\libtestutil-lib-win32_init.d crypto\x509\libcrypto-lib-x_x509.d crypto\ec\libcrypto-lib-ecp_oct.d crypto\dh\libcrypto-lib-dh_prn.d test\rdrand_sanitytest-bin-rdrand_sanitytest.d crypto\libfips-lib-param_build.d test\helpers\cmp_server_test-bin-cmp_testlib.d test\ctype_internal_test-bin-ctype_internal_test.d fuzz\bignum-test-bin-bignum.d crypto\ec\curve448\arch_64\libcrypto-lib-f_impl64.d crypto\evp\libcrypto-lib-bio_b64.d providers\legacy-dso-legacyprov.d crypto\evp\libcrypto-lib-legacy_md5.d crypto\ec\libfips-lib-ec_mult.d providers\implementations\exchange\libdefault-lib-ecdh_exch.d test\buildtest_c_sslerr_legacy-bin-buildtest_sslerr_legacy.d crypto\bio\libcrypto-lib-bf_prefix.d crypto\rsa\libfips-lib-rsa_lib.d crypto\cast\libcrypto-lib-c_skey.d test\helpers\dtlstest-bin-ssltestlib.d providers\implementations\ciphers\libfips-lib-cipher_aes.d providers\implementations\signature\libdefault-lib-dsa_sig.d test\asynciotest-bin-asynciotest.d crypto\bio\libcrypto-lib-bf_readbuff.d crypto\engine\libcrypto-lib-eng_init.d providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm_hw.d test\helpers\asynciotest-bin-ssltestlib.d providers\implementations\rands\libdefault-lib-drbg_ctr.d crypto\dso\libcrypto-lib-dso_dlfcn.d crypto\evp\libcrypto-lib-names.d crypto\evp\libcrypto-lib-legacy_wp.d crypto\pem\libcrypto-lib-pem_info.d crypto\x509\libcrypto-lib-v3_lib.d crypto\cmp\libcrypto-lib-cmp_msg.d crypto\libcrypto-lib-ebcdic.d crypto\bn\libcrypto-lib-bn_asm.d crypto\pem\libcrypto-lib-pem_x509.d providers\implementations\kdfs\libdefault-lib-krb5kdf.d crypto\libcrypto-lib-o_str.d crypto\asn1\libcrypto-lib-bio_asn1.d crypto\ec\libcrypto-lib-ec_cvt.d ssl\libssl-lib-methods.d ssl\libssl-lib-tls13_enc.d crypto\evp\libcrypto-lib-p_legacy.d crypto\dso\libcrypto-lib-dso_err.d test\buildtest_c_self_test-bin-buildtest_self_test.d engines\libcrypto-lib-e_padlock.d test\srptest-bin-srptest.d crypto\dsa\libcrypto-lib-dsa_err.d crypto\buffer\libcrypto-lib-buffer.d ssl\libssl-lib-bio_ssl.d crypto\dh\libfips-lib-dh_kdf.d crypto\rsa\libcrypto-lib-rsa_none.d crypto\rand\libcrypto-lib-prov_seed.d providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.d crypto\ffc\libfips-lib-ffc_key_generate.d crypto\ec\libfips-lib-curve25519.d apps\openssl-bin-s_server.d crypto\rsa\libcrypto-lib-rsa_chk.d providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.d crypto\evp\libcrypto-lib-evp_fetch.d crypto\whrlpool\libcrypto-lib-wp_block.d crypto\bn\libfips-lib-bn_word.d test\params_test-bin-params_test.d test\igetest-bin-igetest.d crypto\evp\libfips-lib-asymcipher.d ssl\statem\libssl-lib-extensions_cust.d fuzz\server-test-bin-fuzz_rand.d test\x509_internal_test-bin-x509_internal_test.d crypto\evp\libcrypto-lib-encode.d test\cmp_msg_test-bin-cmp_msg_test.d crypto\crmf\libcrypto-lib-crmf_pbm.d crypto\asn1\libcrypto-lib-tasn_scn.d fuzz\server-test-bin-test-corpus.d test\siphash_internal_test-bin-siphash_internal_test.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha.d providers\implementations\exchange\libfips-lib-kdf_exch.d crypto\bio\libcrypto-lib-bss_null.d crypto\http\libcrypto-lib-http_lib.d crypto\pkcs12\libcrypto-lib-p12_crpt.d test\casttest-bin-casttest.d crypto\dsa\libcrypto-lib-dsa_vrf.d test\ssl_old_test-bin-ssl_old_test.d providers\common\der\libcommon-lib-der_ecx_key.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_hw.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_hw.d providers\implementations\encode_decode\libdefault-lib-encode_key2ms.d providers\implementations\digests\libdefault-lib-blake2s_prov.d crypto\pkcs12\libcrypto-lib-p12_npas.d crypto\evp\libcrypto-lib-pmeth_check.d ssl\libssl-lib-s3_lib.d crypto\x509\libcrypto-lib-v3_info.d crypto\store\libcrypto-lib-store_meth.d crypto\encode_decode\libcrypto-lib-decoder_lib.d crypto\dso\libcrypto-lib-dso_dl.d test\buildtest_c_param_build-bin-buildtest_param_build.d crypto\x509\libcrypto-lib-v3_prn.d crypto\evp\libcrypto-lib-c_allc.d test\rand_test-bin-rand_test.d crypto\bio\libcrypto-lib-bss_conn.d ssl\record\libssl-lib-ssl3_record_tls13.d crypto\aria\libcrypto-lib-aria.d crypto\ec\libcrypto-lib-ec_asn1.d crypto\libfips-lib-asn1_dsa.d providers\implementations\signature\libdefault-lib-eddsa_sig.d providers\implementations\digests\libdefault-lib-blake2_prov.d crypto\asn1\libcrypto-lib-a_strnid.d crypto\ui\libcrypto-lib-ui_err.d crypto\dsa\libfips-lib-dsa_key.d crypto\x509\libcrypto-lib-x_all.d crypto\asn1\libcrypto-lib-a_digest.d crypto\store\libcrypto-lib-store_register.d test\ossl_store_test-bin-ossl_store_test.d crypto\md4\libcrypto-lib-md4_one.d crypto\x509\libcrypto-lib-v3_utf8.d crypto\asn1\libcrypto-lib-asn_moid.d providers\implementations\digests\liblegacy-lib-wp_prov.d crypto\evp\libfips-lib-pmeth_check.d test\recordlentest-bin-recordlentest.d crypto\evp\libcrypto-lib-p_dec.d providers\implementations\asymciphers\libdefault-lib-rsa_enc.d test\aborttest-bin-aborttest.d crypto\rc5\libcrypto-lib-rc5_skey.d crypto\evp\libfips-lib-evp_lib.d crypto\asn1\libcrypto-lib-a_gentm.d crypto\cmp\libcrypto-lib-cmp_vfy.d test\x509_dup_cert_test-bin-x509_dup_cert_test.d crypto\sha\libcrypto-lib-keccak1600.d crypto\bn\libfips-lib-bn_rsa_fips186_4.d providers\implementations\ciphers\libdefault-lib-cipher_aes_siv.d crypto\x509\libcrypto-lib-x509_att.d crypto\evp\libcrypto-lib-e_aria.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hw.d crypto\x509\libcrypto-lib-pcy_tree.d crypto\conf\libcrypto-lib-conf_def.d crypto\ts\libcrypto-lib-ts_asn1.d crypto\md5\liblegacy-lib-md5_dgst.d crypto\evp\libcrypto-lib-p_seal.d ssl\libssl-lib-ssl_rsa.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts.d providers\implementations\asymciphers\libfips-lib-rsa_enc.d providers\common\libdefault-lib-securitycheck.d crypto\x509\libcrypto-lib-v3_cpols.d test\dtlsv1listentest-bin-dtlsv1listentest.d apps\openssl-bin-errstr.d test\ffc_internal_test-bin-ffc_internal_test.d engines\libcrypto-lib-e_capi.d crypto\rsa\libfips-lib-rsa_sp800_56b_check.d test\helpers\sslbuffertest-bin-ssltestlib.d crypto\evp\libcrypto-lib-legacy_md4.d crypto\ct\libcrypto-lib-ct_b64.d crypto\bn\libcrypto-lib-bn_mod.d crypto\evp\libcrypto-lib-e_des3.d crypto\des\liblegacy-lib-des_enc.d crypto\evp\libcrypto-lib-pbe_scrypt.d crypto\ec\libfips-lib-ecdsa_vrf.d crypto\asn1\libcrypto-lib-p5_pbe.d providers\implementations\rands\seeding\libdefault-lib-rand_win.d crypto\cast\libcrypto-lib-c_enc.d crypto\x509\libcrypto-lib-x509_def.d crypto\ocsp\libcrypto-lib-ocsp_ext.d crypto\libcrypto-lib-provider.d crypto\asn1\libcrypto-lib-tasn_new.d providers\implementations\ciphers\liblegacy-lib-cipher_cast5_hw.d crypto\property\libcrypto-lib-property.d crypto\encode_decode\libcrypto-lib-encoder_pkey.d crypto\ffc\libfips-lib-ffc_params_generate.d crypto\asn1\libcrypto-lib-a_strex.d providers\implementations\macs\libdefault-lib-hmac_prov.d crypto\ec\curve448\libfips-lib-curve448.d crypto\des\libcrypto-lib-cfb64enc.d crypto\engine\libcrypto-lib-tb_digest.d providers\implementations\kdfs\libfips-lib-sskdf.d crypto\des\libcrypto-lib-ofb64enc.d test\ct_test-bin-ct_test.d crypto\modes\libfips-lib-cbc128.d crypto\aes\libcrypto-lib-aes_core.d crypto\evp\libcrypto-lib-evp_err.d crypto\rsa\libcrypto-lib-rsa_pss.d crypto\err\libcrypto-lib-err_all_legacy.d crypto\dsa\libfips-lib-dsa_check.d crypto\engine\libcrypto-lib-eng_cnf.d crypto\evp\libcrypto-lib-keymgmt_meth.d crypto\x509\libcrypto-lib-pcy_lib.d crypto\srp\libcrypto-lib-srp_vfy.d providers\implementations\ciphers\libdefault-lib-cipher_aria_ccm.d crypto\ec\libcrypto-lib-ec_kmeth.d providers\implementations\encode_decode\libdefault-lib-encode_key2text.d test\buildtest_c_txt_db-bin-buildtest_txt_db.d test\buildtest_c_seed-bin-buildtest_seed.d crypto\cms\libcrypto-lib-cms_asn1.d crypto\md5\libcrypto-lib-md5_one.d crypto\x509\libcrypto-lib-pcy_cache.d crypto\engine\libcrypto-lib-eng_lib.d crypto\dh\libfips-lib-dh_lib.d ssl\libssl-lib-t1_lib.d crypto\evp\libcrypto-lib-evp_key.d crypto\ec\libcrypto-lib-ec_err.d test\endecode_test-bin-endecode_test.d test\helpers\pkcs12_format_test-bin-pkcs12.d crypto\ffc\libfips-lib-ffc_params_validate.d crypto\camellia\libcrypto-lib-camellia.d ssl\record\libssl-lib-dtls1_bitmap.d test\evp_libctx_test-bin-evp_libctx_test.d crypto\x509\libcrypto-lib-x_exten.d crypto\rsa\libfips-lib-rsa_pss.d crypto\sha\libcrypto-lib-sha1_one.d apps\openssl-bin-progs.d providers\implementations\digests\liblegacy-lib-ripemd_prov.d crypto\libcrypto-lib-provider_conf.d crypto\dh\libfips-lib-dh_check.d test\helpers\tls13ccstest-bin-ssltestlib.d crypto\bn\libcrypto-lib-bn_depr.d crypto\asn1\libcrypto-lib-a_print.d providers\implementations\exchange\libdefault-lib-kdf_exch.d ssl\statem\libssl-lib-statem_dtls.d crypto\libfips-lib-ex_data.d crypto\bn\libcrypto-lib-bn_mont.d crypto\rand\libcrypto-lib-rand_err.d crypto\modes\libcrypto-lib-cbc128.d test\asn1_string_table_test-bin-asn1_string_table_test.d providers\implementations\kdfs\libfips-lib-sshkdf.d test\constant_time_test-bin-constant_time_test.d crypto\libfips-lib-context.d test\cmsapitest-bin-cmsapitest.d test\buildtest_c_buffer-bin-buildtest_buffer.d crypto\seed\libcrypto-lib-seed_ecb.d test\cmp_asn_test-bin-cmp_asn_test.d crypto\ffc\libfips-lib-ffc_dh.d providers\implementations\signature\libdefault-lib-rsa_sig.d crypto\asn1\libcrypto-lib-a_utctm.d test\sanitytest-bin-sanitytest.d crypto\engine\libcrypto-lib-eng_openssl.d crypto\cms\libcrypto-lib-cms_rsa.d crypto\libfips-lib-o_str.d test\helpers\ssl_test-bin-handshake_srp.d crypto\libcrypto-lib-core_algorithm.d test\buildtest_c_objects-bin-buildtest_objects.d providers\implementations\ciphers\libdefault-lib-cipher_tdes.d crypto\modes\libcrypto-lib-ofb128.d test\evp_kdf_test-bin-evp_kdf_test.d test\helpers\ssl_test-bin-ssl_test_ctx.d test\provider_internal_test-bin-provider_internal_test.d providers\implementations\kdfs\libfips-lib-kbkdf.d providers\implementations\ciphers\liblegacy-lib-cipher_des.d crypto\ec\curve448\arch_32\libcrypto-lib-f_impl32.d crypto\async\arch\libcrypto-lib-async_null.d test\sm2_internal_test-bin-sm2_internal_test.d crypto\aes\libcrypto-lib-aes_cbc.d crypto\des\libcrypto-lib-qud_cksm.d test\hmactest-bin-hmactest.d providers\common\der\libcommon-lib-der_ec_key.d crypto\x509\libcrypto-lib-t_x509.d crypto\engine\libcrypto-lib-eng_rdrand.d crypto\dso\libcrypto-lib-dso_openssl.d crypto\conf\libcrypto-lib-conf_mod.d crypto\x509\libcrypto-lib-x_crl.d test\buildtest_c_whrlpool-bin-buildtest_whrlpool.d test\buildtest_c_comp-bin-buildtest_comp.d crypto\libfips-lib-provider_predefined.d crypto\x509\libcrypto-lib-x509_d2.d crypto\bn\libfips-lib-bn_sqr.d apps\openssl-bin-genpkey.d crypto\bio\libcrypto-lib-bio_cb.d ssl\libssl-lib-ssl_init.d crypto\ec\libfips-lib-ec_lib.d crypto\ec\libfips-lib-ecdsa_sign.d providers\implementations\macs\libdefault-lib-gmac_prov.d crypto\ffc\libcrypto-lib-ffc_key_generate.d crypto\bio\libcrypto-lib-bss_mem.d crypto\x509\libcrypto-lib-x509_ext.d crypto\cmac\libfips-lib-cmac.d test\evp_pkey_dparams_test-bin-evp_pkey_dparams_test.d crypto\pem\libcrypto-lib-pem_all.d crypto\evp\libcrypto-lib-digest.d test\curve448_internal_test-bin-curve448_internal_test.d test\pkey_meth_test-bin-pkey_meth_test.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ccm.d crypto\cmp\libcrypto-lib-cmp_server.d crypto\cms\libcrypto-lib-cms_lib.d providers\implementations\rands\libdefault-lib-drbg_hash.d providers\common\der\libcommon-lib-der_rsa_gen.d crypto\whrlpool\libcrypto-lib-wp_dgst.d crypto\encode_decode\libcrypto-lib-decoder_err.d test\buildtest_c_conf_api-bin-buildtest_conf_api.d crypto\pem\libcrypto-lib-pem_pkey.d providers\implementations\encode_decode\libdefault-lib-decode_der2key.d providers\implementations\encode_decode\libdefault-lib-decode_msblob2key.d test\sparse_array_test-bin-sparse_array_test.d providers\common\libcommon-lib-provider_err.d providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.d providers\implementations\rands\libdefault-lib-drbg_hmac.d providers\implementations\rands\libfips-lib-drbg_hmac.d crypto\cms\libcrypto-lib-cms_ec.d crypto\libcrypto-lib-asn1_dsa.d crypto\x509\libcrypto-lib-v3_utl.d crypto\dsa\libcrypto-lib-dsa_asn1.d crypto\evp\libfips-lib-ec_support.d test\rsa_complex-bin-rsa_complex.d crypto\des\libcrypto-lib-cfb_enc.d crypto\rsa\libcrypto-lib-rsa_ameth.d crypto\pkcs12\libcrypto-lib-p12_sbag.d ssl\record\libssl-lib-ssl3_buffer.d test\rc5test-bin-rc5test.d test\cipher_overhead_test-bin-cipher_overhead_test.d providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm.d crypto\rsa\libfips-lib-rsa_none.d crypto\kdf\libcrypto-lib-kdf_err.d crypto\ec\curve448\arch_32\libfips-lib-f_impl32.d crypto\md2\libcrypto-lib-md2_one.d test\bio_readbuffer_test-bin-bio_readbuffer_test.d fuzz\crl-test-bin-crl.d crypto\http\libcrypto-lib-http_err.d apps\openssl-bin-storeutl.d crypto\libfips-lib-threads_none.d test\testutil\libtestutil-lib-main.d crypto\pkcs12\libcrypto-lib-p12_key.d providers\implementations\rands\libfips-lib-drbg_hash.d providers\implementations\ciphers\libdefault-lib-cipher_camellia_hw.d crypto\evp\libcrypto-lib-e_bf.d crypto\x509\libcrypto-lib-v3_conf.d providers\implementations\ciphers\liblegacy-lib-cipher_cast5.d providers\libcrypto-lib-nullprov.d providers\implementations\ciphers\liblegacy-lib-cipher_rc5_hw.d crypto\ec\libcrypto-lib-ec_mult.d crypto\cmp\libcrypto-lib-cmp_client.d ssl\statem\libssl-lib-statem_lib.d crypto\ec\libcrypto-lib-curve25519.d crypto\bio\libcrypto-lib-bf_lbuf.d test\buildtest_c_cryptoerr_legacy-bin-buildtest_cryptoerr_legacy.d crypto\rsa\libfips-lib-rsa_gen.d test\upcallstest-bin-upcallstest.d providers\libcrypto-lib-baseprov.d crypto\evp\libfips-lib-mac_lib.d crypto\evp\libcrypto-lib-e_des.d crypto\evp\libcrypto-lib-kdf_lib.d test\helpers\dtls_mtu_test-bin-ssltestlib.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_wrap_hw.d test\sslbuffertest-bin-sslbuffertest.d crypto\bn\libfips-lib-bn_shift.d providers\implementations\rands\libdefault-lib-drbg.d crypto\rsa\libcrypto-lib-rsa_x931.d crypto\dh\libcrypto-lib-dh_gen.d providers\implementations\keymgmt\libfips-lib-ec_kmgmt.d test\buildtest_c_rand-bin-buildtest_rand.d crypto\libfips-lib-cpuid.d providers\implementations\ciphers\libdefault-lib-cipher_aes_gcm_hw.d providers\implementations\encode_decode\libdefault-lib-decode_spki2typespki.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4.d providers\implementations\keymgmt\libdefault-lib-mac_legacy_kmgmt.d test\buildtest_c_fips_names-bin-buildtest_fips_names.d crypto\bn\libfips-lib-bn_prime.d apps\lib\libapps-lib-win32_init.d ssl\libssl-lib-s3_msg.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_default.d fuzz\server-test-bin-server.d providers\implementations\macs\libdefault-lib-cmac_prov.d crypto\evp\libcrypto-lib-dh_ctrl.d fuzz\ct-test-bin-ct.d crypto\libcrypto-lib-cryptlib.d apps\openssl-bin-kdf.d crypto\ec\libcrypto-lib-ec_pmeth.d crypto\x509\libcrypto-lib-pcy_map.d crypto\sha\libcrypto-lib-sha256.d providers\implementations\ciphers\liblegacy-lib-cipher_desx.d crypto\ocsp\libcrypto-lib-v3_ocsp.d crypto\bf\libcrypto-lib-bf_enc.d crypto\ec\libcrypto-lib-ecdsa_vrf.d crypto\engine\libcrypto-lib-eng_list.d crypto\evp\libcrypto-lib-e_sm4.d crypto\modes\libfips-lib-ctr128.d test\ssl_ctx_test-bin-ssl_ctx_test.d test\cmp_server_test-bin-cmp_server_test.d crypto\seed\libcrypto-lib-seed_cbc.d crypto\bn\libcrypto-lib-bn_mul.d providers\implementations\ciphers\libdefault-lib-cipher_aria_hw.d crypto\des\libcrypto-lib-fcrypt_b.d crypto\encode_decode\libcrypto-lib-encoder_lib.d crypto\stack\libcrypto-lib-stack.d test\endecoder_legacy_test-bin-endecoder_legacy_test.d providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.d crypto\x509\libcrypto-lib-x509_req.d crypto\engine\libcrypto-lib-eng_fat.d providers\common\libfips-lib-provider_seeding.d test\bio_prefix_text-bin-bio_prefix_text.d test\helpers\cmp_protect_test-bin-cmp_testlib.d providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.d crypto\evp\libfips-lib-evp_fetch.d crypto\evp\libcrypto-lib-legacy_sha.d crypto\libcrypto-lib-info.d apps\openssl-bin-ec.d test\buildtest_c_pem-bin-buildtest_pem.d crypto\x509\libcrypto-lib-x_pubkey.d test\provider_test-bin-provider_test.d crypto\ec\libfips-lib-ec_oct.d crypto\rc5\libcrypto-lib-rc5_enc.d crypto\ess\libcrypto-lib-ess_err.d crypto\asn1\libcrypto-lib-a_utf8.d crypto\asn1\libcrypto-lib-tasn_fre.d crypto\bio\libcrypto-lib-bss_file.d ssl\record\libcommon-lib-tls_pad.d crypto\ec\libfips-lib-ecx_key.d providers\implementations\ciphers\libdefault-lib-cipher_aria.d providers\implementations\rands\libfips-lib-drbg_ctr.d crypto\bn\libcrypto-lib-bn_lib.d crypto\store\libcrypto-lib-store_result.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5.d crypto\objects\libcrypto-lib-obj_xref.d providers\implementations\ciphers\libdefault-lib-cipher_sm4.d crypto\libcrypto-lib-initthread.d test\stack_test-bin-stack_test.d test\params_api_test-bin-params_api_test.d crypto\pkcs7\libcrypto-lib-bio_pk7.d crypto\engine\libcrypto-lib-tb_dh.d crypto\bn\libcrypto-lib-bn_const.d crypto\objects\libcrypto-lib-obj_dat.d providers\implementations\digests\libdefault-lib-md5_sha1_prov.d crypto\modes\libfips-lib-gcm128.d crypto\x509\libcrypto-lib-v3_genn.d crypto\ffc\libcrypto-lib-ffc_params_generate.d crypto\rsa\libcrypto-lib-rsa_asn1.d crypto\libcrypto-lib-params_dup.d crypto\evp\libfips-lib-keymgmt_meth.d test\helpers\ssl_test-bin-handshake.d apps\lib\libapps-lib-app_libctx.d providers\liblegacy-lib-prov_running.d providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.d crypto\ct\libcrypto-lib-ct_err.d crypto\bn\libcrypto-lib-bn_rsa_fips186_4.d crypto\property\libfips-lib-property_string.d crypto\ec\libfips-lib-ecp_smpl.d providers\implementations\macs\libdefault-lib-kmac_prov.d crypto\des\libcrypto-lib-ofb64ede.d crypto\ffc\libfips-lib-ffc_backend.d providers\implementations\exchange\libfips-lib-ecdh_exch.d apps\openssl-bin-rehash.d fuzz\asn1parse-test-bin-test-corpus.d ssl\libssl-lib-ssl_conf.d test\v3nametest-bin-v3nametest.d providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.d ssl\libssl-lib-s3_enc.d crypto\rsa\libcrypto-lib-rsa_pmeth.d providers\implementations\ciphers\libdefault-lib-cipher_aes_siv_hw.d crypto\libcrypto-lib-threads_pthread.d crypto\modes\libcrypto-lib-siv128.d crypto\evp\libcrypto-lib-legacy_md5_sha1.d providers\common\libfips-lib-bio_prov.d crypto\property\libcrypto-lib-property_parse.d test\bio_memleak_test-bin-bio_memleak_test.d crypto\rsa\libcrypto-lib-rsa_sp800_56b_gen.d providers\implementations\kdfs\libdefault-lib-x942kdf.d crypto\dsa\libcrypto-lib-dsa_prn.d providers\common\libdefault-lib-bio_prov.d test\acvp_test-bin-acvp_test.d crypto\pkcs7\libcrypto-lib-pk7_attr.d providers\common\der\libcommon-lib-der_dsa_gen.d crypto\pkcs12\libcrypto-lib-p12_init.d crypto\evp\libfips-lib-evp_rand.d test\buildtest_c_e_os2-bin-buildtest_e_os2.d crypto\bio\libcrypto-lib-bf_buff.d crypto\asn1\libcrypto-lib-asn_pack.d crypto\libcrypto-lib-o_init.d crypto\evp\libcrypto-lib-e_xcbc_d.d crypto\evp\libcrypto-lib-e_cast.d crypto\ec\libcrypto-lib-ec2_smpl.d test\sslapitest-bin-tls-provider.d crypto\ec\libfips-lib-ec_cvt.d crypto\ec\curve448\libfips-lib-curve448_tables.d crypto\bn\libfips-lib-bn_ctx.d crypto\sm4\libcrypto-lib-sm4.d test\buildtest_c_pem2-bin-buildtest_pem2.d crypto\property\libcrypto-lib-property_err.d crypto\evp\libcrypto-lib-ctrl_params_translate.d crypto\bn\libcrypto-lib-bn_sqrt.d crypto\ffc\libcrypto-lib-ffc_params_validate.d ssl\statem\libssl-lib-extensions_clnt.d test\helpers\ssl_test_ctx_test-bin-ssl_test_ctx.d crypto\x509\libcrypto-lib-x509name.d test\ecstresstest-bin-ecstresstest.d crypto\evp\libcrypto-lib-dh_support.d apps\openssl-bin-prime.d test\gmdifftest-bin-gmdifftest.d crypto\libcrypto-lib-getenv.d crypto\dh\libcrypto-lib-dh_asn1.d crypto\libcrypto-lib-uid.d providers\common\libfips-lib-digest_to_nid.d crypto\asn1\libcrypto-lib-a_i2d_fp.d crypto\asn1\libcrypto-lib-f_int.d crypto\dsa\libfips-lib-dsa_sign.d crypto\dsa\libcrypto-lib-dsa_backend.d crypto\sha\libcrypto-lib-sha3.d crypto\ts\libcrypto-lib-ts_conf.d test\buildtest_c_http-bin-buildtest_http.d crypto\dsa\libcrypto-lib-dsa_lib.d crypto\property\libcrypto-lib-property_query.d providers\implementations\signature\libfips-lib-rsa_sig.d ssl\libssl-lib-pqueue.d crypto\libcrypto-lib-o_time.d crypto\camellia\libcrypto-lib-cmll_ecb.d providers\implementations\signature\libfips-lib-eddsa_sig.d crypto\x509\libcrypto-lib-x509rset.d crypto\cms\libcrypto-lib-cms_sd.d test\helpers\cmp_asn_test-bin-cmp_testlib.d crypto\buffer\libfips-lib-buffer.d crypto\cms\libcrypto-lib-cms_att.d crypto\asn1\libcrypto-lib-x_spki.d crypto\dh\libcrypto-lib-dh_backend.d test\dhtest-bin-dhtest.d crypto\pkcs12\libcrypto-lib-p12_p8e.d fuzz\cms-test-bin-cms.d apps\openssl-bin-version.d crypto\ui\libcrypto-lib-ui_null.d crypto\rand\libcrypto-lib-rand_pool.d crypto\conf\libcrypto-lib-conf_mall.d providers\implementations\keymgmt\libdefault-lib-ec_kmgmt.d test\ciphername_test-bin-ciphername_test.d crypto\dsa\libcrypto-lib-dsa_depr.d crypto\libcrypto-lib-der_writer.d crypto\evp\libcrypto-lib-ec_support.d crypto\pem\libcrypto-lib-pem_pk8.d crypto\pkcs12\libcrypto-lib-p12_p8d.d test\buildtest_c_ossl_typ-bin-buildtest_ossl_typ.d crypto\rsa\libcrypto-lib-rsa_saos.d crypto\ec\libfips-lib-ec2_oct.d crypto\bn\libcrypto-lib-bn_blind.d apps\openssl-bin-passwd.d crypto\asn1\libcrypto-lib-p8_pkey.d crypto\ec\libfips-lib-ecdsa_ossl.d test\pemtest-bin-pemtest.d test\helpers\cmp_msg_test-bin-cmp_testlib.d crypto\ocsp\libcrypto-lib-ocsp_http.d crypto\sha\libfips-lib-keccak1600.d crypto\evp\libcrypto-lib-bio_ok.d test\buildtest_c_md2-bin-buildtest_md2.d crypto\rsa\libcrypto-lib-rsa_err.d crypto\pkcs7\libcrypto-lib-pk7_lib.d crypto\camellia\libcrypto-lib-cmll_cfb.d crypto\ec\libcrypto-lib-ec_lib.d providers\common\der\libdefault-lib-der_sm2_key.d crypto\x509\libcrypto-lib-x509_vfy.d test\buildtest_c_ripemd-bin-buildtest_ripemd.d test\namemap_internal_test-bin-namemap_internal_test.d crypto\property\libcrypto-lib-defn_cache.d test\x509aux-bin-x509aux.d test\cmp_protect_test-bin-cmp_protect_test.d crypto\dsa\libcrypto-lib-dsa_check.d test\testutil\libtestutil-lib-random.d crypto\asn1\libcrypto-lib-a_bitstr.d crypto\bn\libcrypto-lib-bn_x931p.d crypto\dh\libfips-lib-dh_key.d providers\implementations\ciphers\liblegacy-lib-cipher_desx_hw.d test\mdc2test-bin-mdc2test.d apps\openssl-bin-pkcs12.d crypto\des\libcrypto-lib-set_key.d crypto\aes\libcrypto-lib-aes_wrap.d ssl\libssl-lib-t1_enc.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_poly1305_hw.d test\helpers\cmp_hdr_test-bin-cmp_testlib.d providers\common\der\libcommon-lib-der_digests_gen.d fuzz\client-test-bin-fuzz_rand.d crypto\objects\libcrypto-lib-obj_err.d crypto\des\libcrypto-lib-pcbc_enc.d apps\openssl-bin-list.d crypto\engine\libcrypto-lib-eng_all.d providers\libcrypto-lib-defltprov.d crypto\evp\libcrypto-lib-pmeth_lib.d crypto\libfips-lib-bsearch.d test\evp_pkey_provided_test-bin-evp_pkey_provided_test.d apps\lib\libapps-lib-engine_loader.d crypto\rsa\libfips-lib-rsa_chk.d crypto\x509\libcrypto-lib-v3_crld.d test\buildtest_c_async-bin-buildtest_async.d test\threadstest-bin-threadstest.d test\helpers\cmp_vfy_test-bin-cmp_testlib.d crypto\asn1\libcrypto-lib-x_val.d providers\implementations\ciphers\liblegacy-lib-cipher_tdes_common.d crypto\cast\libcrypto-lib-c_cfb64.d crypto\x509\libcrypto-lib-x509_lu.d crypto\bn\libfips-lib-bn_add.d crypto\modes\libcrypto-lib-ocb128.d providers\implementations\kdfs\libdefault-lib-kbkdf.d crypto\libcrypto-lib-mem_sec.d crypto\cast\libcrypto-lib-c_ofb64.d apps\openssl-bin-fipsinstall.d providers\implementations\keymgmt\libdefault-lib-dh_kmgmt.d ssl\libssl-lib-d1_srtp.d crypto\bn\libfips-lib-bn_mod.d crypto\pem\libcrypto-lib-pem_lib.d crypto\modes\libfips-lib-ofb128.d providers\implementations\signature\libfips-lib-ecdsa_sig.d crypto\rsa\libfips-lib-rsa_ossl.d test\destest-bin-destest.d providers\common\der\libcommon-lib-der_rsa_key.d test\packettest-bin-packettest.d test\buildtest_c_types-bin-buildtest_types.d test\testutil\libtestutil-lib-testutil_init.d crypto\aes\libfips-lib-aes_ecb.d crypto\asn1\libcrypto-lib-nsseq.d providers\common\der\libcommon-lib-der_wrap_gen.d apps\openssl-bin-pkeyutl.d test\provfetchtest-bin-provfetchtest.d providers\implementations\kdfs\libdefault-lib-pbkdf2_fips.d crypto\bn\libcrypto-lib-bn_prime.d crypto\pem\libcrypto-lib-pem_oth.d apps\openssl-bin-genrsa.d test\cmp_ctx_test-bin-cmp_ctx_test.d crypto\engine\libcrypto-lib-tb_asnmth.d crypto\asn1\libcrypto-lib-asn_mstbl.d crypto\engine\libcrypto-lib-eng_table.d crypto\ec\curve448\libcrypto-lib-eddsa.d crypto\libcrypto-lib-mem.d apps\openssl-bin-speed.d providers\implementations\ciphers\libcommon-lib-ciphercommon_block.d test\testutil\libtestutil-lib-format_output.d providers\common\der\libcommon-lib-der_ecx_gen.d fuzz\x509-test-bin-x509.d crypto\ec\libfips-lib-ec_curve.d test\buildtest_c_params-bin-buildtest_params.d test\buildtest_c_dtls1-bin-buildtest_dtls1.d crypto\ffc\libcrypto-lib-ffc_key_validate.d crypto\bn\libcrypto-lib-bn_gf2m.d crypto\md5\libcrypto-lib-md5_dgst.d test\servername_test-bin-servername_test.d providers\implementations\kem\libfips-lib-rsa_kem.d crypto\ec\libcrypto-lib-ecdh_kdf.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha1_hw.d crypto\ui\libcrypto-lib-ui_lib.d crypto\bio\libcrypto-lib-bio_print.d crypto\err\libcrypto-lib-err_blocks.d crypto\libfips-lib-param_build_set.d crypto\pkcs7\libcrypto-lib-pk7_smime.d crypto\libcrypto-lib-trace.d crypto\bn\libfips-lib-bn_mul.d crypto\md5\liblegacy-lib-md5_sha1.d crypto\libfips-lib-core_namemap.d crypto\asn1\libcrypto-lib-d2i_param.d crypto\dh\libcrypto-lib-dh_check.d crypto\des\libcrypto-lib-ecb_enc.d test\sm4_internal_test-bin-sm4_internal_test.d crypto\bn\libfips-lib-bn_asm.d fuzz\x509-test-bin-test-corpus.d test\buildtest_c_evp-bin-buildtest_evp.d test\helpers\cmp_client_test-bin-cmp_testlib.d crypto\evp\libcrypto-lib-evp_enc.d test\buildtest_c_stack-bin-buildtest_stack.d apps\lib\libapps-lib-app_provider.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ocb.d ssl\libssl-lib-t1_trce.d crypto\cms\libcrypto-lib-cms_ess.d crypto\pkcs12\libcrypto-lib-p12_decr.d crypto\cms\libcrypto-lib-cms_cd.d crypto\cmp\libcrypto-lib-cmp_asn.d crypto\evp\libcrypto-lib-bio_md.d crypto\libcrypto-lib-core_namemap.d ssl\libssl-lib-ssl_err_legacy.d crypto\bn\libcrypto-lib-bn_nist.d apps\openssl-bin-x509.d providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.d crypto\ec\curve448\libfips-lib-eddsa.d crypto\conf\libcrypto-lib-conf_err.d fuzz\client-test-bin-test-corpus.d crypto\rand\libcrypto-lib-randfile.d test\dsa_no_digest_size_test-bin-dsa_no_digest_size_test.d crypto\bn\libfips-lib-bn_recp.d crypto\x509\libcrypto-lib-v3_bitst.d providers\implementations\kdfs\libdefault-lib-pbkdf2.d crypto\pkcs12\libcrypto-lib-p12_add.d crypto\evp\libcrypto-lib-e_rc5.d crypto\x509\libcrypto-lib-v3_admis.d test\evp_pkey_ctx_new_from_name-bin-evp_pkey_ctx_new_from_name.d providers\implementations\ciphers\libdefault-lib-cipher_aes.d crypto\rc2\libcrypto-lib-rc2_cbc.d crypto\evp\libcrypto-lib-e_old.d crypto\ts\libcrypto-lib-ts_rsp_print.d providers\implementations\digests\libfips-lib-sha3_prov.d test\helpers\endecode_test-bin-predefined_dhparams.d crypto\bio\libcrypto-lib-bf_nbio.d crypto\dh\libcrypto-lib-dh_meth.d apps\openssl-bin-rsa.d test\testutil\libtestutil-lib-options.d crypto\bn\libcrypto-lib-bn_kron.d providers\implementations\keymgmt\libfips-lib-dh_kmgmt.d crypto\ec\curve448\libcrypto-lib-curve448_tables.d test\buildtest_c_tls1-bin-buildtest_tls1.d test\dtlstest-bin-dtlstest.d test\buildtest_c_macros-bin-buildtest_macros.d crypto\property\libfips-lib-property.d crypto\sha\libcrypto-lib-sha512.d crypto\x509\libcrypto-lib-v3_san.d crypto\cmp\libcrypto-lib-cmp_http.d fuzz\conf-test-bin-conf.d crypto\dh\libcrypto-lib-dh_kdf.d crypto\evp\libcrypto-lib-e_idea.d crypto\evp\libcrypto-lib-e_rc2.d crypto\modes\libfips-lib-cfb128.d crypto\asn1\libcrypto-lib-tasn_typ.d test\cmp_status_test-bin-cmp_status_test.d test\cmp_hdr_test-bin-cmp_hdr_test.d apps\lib\libapps-lib-engine.d providers\implementations\ciphers\libdefault-lib-cipher_camellia.d apps\openssl-bin-pkcs7.d crypto\sm2\libcrypto-lib-sm2_crypt.d crypto\asn1\libcrypto-lib-a_int.d crypto\x509\libcrypto-lib-v3_pmaps.d crypto\asn1\libcrypto-lib-asn1_item_list.d providers\implementations\kem\libdefault-lib-rsa_kem.d crypto\md5\liblegacy-lib-md5_one.d test\context_internal_test-bin-context_internal_test.d crypto\pkcs7\libcrypto-lib-pk7_asn1.d providers\implementations\ciphers\libfips-lib-cipher_tdes_common.d crypto\asn1\libcrypto-lib-p5_scrypt.d crypto\evp\libfips-lib-signature.d crypto\asn1\libcrypto-lib-tasn_enc.d providers\implementations\ciphers\libfips-lib-cipher_aes_hw.d crypto\bn\libcrypto-lib-bn_exp.d crypto\err\libcrypto-lib-err_prn.d test\pbelutest-bin-pbelutest.d apps\openssl-bin-crl.d providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.d test\time_offset_test-bin-time_offset_test.d test\provider_test-bin-p_test.d test\helpers\sslcorrupttest-bin-ssltestlib.d crypto\x509\libcrypto-lib-v3_purp.d providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.d crypto\sha\libfips-lib-sha512.d crypto\evp\libcrypto-lib-e_rc4_hmac_md5.d apps\lib\cmp_client_test-bin-cmp_mock_srv.d crypto\evp\libfips-lib-kem.d test\provider_internal_test-bin-p_test.d test\bn_internal_test-bin-bn_internal_test.d crypto\aes\libfips-lib-aes_cbc.d crypto\engine\libcrypto-lib-eng_err.d test\prov_config_test-bin-prov_config_test.d crypto\libcrypto-lib-cpt_err.d crypto\lhash\libcrypto-lib-lh_stats.d providers\common\libdefault-lib-capabilities.d providers\implementations\exchange\libdefault-lib-ecx_exch.d providers\implementations\asymciphers\libdefault-lib-sm2_enc.d crypto\evp\libfips-lib-evp_enc.d crypto\modes\libcrypto-lib-cts128.d apps\openssl-bin-engine.d crypto\camellia\libcrypto-lib-cmll_misc.d crypto\engine\libcrypto-lib-tb_rsa.d ssl\record\libssl-lib-rec_layer_s3.d crypto\asn1\libcrypto-lib-x_bignum.d crypto\rsa\libcrypto-lib-rsa_depr.d crypto\cms\libcrypto-lib-cms_io.d test\ideatest-bin-ideatest.d crypto\x509\libcrypto-lib-v3_sxnet.d crypto\libcrypto-lib-provider_child.d test\keymgmt_internal_test-bin-keymgmt_internal_test.d test\enginetest-bin-enginetest.d crypto\asn1\libcrypto-lib-asn1_err.d apps\openssl-bin-openssl.d test\crltest-bin-crltest.d crypto\dsa\libfips-lib-dsa_backend.d crypto\ec\libcrypto-lib-ec_oct.d test\bio_callback_test-bin-bio_callback_test.d providers\common\der\libcommon-lib-der_dsa_key.d crypto\rsa\libcrypto-lib-rsa_ossl.d crypto\asn1\libcrypto-lib-a_object.d providers\implementations\kdfs\libdefault-lib-hkdf.d crypto\evp\libcrypto-lib-keymgmt_lib.d test\hexstr_test-bin-hexstr_test.d crypto\ec\curve448\libfips-lib-scalar.d crypto\libfips-lib-cryptlib.d ssl\libssl-lib-ssl_cert.d crypto\rsa\libcrypto-lib-rsa_meth.d crypto\x509\libcrypto-lib-v3_asid.d crypto\bn\libcrypto-lib-bn_gcd.d test\buildtest_c_core_dispatch-bin-buildtest_core_dispatch.d providers\common\der\libcommon-lib-der_ec_sig.d crypto\modes\libcrypto-lib-gcm128.d providers\implementations\encode_decode\libdefault-lib-decode_pvk2key.d fuzz\asn1-test-bin-asn1.d crypto\evp\libfips-lib-pmeth_lib.d crypto\bn\libcrypto-lib-bn_shift.d crypto\asn1\libcrypto-lib-x_sig.d test\asn1_internal_test-bin-asn1_internal_test.d providers\implementations\kdfs\libfips-lib-pbkdf2_fips.d crypto\conf\libcrypto-lib-conf_api.d fuzz\cmp-test-bin-cmp.d crypto\camellia\libcrypto-lib-cmll_ofb.d crypto\libcrypto-lib-o_dir.d providers\implementations\rands\libfips-lib-crngt.d crypto\des\libcrypto-lib-xcbc_enc.d crypto\modes\libfips-lib-ccm128.d providers\implementations\encode_decode\libdefault-lib-encode_key2any.d crypto\async\libcrypto-lib-async_err.d crypto\ec\libcrypto-lib-ecp_mont.d crypto\dh\libcrypto-lib-dh_lib.d crypto\asn1\libcrypto-lib-a_octet.d crypto\sm3\libcrypto-lib-legacy_sm3.d providers\implementations\storemgmt\libdefault-lib-file_store.d apps\openssl-bin-ocsp.d crypto\evp\libcrypto-lib-e_aes_cbc_hmac_sha256.d test\uitest-bin-uitest.d crypto\rand\libcrypto-lib-rand_meth.d crypto\property\libfips-lib-defn_cache.d apps\lib\libapps-lib-s_cb.d crypto\ec\libcrypto-lib-ec_check.d test\pkcs7_test-bin-pkcs7_test.d crypto\libcrypto-lib-core_fetch.d crypto\bn\libfips-lib-bn_conv.d providers\implementations\keymgmt\libdefault-lib-dsa_kmgmt.d providers\implementations\kdfs\libdefault-lib-scrypt.d crypto\ocsp\libcrypto-lib-ocsp_srv.d crypto\rsa\libfips-lib-rsa_schemes.d crypto\pkcs12\libcrypto-lib-p12_attr.d crypto\libcrypto-lib-threads_win.d crypto\libcrypto-lib-provider_predefined.d crypto\modes\libfips-lib-xts128.d test\rsa_test-bin-rsa_test.d providers\common\der\libdefault-lib-der_sm2_sig.d test\asynctest-bin-asynctest.d providers\implementations\digests\libcommon-lib-digestcommon.d crypto\x509\libcrypto-lib-x509_meth.d providers\implementations\rands\libfips-lib-drbg.d apps\openssl-bin-rsautl.d crypto\ec\curve448\libfips-lib-f_generic.d test\asn1_encode_test-bin-asn1_encode_test.d crypto\libcrypto-lib-bsearch.d apps\lib\libapps-lib-fmt.d crypto\libfips-lib-der_writer.d crypto\x509\libcrypto-lib-by_store.d test\provider_fallback_test-bin-provider_fallback_test.d crypto\x509\libcrypto-lib-x509_set.d crypto\rand\libcrypto-lib-rand_lib.d crypto\ffc\libcrypto-lib-ffc_backend.d test\buildtest_c_cast-bin-buildtest_cast.d apps\openssl-bin-ca.d apps\lib\libapps-lib-tlssrp_depr.d crypto\x509\libcrypto-lib-x509_trust.d fuzz\bignum-test-bin-test-corpus.d test\buildtest_c_sha-bin-buildtest_sha.d test\versions-bin-versions.d providers\implementations\ciphers\libdefault-lib-cipher_aes_wrp.d apps\lib\libapps-lib-s_socket.d providers\implementations\ciphers\libfips-lib-cipher_cts.d crypto\libfips-lib-ctype.d crypto\engine\libcrypto-lib-eng_ctrl.d crypto\asn1\libcrypto-lib-ameth_lib.d crypto\dsa\libcrypto-lib-dsa_sign.d crypto\stack\libfips-lib-stack.d apps\openssl-bin-req.d providers\implementations\ciphers\libcommon-lib-ciphercommon_hw.d test\wpackettest-bin-wpackettest.d crypto\ec\libcrypto-lib-ecx_meth.d test\testutil\libtestutil-lib-fake_random.d providers\implementations\digests\libdefault-lib-md5_prov.d providers\implementations\signature\libdefault-lib-mac_legacy_sig.d apps\lib\libapps-lib-apps.d test\chacha_internal_test-bin-chacha_internal_test.d test\buildtest_c_ecdsa-bin-buildtest_ecdsa.d crypto\ui\libcrypto-lib-ui_openssl.d fuzz\asn1parse-test-bin-asn1parse.d test\buildtest_c_hmac-bin-buildtest_hmac.d crypto\ec\libcrypto-lib-ec_backend.d crypto\evp\libcrypto-lib-legacy_md2.d crypto\hmac\libcrypto-lib-hmac.d test\rsa_mp_test-bin-rsa_mp_test.d providers\implementations\ciphers\liblegacy-lib-cipher_rc2_hw.d providers\implementations\ciphers\libfips-lib-cipher_aes_xts.d crypto\des\libfips-lib-set_key.d crypto\x509\libcrypto-lib-v3_tlsf.d providers\implementations\macs\libdefault-lib-siphash_prov.d test\p_test-dso-p_test.d crypto\dso\libcrypto-lib-dso_win32.d crypto\modes\libcrypto-lib-ctr128.d test\provider_status_test-bin-provider_status_test.d crypto\asn1\libcrypto-lib-asn_mime.d crypto\x509\libcrypto-lib-x509type.d crypto\evp\libcrypto-lib-evp_lib.d crypto\rc2\libcrypto-lib-rc2_ecb.d crypto\evp\libcrypto-lib-p_enc.d crypto\bn\libfips-lib-bn_lib.d crypto\evp\libcrypto-lib-e_aes.d providers\implementations\exchange\libfips-lib-dh_exch.d test\dtls_mtu_test-bin-dtls_mtu_test.d providers\implementations\digests\libdefault-lib-sha2_prov.d crypto\libcrypto-lib-packet.d test\memleaktest-bin-memleaktest.d crypto\x509\libcrypto-lib-v3_addr.d providers\implementations\digests\liblegacy-lib-md2_prov.d crypto\ec\libcrypto-lib-ec_print.d crypto\bio\libcrypto-lib-bss_fd.d crypto\evp\libcrypto-lib-mac_meth.d providers\implementations\ciphers\libdefault-lib-cipher_sm4_hw.d crypto\bn\libcrypto-lib-bn_mpi.d test\testutil\libtestutil-lib-load.d crypto\lhash\libcrypto-lib-lhash.d test\evp_test-bin-evp_test.d crypto\libfips-lib-params_from_text.d crypto\pkcs12\libcrypto-lib-p12_crt.d providers\common\libdefault-lib-digest_to_nid.d crypto\evp\libcrypto-lib-m_sigver.d crypto\asn1\libcrypto-lib-asn1_lib.d crypto\ocsp\libcrypto-lib-ocsp_vfy.d crypto\des\libcrypto-lib-rand_key.d providers\implementations\ciphers\libcommon-lib-ciphercommon.d crypto\bn\libcrypto-lib-bn_intern.d providers\implementations\ciphers\liblegacy-lib-cipher_seed_hw.d crypto\asn1\libcrypto-lib-t_bitst.d crypto\evp\libcrypto-lib-evp_pkey.d crypto\rsa\libcrypto-lib-rsa_crpt.d test\bad_dtls_test-bin-bad_dtls_test.d crypto\bn\libfips-lib-bn_nist.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20_poly1305.d crypto\x509\libcrypto-lib-x509cset.d crypto\evp\libfips-lib-m_sigver.d test\buildtest_c_prov_ssl-bin-buildtest_prov_ssl.d crypto\asn1\libcrypto-lib-d2i_pu.d crypto\evp\libcrypto-lib-dsa_ctrl.d crypto\asn1\libcrypto-lib-tasn_prn.d crypto\seed\libcrypto-lib-seed_ofb.d test\bio_enc_test-bin-bio_enc_test.d providers\implementations\keymgmt\libdefault-lib-ecx_kmgmt.d crypto\ess\libcrypto-lib-ess_asn1.d providers\implementations\rands\seeding\libdefault-lib-rand_cpu_x86.d crypto\ec\libcrypto-lib-ec_curve.d crypto\x509\libcrypto-lib-x509_cmp.d fuzz\asn1-test-bin-fuzz_rand.d crypto\bio\libcrypto-lib-bss_dgram.d test\errtest-bin-errtest.d ssl\libssl-lib-d1_lib.d crypto\pkcs12\libcrypto-lib-p12_kiss.d test\helpers\servername_test-bin-ssltestlib.d providers\implementations\ciphers\liblegacy-lib-cipher_rc2.d test\exptest-bin-exptest.d crypto\evp\libfips-lib-mac_meth.d providers\implementations\exchange\libdefault-lib-dh_exch.d crypto\bn\libfips-lib-bn_gcd.d crypto\pkcs12\libcrypto-lib-p12_utl.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_wrap.d crypto\store\libcrypto-lib-store_init.d crypto\bn\libfips-lib-bn_dh.d crypto\store\libcrypto-lib-store_err.d crypto\bio\libcrypto-lib-bss_log.d test\x509_check_cert_pkey_test-bin-x509_check_cert_pkey_test.d providers\implementations\signature\libfips-lib-dsa_sig.d apps\openssl-bin-smime.d crypto\libcrypto-lib-punycode.d crypto\x509\libcrypto-lib-v3_ncons.d crypto\async\arch\libcrypto-lib-async_win.d ssl\libssl-lib-tls_srp.d test\tls13encryptiontest-bin-tls13encryptiontest.d providers\implementations\digests\liblegacy-lib-md4_prov.d crypto\asn1\libcrypto-lib-a_dup.d crypto\evp\libcrypto-lib-kdf_meth.d crypto\dsa\libcrypto-lib-dsa_ameth.d crypto\des\libfips-lib-des_enc.d crypto\x509\libcrypto-lib-v3_extku.d crypto\cmp\libcrypto-lib-cmp_err.d crypto\evp\libcrypto-lib-asymcipher.d crypto\bn\libfips-lib-bn_sqrt.d apps\openssl-bin-crl2pkcs7.d crypto\evp\libfips-lib-kdf_lib.d crypto\pem\libcrypto-lib-pvkfmt.d crypto\des\libcrypto-lib-fcrypt.d crypto\srp\libcrypto-lib-srp_lib.d crypto\bn\libfips-lib-bn_const.d crypto\libfips-lib-params_dup.d test\sysdefaulttest-bin-sysdefaulttest.d ssl\libssl-lib-ssl_sess.d crypto\dsa\libfips-lib-dsa_gen.d test\testutil\libtestutil-lib-provider.d test\ssl_test_ctx_test-bin-ssl_test_ctx_test.d crypto\bio\libcrypto-lib-bio_err.d crypto\ffc\libcrypto-lib-ffc_params.d providers\implementations\storemgmt\libdefault-lib-file_store_any2obj.d providers\implementations\rands\libdefault-lib-seed_src.d crypto\err\libcrypto-lib-err.d test\x509_time_test-bin-x509_time_test.d crypto\ec\libfips-lib-ec_backend.d test\buildtest_c_ecdh-bin-buildtest_ecdh.d crypto\bio\libcrypto-lib-bf_null.d providers\implementations\ciphers\liblegacy-lib-cipher_des_hw.d test\asn1_time_test-bin-asn1_time_test.d crypto\sha\libcrypto-lib-sha1dgst.d crypto\asn1\libcrypto-lib-f_string.d providers\common\libfips-lib-capabilities.d crypto\asn1\libcrypto-lib-a_mbstr.d crypto\encode_decode\libcrypto-lib-encoder_meth.d crypto\dsa\libcrypto-lib-dsa_key.d crypto\modes\libcrypto-lib-ccm128.d crypto\rsa\libfips-lib-rsa_mp_names.d crypto\pkcs7\libcrypto-lib-pk7_mime.d providers\implementations\digests\libdefault-lib-sm3_prov.d crypto\libfips-lib-threads_win.d providers\implementations\ciphers\liblegacy-lib-cipher_rc5.d crypto\bn\libcrypto-lib-bn_div.d crypto\libcrypto-lib-context.d providers\implementations\macs\libfips-lib-gmac_prov.d crypto\des\libcrypto-lib-cbc_cksm.d crypto\rsa\libcrypto-lib-rsa_x931g.d test\provider_pkey_test-bin-provider_pkey_test.d providers\implementations\rands\seeding\libdefault-lib-rand_unix.d crypto\md4\libcrypto-lib-md4_dgst.d ssl\statem\libssl-lib-statem.d crypto\libfips-lib-params.d apps\openssl-bin-ecparam.d providers\common\libfips-lib-securitycheck.d crypto\evp\libcrypto-lib-legacy_blake2.d crypto\siphash\libcrypto-lib-siphash.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ccm_hw.d providers\implementations\encode_decode\libdefault-lib-endecoder_common.d crypto\ec\libcrypto-lib-ecx_backend.d test\sha_test-bin-sha_test.d test\testutil\libtestutil-lib-apps_shims.d crypto\x509\libcrypto-lib-v3_enum.d apps\openssl-bin-cms.d test\buildtest_c_blowfish-bin-buildtest_blowfish.d crypto\conf\libcrypto-lib-conf_ssl.d providers\implementations\rands\libdefault-lib-crngt.d crypto\evp\libcrypto-lib-evp_pbe.d providers\common\der\libdefault-lib-der_rsa_sig.d crypto\x509\libcrypto-lib-x509_obj.d providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.d crypto\evp\libfips-lib-dh_support.d crypto\evp\libfips-lib-keymgmt_lib.d crypto\evp\libcrypto-lib-signature.d providers\common\der\libfips-lib-der_rsa_sig.d test\bio_core_test-bin-bio_core_test.d crypto\bn\libcrypto-lib-bn_sqr.d providers\implementations\macs\libfips-lib-kmac_prov.d apps\lib\libapps-lib-apps_ui.d crypto\bn\libfips-lib-bn_mpi.d crypto\aes\libcrypto-lib-aes_ige.d crypto\ts\libcrypto-lib-ts_err.d crypto\libcrypto-lib-ctype.d crypto\rc2\libcrypto-lib-rc2ofb64.d crypto\ec\libfips-lib-ecx_backend.d fuzz\client-test-bin-client.d crypto\libfips-lib-sparse_array.d crypto\x509\libcrypto-lib-v3_ia5.d crypto\cast\libcrypto-lib-c_ecb.d crypto\bn\libcrypto-lib-bn_conv.d crypto\dsa\libcrypto-lib-dsa_pmeth.d test\poly1305_internal_test-bin-poly1305_internal_test.d test\buildtest_c_ts-bin-buildtest_ts.d crypto\pkcs12\libcrypto-lib-pk12err.d crypto\evp\libcrypto-lib-p_verify.d test\sslapitest-bin-filterprov.d crypto\ffc\libcrypto-lib-ffc_dh.d ssl\libssl-lib-ssl_mcnf.d providers\implementations\ciphers\liblegacy-lib-cipher_blowfish_hw.d apps\lib\libapps-lib-opt.d apps\openssl-bin-rand.d crypto\ts\libcrypto-lib-ts_lib.d test\rc4test-bin-rc4test.d providers\implementations\encode_decode\libdefault-lib-encode_key2blob.d test\rc2test-bin-rc2test.d crypto\dh\libcrypto-lib-dh_depr.d test\buildtest_c_cmac-bin-buildtest_cmac.d crypto\dsa\libfips-lib-dsa_ossl.d apps\openssl-bin-dgst.d apps\openssl-bin-cmp.d crypto\evp\libcrypto-lib-c_alld.d providers\implementations\ciphers\libdefault-lib-cipher_chacha20.d apps\openssl-bin-spkac.d crypto\x509\libcrypto-lib-v3_pcons.d test\ssl_test-bin-ssl_test.d crypto\property\libcrypto-lib-property_string.d crypto\x509\libcrypto-lib-v3err.d crypto\engine\libcrypto-lib-tb_pkmeth.d crypto\comp\libcrypto-lib-comp_err.d crypto\ec\libcrypto-lib-ec2_oct.d fuzz\x509-test-bin-fuzz_rand.d apps\openssl-bin-s_client.d crypto\bn\libcrypto-lib-bn_srp.d crypto\asn1\libcrypto-lib-a_sign.d crypto\cms\libcrypto-lib-cms_kari.d crypto\rc4\libcrypto-lib-rc4_enc.d crypto\cmac\libcrypto-lib-cmac.d crypto\evp\libcrypto-lib-e_camellia.d crypto\dh\libcrypto-lib-dh_group_params.d providers\implementations\ciphers\libdefault-lib-cipher_aes_cbc_hmac_sha256_hw.d providers\implementations\signature\libdefault-lib-ecdsa_sig.d crypto\rsa\libfips-lib-rsa_crpt.d crypto\libcrypto-lib-threads_none.d crypto\dsa\libcrypto-lib-dsa_gen.d providers\common\der\libdefault-lib-der_sm2_gen.d crypto\asn1\libcrypto-lib-tasn_utl.d crypto\des\libfips-lib-fcrypt_b.d providers\common\libfips-lib-securitycheck_fips.d crypto\rsa\libcrypto-lib-rsa_schemes.d crypto\aes\libfips-lib-aes_core.d test\pkcs12_format_test-bin-pkcs12_format_test.d test\cipherlist_test-bin-cipherlist_test.d apps\openssl-bin-dsa.d crypto\cms\libcrypto-lib-cms_env.d crypto\bn\libcrypto-lib-bn_dh.d test\buildtest_c_modes-bin-buildtest_modes.d providers\common\der\libcommon-lib-der_ec_gen.d crypto\rand\libfips-lib-rand_lib.d crypto\asn1\libcrypto-lib-a_type.d crypto\ec\libfips-lib-ec2_smpl.d crypto\md5\libcrypto-lib-md5_sha1.d crypto\des\libcrypto-lib-ecb3_enc.d crypto\ffc\libfips-lib-ffc_key_validate.d crypto\asn1\libcrypto-lib-a_d2i_fp.d crypto\pkcs12\libcrypto-lib-p12_mutl.d crypto\asn1\libcrypto-lib-x_pkey.d providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5_hw.d test\helpers\sslapitest-bin-ssltestlib.d crypto\crmf\libcrypto-lib-crmf_asn.d crypto\dh\libcrypto-lib-dh_err.d crypto\ui\libcrypto-lib-ui_util.d crypto\dh\libcrypto-lib-dh_key.d providers\implementations\ciphers\libdefault-lib-cipher_aes_ocb_hw.d ssl\libssl-lib-d1_msg.d providers\implementations\ciphers\libdefault-lib-cipher_tdes_common.d crypto\encode_decode\libcrypto-lib-decoder_pkey.d test\v3ext-bin-v3ext.d crypto\modes\libcrypto-lib-cfb128.d fuzz\ct-test-bin-test-corpus.d crypto\ec\curve448\libcrypto-lib-curve448.d apps\openssl-bin-nseq.d test\afalgtest-bin-afalgtest.d crypto\asn1\libcrypto-lib-d2i_pr.d crypto\x509\libcrypto-lib-v3_akid.d providers\implementations\ciphers\libdefault-lib-cipher_aes_xts_fips.d providers\implementations\macs\libdefault-lib-blake2s_mac.d crypto\evp\libcrypto-lib-p5_crpt2.d providers\implementations\kdfs\libdefault-lib-sskdf.d crypto\ts\libcrypto-lib-ts_rsp_verify.d crypto\ct\libcrypto-lib-ct_vfy.d crypto\modes\libcrypto-lib-xts128.d providers\common\libfips-lib-provider_util.d test\helpers\recordlentest-bin-ssltestlib.d crypto\libcrypto-lib-param_build_set.d crypto\engine\libcrypto-lib-eng_pkey.d crypto\pkcs7\libcrypto-lib-pk7_doit.d crypto\rsa\libfips-lib-rsa_backend.d crypto\bio\libcrypto-lib-bio_lib.d crypto\ts\libcrypto-lib-ts_req_print.d crypto\poly1305\libcrypto-lib-poly1305.d crypto\x509\libcrypto-lib-pcy_data.d crypto\dso\libcrypto-lib-dso_vms.d crypto\x509\libcrypto-lib-x509spki.d crypto\cmp\libcrypto-lib-cmp_hdr.d test\cmp_vfy_test-bin-cmp_vfy_test.d test\ocspapitest-bin-ocspapitest.d crypto\bn\libfips-lib-bn_exp.d ssl\statem\libssl-lib-statem_srvr.d crypto\rc5\libcrypto-lib-rc5ofb64.d crypto\bio\libcrypto-lib-bio_sock2.d crypto\ec\libcrypto-lib-ecdh_ossl.d test\buildtest_c_configuration-bin-buildtest_configuration.d crypto\des\libcrypto-lib-des_enc.d crypto\bf\libcrypto-lib-bf_ecb.d crypto\encode_decode\libcrypto-lib-decoder_meth.d providers\implementations\ciphers\libdefault-lib-cipher_aes_hw.d crypto\libfips-lib-initthread.d crypto\engine\libcrypto-lib-tb_eckey.d test\buildtest_c_provider-bin-buildtest_provider.d test\confdump-bin-confdump.d crypto\chacha\libcrypto-lib-chacha_enc.d crypto\rsa\libfips-lib-rsa_oaep.d crypto\asn1\libcrypto-lib-asn1_gen.d crypto\ocsp\libcrypto-lib-ocsp_cl.d crypto\evp\libcrypto-lib-evp_utils.d crypto\x509\libcrypto-lib-pcy_node.d ssl\libssl-lib-ssl_ciph.d test\buildtest_c_conftypes-bin-buildtest_conftypes.d test\lhash_test-bin-lhash_test.d test\evp_extra_test2-bin-evp_extra_test2.d test\buildtest_c_core_names-bin-buildtest_core_names.d crypto\bio\libcrypto-lib-bio_addr.d fuzz\conf-test-bin-test-corpus.d crypto\libfips-lib-threads_pthread.d crypto\rsa\libcrypto-lib-rsa_mp.d crypto\evp\libcrypto-lib-p5_crpt.d crypto\dsa\libfips-lib-dsa_vrf.d crypto\ec\libcrypto-lib-ecx_key.d crypto\libcrypto-lib-threads_lib.d providers\libcrypto-lib-prov_running.d crypto\bio\libcrypto-lib-bio_sock.d providers\implementations\digests\libfips-lib-sha2_prov.d crypto\rsa\libcrypto-lib-rsa_mp_names.d crypto\libcrypto-lib-ex_data.d crypto\evp\libfips-lib-digest.d test\buildtest_c_des-bin-buildtest_des.d crypto\ct\libcrypto-lib-ct_sct_ctx.d fuzz\asn1-test-bin-test-corpus.d crypto\rsa\libcrypto-lib-rsa_sp800_56b_check.d crypto\engine\libcrypto-lib-tb_rand.d test\cmp_client_test-bin-cmp_client_test.d test\provider_pkey_test-bin-fake_rsaprov.d crypto\des\liblegacy-lib-fcrypt_b.d providers\implementations\macs\libfips-lib-cmac_prov.d crypto\evp\libfips-lib-p_lib.d crypto\cms\libcrypto-lib-cms_dh.d test\buildtest_c_kdf-bin-buildtest_kdf.d crypto\dsa\libfips-lib-dsa_lib.d ssl\libssl-lib-ssl_rsa_legacy.d crypto\rc5\libcrypto-lib-rc5cfb64.d crypto\x509\libcrypto-lib-v3_int.d crypto\bio\libcrypto-lib-bss_bio.d providers\implementations\rands\libfips-lib-test_rng.d crypto\engine\libcrypto-lib-tb_dsa.d crypto\ocsp\libcrypto-lib-ocsp_prn.d crypto\ec\libfips-lib-ec_key.d apps\openssl-bin-enc.d crypto\x509\libcrypto-lib-by_dir.d test\dsatest-bin-dsatest.d crypto\x509\libcrypto-lib-v3_pku.d providers\implementations\ciphers\libdefault-lib-cipher_aria_ccm_hw.d providers\implementations\keymgmt\libdefault-lib-kdf_legacy_kmgmt.d crypto\rsa\libcrypto-lib-rsa_gen.d test\test_test-bin-test_test.d test\rsa_sp800_56b_test-bin-rsa_sp800_56b_test.d crypto\asn1\libcrypto-lib-x_int64.d crypto\ct\libcrypto-lib-ct_log.d crypto\evp\libcrypto-lib-p_open.d crypto\pkcs12\libcrypto-lib-p12_asn.d crypto\ec\libfips-lib-ec_asn1.d test\pbetest-bin-pbetest.d crypto\aes\libfips-lib-aes_misc.d crypto\bf\libcrypto-lib-bf_skey.d ssl\libssl-lib-ssl_utst.d crypto\x509\libcrypto-lib-v3_pci.d crypto\buffer\libcrypto-lib-buf_err.d crypto\conf\libcrypto-lib-conf_lib.d crypto\ct\libcrypto-lib-ct_sct.d test\buildtest_c_ec-bin-buildtest_ec.d providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.d test\buildtest_c_rc5-bin-buildtest_rc5.d test\buildtest_c_bn-bin-buildtest_bn.d crypto\libfips-lib-threads_lib.d
 
 GENERATED_MANDATORY=include\crypto\bn_conf.h include\crypto\dso_conf.h include\openssl\asn1.h include\openssl\asn1t.h include\openssl\bio.h include\openssl\cmp.h include\openssl\cms.h include\openssl\conf.h include\openssl\crmf.h include\openssl\crypto.h include\openssl\ct.h include\openssl\err.h include\openssl\ess.h include\openssl\fipskey.h include\openssl\lhash.h include\openssl\ocsp.h include\openssl\opensslv.h include\openssl\pkcs12.h include\openssl\pkcs7.h include\openssl\safestack.h include\openssl\srp.h include\openssl\ssl.h include\openssl\ui.h include\openssl\x509.h include\openssl\x509_vfy.h include\openssl\x509v3.h test\provider_internal_test.cnf
-GENERATED=apps\CA.pl apps\openssl.rc apps\progs.c apps\progs.h apps\tsget.pl crypto\buildinf.h doc\man1\openssl-asn1parse.pod doc\man1\openssl-ca.pod doc\man1\openssl-ciphers.pod doc\man1\openssl-cmds.pod doc\man1\openssl-cmp.pod doc\man1\openssl-cms.pod doc\man1\openssl-crl.pod doc\man1\openssl-crl2pkcs7.pod doc\man1\openssl-dgst.pod doc\man1\openssl-dhparam.pod doc\man1\openssl-dsa.pod doc\man1\openssl-dsaparam.pod doc\man1\openssl-ec.pod doc\man1\openssl-ecparam.pod doc\man1\openssl-enc.pod doc\man1\openssl-engine.pod doc\man1\openssl-errstr.pod doc\man1\openssl-fipsinstall.pod doc\man1\openssl-gendsa.pod doc\man1\openssl-genpkey.pod doc\man1\openssl-genrsa.pod doc\man1\openssl-info.pod doc\man1\openssl-kdf.pod doc\man1\openssl-list.pod doc\man1\openssl-mac.pod doc\man1\openssl-nseq.pod doc\man1\openssl-ocsp.pod doc\man1\openssl-passwd.pod doc\man1\openssl-pkcs12.pod doc\man1\openssl-pkcs7.pod doc\man1\openssl-pkcs8.pod doc\man1\openssl-pkey.pod doc\man1\openssl-pkeyparam.pod doc\man1\openssl-pkeyutl.pod doc\man1\openssl-prime.pod doc\man1\openssl-rand.pod doc\man1\openssl-rehash.pod doc\man1\openssl-req.pod doc\man1\openssl-rsa.pod doc\man1\openssl-rsautl.pod doc\man1\openssl-s_client.pod doc\man1\openssl-s_server.pod doc\man1\openssl-s_time.pod doc\man1\openssl-sess_id.pod doc\man1\openssl-smime.pod doc\man1\openssl-speed.pod doc\man1\openssl-spkac.pod doc\man1\openssl-srp.pod doc\man1\openssl-storeutl.pod doc\man1\openssl-ts.pod doc\man1\openssl-verify.pod doc\man1\openssl-version.pod doc\man1\openssl-x509.pod doc\man7\openssl_user_macros.pod providers\common\der\der_digests_gen.c providers\common\der\der_dsa_gen.c providers\common\der\der_ec_gen.c providers\common\der\der_ecx_gen.c providers\common\der\der_rsa_gen.c providers\common\der\der_sm2_gen.c providers\common\der\der_wrap_gen.c providers\common\include\prov\der_digests.h providers\common\include\prov\der_dsa.h providers\common\include\prov\der_ec.h providers\common\include\prov\der_ecx.h providers\common\include\prov\der_rsa.h providers\common\include\prov\der_sm2.h providers\common\include\prov\der_wrap.h providers\legacy.def providers\legacy.rc test\buildtest_aes.c test\buildtest_async.c test\buildtest_blowfish.c test\buildtest_bn.c test\buildtest_buffer.c test\buildtest_camellia.c test\buildtest_cast.c test\buildtest_cmac.c test\buildtest_cmp_util.c test\buildtest_comp.c test\buildtest_conf_api.c test\buildtest_configuration.c test\buildtest_conftypes.c test\buildtest_core.c test\buildtest_core_dispatch.c test\buildtest_core_names.c test\buildtest_core_object.c test\buildtest_cryptoerr_legacy.c test\buildtest_decoder.c test\buildtest_des.c test\buildtest_dh.c test\buildtest_dsa.c test\buildtest_dtls1.c test\buildtest_e_os2.c test\buildtest_ebcdic.c test\buildtest_ec.c test\buildtest_ecdh.c test\buildtest_ecdsa.c test\buildtest_encoder.c test\buildtest_engine.c test\buildtest_evp.c test\buildtest_fips_names.c test\buildtest_hmac.c test\buildtest_http.c test\buildtest_kdf.c test\buildtest_macros.c test\buildtest_md2.c test\buildtest_md4.c test\buildtest_md5.c test\buildtest_modes.c test\buildtest_obj_mac.c test\buildtest_objects.c test\buildtest_ossl_typ.c test\buildtest_param_build.c test\buildtest_params.c test\buildtest_pem.c test\buildtest_pem2.c test\buildtest_prov_ssl.c test\buildtest_provider.c test\buildtest_rand.c test\buildtest_rc2.c test\buildtest_rc4.c test\buildtest_rc5.c test\buildtest_ripemd.c test\buildtest_rsa.c test\buildtest_seed.c test\buildtest_self_test.c test\buildtest_sha.c test\buildtest_srtp.c test\buildtest_ssl2.c test\buildtest_sslerr_legacy.c test\buildtest_stack.c test\buildtest_store.c test\buildtest_symhacks.c test\buildtest_tls1.c test\buildtest_ts.c test\buildtest_txt_db.c test\buildtest_types.c test\buildtest_whrlpool.c test\p_test.def tools\c_rehash.pl util\wrap.pl
+GENERATED=apps\CA.pl apps\openssl.rc apps\progs.c apps\progs.h apps\tsget.pl crypto\buildinf.h doc\man1\openssl-asn1parse.pod doc\man1\openssl-ca.pod doc\man1\openssl-ciphers.pod doc\man1\openssl-cmds.pod doc\man1\openssl-cmp.pod doc\man1\openssl-cms.pod doc\man1\openssl-crl.pod doc\man1\openssl-crl2pkcs7.pod doc\man1\openssl-dgst.pod doc\man1\openssl-dhparam.pod doc\man1\openssl-dsa.pod doc\man1\openssl-dsaparam.pod doc\man1\openssl-ec.pod doc\man1\openssl-ecparam.pod doc\man1\openssl-enc.pod doc\man1\openssl-engine.pod doc\man1\openssl-errstr.pod doc\man1\openssl-fipsinstall.pod doc\man1\openssl-gendsa.pod doc\man1\openssl-genpkey.pod doc\man1\openssl-genrsa.pod doc\man1\openssl-info.pod doc\man1\openssl-kdf.pod doc\man1\openssl-list.pod doc\man1\openssl-mac.pod doc\man1\openssl-nseq.pod doc\man1\openssl-ocsp.pod doc\man1\openssl-passwd.pod doc\man1\openssl-pkcs12.pod doc\man1\openssl-pkcs7.pod doc\man1\openssl-pkcs8.pod doc\man1\openssl-pkey.pod doc\man1\openssl-pkeyparam.pod doc\man1\openssl-pkeyutl.pod doc\man1\openssl-prime.pod doc\man1\openssl-rand.pod doc\man1\openssl-rehash.pod doc\man1\openssl-req.pod doc\man1\openssl-rsa.pod doc\man1\openssl-rsautl.pod doc\man1\openssl-s_client.pod doc\man1\openssl-s_server.pod doc\man1\openssl-s_time.pod doc\man1\openssl-sess_id.pod doc\man1\openssl-smime.pod doc\man1\openssl-speed.pod doc\man1\openssl-spkac.pod doc\man1\openssl-srp.pod doc\man1\openssl-storeutl.pod doc\man1\openssl-ts.pod doc\man1\openssl-verify.pod doc\man1\openssl-version.pod doc\man1\openssl-x509.pod doc\man7\openssl_user_macros.pod providers\common\der\der_digests_gen.c providers\common\der\der_dsa_gen.c providers\common\der\der_ec_gen.c providers\common\der\der_ecx_gen.c providers\common\der\der_rsa_gen.c providers\common\der\der_sm2_gen.c providers\common\der\der_wrap_gen.c providers\common\include\prov\der_digests.h providers\common\include\prov\der_dsa.h providers\common\include\prov\der_ec.h providers\common\include\prov\der_ecx.h providers\common\include\prov\der_rsa.h providers\common\include\prov\der_sm2.h providers\common\include\prov\der_wrap.h providers\fips.def providers\fips.rc providers\fipsmodule.cnf providers\legacy.def providers\legacy.rc test\buildtest_aes.c test\buildtest_async.c test\buildtest_blowfish.c test\buildtest_bn.c test\buildtest_buffer.c test\buildtest_camellia.c test\buildtest_cast.c test\buildtest_cmac.c test\buildtest_cmp_util.c test\buildtest_comp.c test\buildtest_conf_api.c test\buildtest_configuration.c test\buildtest_conftypes.c test\buildtest_core.c test\buildtest_core_dispatch.c test\buildtest_core_names.c test\buildtest_core_object.c test\buildtest_cryptoerr_legacy.c test\buildtest_decoder.c test\buildtest_des.c test\buildtest_dh.c test\buildtest_dsa.c test\buildtest_dtls1.c test\buildtest_e_os2.c test\buildtest_ebcdic.c test\buildtest_ec.c test\buildtest_ecdh.c test\buildtest_ecdsa.c test\buildtest_encoder.c test\buildtest_engine.c test\buildtest_evp.c test\buildtest_fips_names.c test\buildtest_hmac.c test\buildtest_http.c test\buildtest_kdf.c test\buildtest_macros.c test\buildtest_md2.c test\buildtest_md4.c test\buildtest_md5.c test\buildtest_modes.c test\buildtest_obj_mac.c test\buildtest_objects.c test\buildtest_ossl_typ.c test\buildtest_param_build.c test\buildtest_params.c test\buildtest_pem.c test\buildtest_pem2.c test\buildtest_prov_ssl.c test\buildtest_provider.c test\buildtest_rand.c test\buildtest_rc2.c test\buildtest_rc4.c test\buildtest_rc5.c test\buildtest_ripemd.c test\buildtest_rsa.c test\buildtest_seed.c test\buildtest_self_test.c test\buildtest_sha.c test\buildtest_srtp.c test\buildtest_ssl2.c test\buildtest_sslerr_legacy.c test\buildtest_stack.c test\buildtest_store.c test\buildtest_symhacks.c test\buildtest_tls1.c test\buildtest_ts.c test\buildtest_txt_db.c test\buildtest_types.c test\buildtest_whrlpool.c test\p_test.def tools\c_rehash.pl util\wrap.pl
 
 INSTALL_LIBS="libcrypto.lib" "libssl.lib"
 INSTALL_SHLIBS=
@@ -41,8 +41,8 @@ INSTALL_SHLIBPDBS=
 INSTALL_ENGINES=
 INSTALL_ENGINEPDBS=
 INSTALL_MODULES="providers\\legacy.dll"
-INSTALL_MODULEPDBS="providers\\legacy.pdb"
-INSTALL_FIPSMODULE=
+INSTALL_MODULEPDBS="providers\\fips.pdb" "providers\\legacy.pdb"
+INSTALL_FIPSMODULE="providers\\fips.dll"
 INSTALL_FIPSMODULECONF=providers\fipsmodule.cnf
 INSTALL_PROGRAMS="apps\\openssl.exe"
 INSTALL_PROGRAMPDBS="apps\\openssl.pdb"
@@ -68,7 +68,7 @@ APPS_OPENSSL="apps\openssl"
 INSTALLTOP_dev=D:
 INSTALLTOP_dir=\__Github__\Windows\3rdparty\openssl\openssl-3.0.5\install
 OPENSSLDIR_dev=C:
-OPENSSLDIR_dir=\Program Files (x86)\Common Files\SSL
+OPENSSLDIR_dir=\Program Files\Common Files\SSL
 LIBDIR=lib
 MODULESDIR_dev=D:
 MODULESDIR_dir=\__Github__\Windows\3rdparty\openssl\openssl-3.0.5\install\lib\ossl-modules
@@ -108,7 +108,7 @@ MT="mt"
 MTFLAGS= -nologo
 
 AS="nasm"
-ASFLAGS=
+ASFLAGS=-g
 
 RC="rc"
 RCFLAGS=
@@ -129,7 +129,7 @@ RCOUTFLAG=/fo$(OSSL_EMPTY)
 
 # Variables starting with CNF_ are common variables for all product types
 
-CNF_ASFLAGS=-f win32
+CNF_ASFLAGS=-Ox -f win64 -DNEAR
 CNF_CPPFLAGS=-D"OPENSSL_BUILDING_OPENSSL" -D"OPENSSL_SYS_WIN32" -D"WIN32_LEAN_AND_MEAN" -D"UNICODE" -D"_UNICODE" -D"_CRT_SECURE_NO_DEPRECATE" -D"_WINSOCK_DEPRECATED_NO_WARNINGS" -D"NDEBUG"
 CNF_CFLAGS=/Gs0 /GF /Gy
 CNF_CXXFLAGS=
@@ -143,7 +143,7 @@ CNF_EX_LIBS=ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib
 # files.
 
 LIB_ASFLAGS=$(CNF_ASFLAGS) $(ASFLAGS)
-LIB_CPPFLAGS=-D"L_ENDIAN" -D"OPENSSL_PIC" -D"OPENSSLDIR=\"C:\\Program Files (x86)\\Common Files\\SSL\"" -D"ENGINESDIR=\"D:\\__Github__\\Windows\\3rdparty\\openssl\\openssl-3.0.5\\install\\lib\\engines-3\"" -D"MODULESDIR=\"D:\\__Github__\\Windows\\3rdparty\\openssl\\openssl-3.0.5\\install\\lib\\ossl-modules\"" $(CNF_CPPFLAGS) $(CPPFLAGS)
+LIB_CPPFLAGS=-D"L_ENDIAN" -D"OPENSSL_PIC" -D"OPENSSLDIR=\"C:\\Program Files\\Common Files\\SSL\"" -D"ENGINESDIR=\"D:\\__Github__\\Windows\\3rdparty\\openssl\\openssl-3.0.5\\install\\lib\\engines-3\"" -D"MODULESDIR=\"D:\\__Github__\\Windows\\3rdparty\\openssl\\openssl-3.0.5\\install\\lib\\ossl-modules\"" $(CNF_CPPFLAGS) $(CPPFLAGS)
 LIB_CFLAGS=/Zi /Fdossl_static.pdb /MT /Zl $(CNF_CFLAGS) $(CFLAGS)
 LIB_LDFLAGS=/dll $(CNF_LDFLAGS) $(LDFLAGS)
 LIB_EX_LIBS=$(CNF_EX_LIBS) $(EX_LIBS)
@@ -161,7 +161,7 @@ BIN_EX_LIBS=$(CNF_EX_LIBS) $(EX_LIBS)
 # CPPFLAGS_Q is used for one thing only: to build up buildinf.h
 CPPFLAGS_Q=-D"L_ENDIAN" -D"OPENSSL_PIC"
 
-PERLASM_SCHEME= win32n
+PERLASM_SCHEME= auto
 
 PROCESSOR= 
 
@@ -224,9 +224,9 @@ list-tests:
 	@cmd /C "set "SRCTOP=$(SRCDIR)" & "$(PERL)" "$(SRCDIR)\test\run_tests.pl" list"
 	@@rem
 
-install: install_sw install_ssldirs install_docs 
+install: install_sw install_ssldirs install_docs install_fips
 
-uninstall: uninstall_docs uninstall_sw 
+uninstall: uninstall_docs uninstall_sw uninstall_fips
 
 libclean:
 	"$(PERL)" -e "map { m/(.*)\.dll$$/; unlink glob """{.,apps,test,fuzz}/$$1.*"""; } @ARGV" $(SHLIBS)
@@ -1028,6 +1028,7 @@ clean: libclean
 	-del /Q /F fuzz\server-test.exe
 	-del /Q /F fuzz\x509-test.exe
 	-del /Q /F test\aborttest.exe
+	-del /Q /F test\acvp_test.exe
 	-del /Q /F test\aesgcmtest.exe
 	-del /Q /F test\afalgtest.exe
 	-del /Q /F test\algorithmid_test.exe
@@ -1371,6 +1372,9 @@ clean: libclean
 	-del /Q /F providers\common\include\prov\der_rsa.h
 	-del /Q /F providers\common\include\prov\der_sm2.h
 	-del /Q /F providers\common\include\prov\der_wrap.h
+	-del /Q /F providers\fips.def
+	-del /Q /F providers\fips.rc
+	-del /Q /F providers\fipsmodule.cnf
 	-del /Q /F providers\legacy.def
 	-del /Q /F providers\legacy.rc
 	-del /Q /F test\buildtest_aes.c
@@ -1472,11 +1476,22 @@ install_docs: install_html_docs
 uninstall_docs: uninstall_html_docs
 
 
-install_fips:
-	@$(ECHO) "The 'install_fips' target requires the 'enable-fips' option"
+install_fips: build_sw $(INSTALL_FIPSMODULECONF)
+#	@[ -n "$(INSTALLTOP)" ] || (echo INSTALLTOP should not be empty; exit 1)
+	@$(PERL) $(SRCDIR)\util\mkdir-p.pl $(MODULESDIR)
+	@$(PERL) $(SRCDIR)\util\mkdir-p.pl $(OPENSSLDIR)
+	@$(ECHO) "*** Installing FIPS module"
+	@$(ECHO) "install $(INSTALL_FIPSMODULE) -> $(MODULESDIR)\$(FIPSMODULENAME)"
+	@"$(PERL)" "$(SRCDIR)\util\copy.pl" "$(INSTALL_FIPSMODULE)" "$(MODULESDIR)"
+	@$(ECHO) "*** Installing FIPS module configuration"
+	@$(ECHO) "install $(INSTALL_FIPSMODULECONF) -> $(OPENSSLDIR)\fipsmodule.cnf"
+	@"$(PERL)" "$(SRCDIR)\util\copy.pl" "$(INSTALL_FIPSMODULECONF)" "$(OPENSSLDIR)"
 
 uninstall_fips:
-	@$(ECHO) "The 'uninstall_fips' target requires the 'enable-fips' option"
+	@$(ECHO) "*** Uninstalling FIPS module configuration"
+	$(RM) "$(OPENSSLDIR)\fipsmodule.cnf"
+	@$(ECHO) "*** Uninstalling FIPS module"
+	$(RM) "$(MODULESDIR)\$(FIPSMODULENAME)"
 
 
 install_ssldirs:
@@ -1614,7 +1629,7 @@ makefile: configdata.pm "Configurations\common0.tmpl" "Configurations\windows-ma
 	@$(ECHO) "**************************************************"
 	@exit 1
 
-configdata.pm: "$(SRCDIR)\Configure" "build.info" "crypto\build.info" "ssl\build.info" "apps\build.info" "util\build.info" "tools\build.info" "fuzz\build.info" "providers\build.info" "doc\build.info" "test\build.info" "engines\build.info" "crypto\objects\build.info" "crypto\buffer\build.info" "crypto\bio\build.info" "crypto\stack\build.info" "crypto\lhash\build.info" "crypto\rand\build.info" "crypto\evp\build.info" "crypto\asn1\build.info" "crypto\pem\build.info" "crypto\x509\build.info" "crypto\conf\build.info" "crypto\txt_db\build.info" "crypto\pkcs7\build.info" "crypto\pkcs12\build.info" "crypto\ui\build.info" "crypto\kdf\build.info" "crypto\store\build.info" "crypto\property\build.info" "crypto\md2\build.info" "crypto\md4\build.info" "crypto\md5\build.info" "crypto\sha\build.info" "crypto\hmac\build.info" "crypto\ripemd\build.info" "crypto\whrlpool\build.info" "crypto\poly1305\build.info" "crypto\siphash\build.info" "crypto\sm3\build.info" "crypto\des\build.info" "crypto\aes\build.info" "crypto\rc2\build.info" "crypto\rc4\build.info" "crypto\rc5\build.info" "crypto\aria\build.info" "crypto\bf\build.info" "crypto\cast\build.info" "crypto\camellia\build.info" "crypto\seed\build.info" "crypto\sm4\build.info" "crypto\chacha\build.info" "crypto\modes\build.info" "crypto\bn\build.info" "crypto\ec\build.info" "crypto\rsa\build.info" "crypto\dsa\build.info" "crypto\dh\build.info" "crypto\sm2\build.info" "crypto\dso\build.info" "crypto\engine\build.info" "crypto\err\build.info" "crypto\comp\build.info" "crypto\http\build.info" "crypto\ocsp\build.info" "crypto\cms\build.info" "crypto\ts\build.info" "crypto\srp\build.info" "crypto\cmac\build.info" "crypto\ct\build.info" "crypto\async\build.info" "crypto\ess\build.info" "crypto\crmf\build.info" "crypto\cmp\build.info" "crypto\encode_decode\build.info" "crypto\ffc\build.info" "apps\lib\build.info" "providers\common\build.info" "providers\implementations\build.info" "doc\man1\build.info" "providers\common\der\build.info" "providers\implementations\digests\build.info" "providers\implementations\ciphers\build.info" "providers\implementations\rands\build.info" "providers\implementations\macs\build.info" "providers\implementations\kdfs\build.info" "providers\implementations\exchange\build.info" "providers\implementations\keymgmt\build.info" "providers\implementations\signature\build.info" "providers\implementations\asymciphers\build.info" "providers\implementations\encode_decode\build.info" "providers\implementations\storemgmt\build.info" "providers\implementations\kem\build.info" "providers\implementations\rands\seeding\build.info" "Configurations\00-base-templates.conf" "Configurations\10-main.conf"
+configdata.pm: "$(SRCDIR)\Configure" "build.info" "crypto\build.info" "ssl\build.info" "apps\build.info" "util\build.info" "tools\build.info" "fuzz\build.info" "providers\build.info" "doc\build.info" "test\build.info" "engines\build.info" "crypto\objects\build.info" "crypto\buffer\build.info" "crypto\bio\build.info" "crypto\stack\build.info" "crypto\lhash\build.info" "crypto\rand\build.info" "crypto\evp\build.info" "crypto\asn1\build.info" "crypto\pem\build.info" "crypto\x509\build.info" "crypto\conf\build.info" "crypto\txt_db\build.info" "crypto\pkcs7\build.info" "crypto\pkcs12\build.info" "crypto\ui\build.info" "crypto\kdf\build.info" "crypto\store\build.info" "crypto\property\build.info" "crypto\md2\build.info" "crypto\md4\build.info" "crypto\md5\build.info" "crypto\sha\build.info" "crypto\hmac\build.info" "crypto\ripemd\build.info" "crypto\whrlpool\build.info" "crypto\poly1305\build.info" "crypto\siphash\build.info" "crypto\sm3\build.info" "crypto\des\build.info" "crypto\aes\build.info" "crypto\rc2\build.info" "crypto\rc4\build.info" "crypto\rc5\build.info" "crypto\aria\build.info" "crypto\bf\build.info" "crypto\cast\build.info" "crypto\camellia\build.info" "crypto\seed\build.info" "crypto\sm4\build.info" "crypto\chacha\build.info" "crypto\modes\build.info" "crypto\bn\build.info" "crypto\ec\build.info" "crypto\rsa\build.info" "crypto\dsa\build.info" "crypto\dh\build.info" "crypto\sm2\build.info" "crypto\dso\build.info" "crypto\engine\build.info" "crypto\err\build.info" "crypto\comp\build.info" "crypto\http\build.info" "crypto\ocsp\build.info" "crypto\cms\build.info" "crypto\ts\build.info" "crypto\srp\build.info" "crypto\cmac\build.info" "crypto\ct\build.info" "crypto\async\build.info" "crypto\ess\build.info" "crypto\crmf\build.info" "crypto\cmp\build.info" "crypto\encode_decode\build.info" "crypto\ffc\build.info" "apps\lib\build.info" "providers\common\build.info" "providers\implementations\build.info" "providers\fips\build.info" "doc\man1\build.info" "providers\common\der\build.info" "providers\implementations\digests\build.info" "providers\implementations\ciphers\build.info" "providers\implementations\rands\build.info" "providers\implementations\macs\build.info" "providers\implementations\kdfs\build.info" "providers\implementations\exchange\build.info" "providers\implementations\keymgmt\build.info" "providers\implementations\signature\build.info" "providers\implementations\asymciphers\build.info" "providers\implementations\encode_decode\build.info" "providers\implementations\storemgmt\build.info" "providers\implementations\kem\build.info" "providers\implementations\rands\seeding\build.info" "Configurations\00-base-templates.conf" "Configurations\10-main.conf"
 	@$(ECHO) "Detected changed: $?"
 	"$(PERL)" configdata.pm -r
 	@$(ECHO) "**************************************************"
@@ -1682,6 +1697,9 @@ include\openssl\x509v3.h: "include\openssl\x509v3.h.in"  configdata.pm
 	"$(PERL)" "-I." -Mconfigdata "util\dofile.pl" "-omakefile" "include\openssl\x509v3.h.in" > $@
 test\provider_internal_test.cnf: "test\provider_internal_test.cnf.in"  configdata.pm
 	"$(PERL)" "-I." -Mconfigdata "util\dofile.pl" "-omakefile" "test\provider_internal_test.cnf.in" > $@
+build_modules_nodep: providers\fipsmodule.cnf
+providers\fipsmodule.cnf: "util\mk-fipsmodule-cnf.pl" providers\fips.dll
+	"$(PERL)" "util\mk-fipsmodule-cnf.pl" -module $(FIPSMODULE) -section_name fips_sect -key $(FIPSKEY) > $@
 apps\libapps.lib: apps\lib\libapps-lib-app_libctx.obj apps\lib\libapps-lib-app_params.obj apps\lib\libapps-lib-app_provider.obj apps\lib\libapps-lib-app_rand.obj apps\lib\libapps-lib-app_x509.obj apps\lib\libapps-lib-apps.obj apps\lib\libapps-lib-apps_ui.obj apps\lib\libapps-lib-columns.obj apps\lib\libapps-lib-engine.obj apps\lib\libapps-lib-engine_loader.obj apps\lib\libapps-lib-fmt.obj apps\lib\libapps-lib-http_server.obj apps\lib\libapps-lib-names.obj apps\lib\libapps-lib-opt.obj apps\lib\libapps-lib-s_cb.obj apps\lib\libapps-lib-s_socket.obj apps\lib\libapps-lib-tlssrp_depr.obj apps\lib\libapps-lib-win32_init.obj
 	$(AR) $(ARFLAGS) $(AROUTFLAG)apps\libapps.lib @<<
 apps\lib\libapps-lib-app_libctx.obj
@@ -5670,6 +5688,1032 @@ providers\implementations\storemgmt\libdefault-lib-file_store_any2obj.obj: provi
 ssl\libdefault-lib-s3_cbc.obj: ssl\s3_cbc.c
 	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -c $(COUTFLAG)$@ "ssl\s3_cbc.c"
 	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  "ssl\s3_cbc.c" > ssl\libdefault-lib-s3_cbc.d 2>&1"
+providers\libfips.lib: crypto\aes\libfips-lib-aes_cbc.obj crypto\aes\libfips-lib-aes_core.obj crypto\aes\libfips-lib-aes_ecb.obj crypto\aes\libfips-lib-aes_misc.obj crypto\bn\libfips-lib-bn_add.obj crypto\bn\libfips-lib-bn_asm.obj crypto\bn\libfips-lib-bn_blind.obj crypto\bn\libfips-lib-bn_const.obj crypto\bn\libfips-lib-bn_conv.obj crypto\bn\libfips-lib-bn_ctx.obj crypto\bn\libfips-lib-bn_dh.obj crypto\bn\libfips-lib-bn_div.obj crypto\bn\libfips-lib-bn_exp.obj crypto\bn\libfips-lib-bn_exp2.obj crypto\bn\libfips-lib-bn_gcd.obj crypto\bn\libfips-lib-bn_gf2m.obj crypto\bn\libfips-lib-bn_intern.obj crypto\bn\libfips-lib-bn_kron.obj crypto\bn\libfips-lib-bn_lib.obj crypto\bn\libfips-lib-bn_mod.obj crypto\bn\libfips-lib-bn_mont.obj crypto\bn\libfips-lib-bn_mpi.obj crypto\bn\libfips-lib-bn_mul.obj crypto\bn\libfips-lib-bn_nist.obj crypto\bn\libfips-lib-bn_prime.obj crypto\bn\libfips-lib-bn_rand.obj crypto\bn\libfips-lib-bn_recp.obj crypto\bn\libfips-lib-bn_rsa_fips186_4.obj crypto\bn\libfips-lib-bn_shift.obj crypto\bn\libfips-lib-bn_sqr.obj crypto\bn\libfips-lib-bn_sqrt.obj crypto\bn\libfips-lib-bn_word.obj crypto\buffer\libfips-lib-buffer.obj crypto\cmac\libfips-lib-cmac.obj crypto\des\libfips-lib-des_enc.obj crypto\des\libfips-lib-ecb3_enc.obj crypto\des\libfips-lib-fcrypt_b.obj crypto\des\libfips-lib-set_key.obj crypto\dh\libfips-lib-dh_backend.obj crypto\dh\libfips-lib-dh_check.obj crypto\dh\libfips-lib-dh_gen.obj crypto\dh\libfips-lib-dh_group_params.obj crypto\dh\libfips-lib-dh_kdf.obj crypto\dh\libfips-lib-dh_key.obj crypto\dh\libfips-lib-dh_lib.obj crypto\dsa\libfips-lib-dsa_backend.obj crypto\dsa\libfips-lib-dsa_check.obj crypto\dsa\libfips-lib-dsa_gen.obj crypto\dsa\libfips-lib-dsa_key.obj crypto\dsa\libfips-lib-dsa_lib.obj crypto\dsa\libfips-lib-dsa_ossl.obj crypto\dsa\libfips-lib-dsa_sign.obj crypto\dsa\libfips-lib-dsa_vrf.obj crypto\ec\curve448\arch_32\libfips-lib-f_impl32.obj crypto\ec\curve448\arch_64\libfips-lib-f_impl64.obj crypto\ec\curve448\libfips-lib-curve448.obj crypto\ec\curve448\libfips-lib-curve448_tables.obj crypto\ec\curve448\libfips-lib-eddsa.obj crypto\ec\curve448\libfips-lib-f_generic.obj crypto\ec\curve448\libfips-lib-scalar.obj crypto\ec\libfips-lib-curve25519.obj crypto\ec\libfips-lib-ec2_oct.obj crypto\ec\libfips-lib-ec2_smpl.obj crypto\ec\libfips-lib-ec_asn1.obj crypto\ec\libfips-lib-ec_backend.obj crypto\ec\libfips-lib-ec_check.obj crypto\ec\libfips-lib-ec_curve.obj crypto\ec\libfips-lib-ec_cvt.obj crypto\ec\libfips-lib-ec_key.obj crypto\ec\libfips-lib-ec_kmeth.obj crypto\ec\libfips-lib-ec_lib.obj crypto\ec\libfips-lib-ec_mult.obj crypto\ec\libfips-lib-ec_oct.obj crypto\ec\libfips-lib-ecdh_kdf.obj crypto\ec\libfips-lib-ecdh_ossl.obj crypto\ec\libfips-lib-ecdsa_ossl.obj crypto\ec\libfips-lib-ecdsa_sign.obj crypto\ec\libfips-lib-ecdsa_vrf.obj crypto\ec\libfips-lib-ecp_mont.obj crypto\ec\libfips-lib-ecp_nist.obj crypto\ec\libfips-lib-ecp_oct.obj crypto\ec\libfips-lib-ecp_smpl.obj crypto\ec\libfips-lib-ecx_backend.obj crypto\ec\libfips-lib-ecx_key.obj crypto\evp\libfips-lib-asymcipher.obj crypto\evp\libfips-lib-dh_support.obj crypto\evp\libfips-lib-digest.obj crypto\evp\libfips-lib-ec_support.obj crypto\evp\libfips-lib-evp_enc.obj crypto\evp\libfips-lib-evp_fetch.obj crypto\evp\libfips-lib-evp_lib.obj crypto\evp\libfips-lib-evp_rand.obj crypto\evp\libfips-lib-evp_utils.obj crypto\evp\libfips-lib-exchange.obj crypto\evp\libfips-lib-kdf_lib.obj crypto\evp\libfips-lib-kdf_meth.obj crypto\evp\libfips-lib-kem.obj crypto\evp\libfips-lib-keymgmt_lib.obj crypto\evp\libfips-lib-keymgmt_meth.obj crypto\evp\libfips-lib-m_sigver.obj crypto\evp\libfips-lib-mac_lib.obj crypto\evp\libfips-lib-mac_meth.obj crypto\evp\libfips-lib-p_lib.obj crypto\evp\libfips-lib-pmeth_check.obj crypto\evp\libfips-lib-pmeth_gn.obj crypto\evp\libfips-lib-pmeth_lib.obj crypto\evp\libfips-lib-signature.obj crypto\ffc\libfips-lib-ffc_backend.obj crypto\ffc\libfips-lib-ffc_dh.obj crypto\ffc\libfips-lib-ffc_key_generate.obj crypto\ffc\libfips-lib-ffc_key_validate.obj crypto\ffc\libfips-lib-ffc_params.obj crypto\ffc\libfips-lib-ffc_params_generate.obj crypto\ffc\libfips-lib-ffc_params_validate.obj crypto\hmac\libfips-lib-hmac.obj crypto\lhash\libfips-lib-lhash.obj crypto\libfips-lib-asn1_dsa.obj crypto\libfips-lib-bsearch.obj crypto\libfips-lib-context.obj crypto\libfips-lib-core_algorithm.obj crypto\libfips-lib-core_fetch.obj crypto\libfips-lib-core_namemap.obj crypto\libfips-lib-cpuid.obj crypto\libfips-lib-cryptlib.obj crypto\libfips-lib-ctype.obj crypto\libfips-lib-der_writer.obj crypto\libfips-lib-ex_data.obj crypto\libfips-lib-initthread.obj crypto\libfips-lib-mem_clr.obj crypto\libfips-lib-o_str.obj crypto\libfips-lib-packet.obj crypto\libfips-lib-param_build.obj crypto\libfips-lib-param_build_set.obj crypto\libfips-lib-params.obj crypto\libfips-lib-params_dup.obj crypto\libfips-lib-params_from_text.obj crypto\libfips-lib-provider_core.obj crypto\libfips-lib-provider_predefined.obj crypto\libfips-lib-self_test_core.obj crypto\libfips-lib-sparse_array.obj crypto\libfips-lib-threads_lib.obj crypto\libfips-lib-threads_none.obj crypto\libfips-lib-threads_pthread.obj crypto\libfips-lib-threads_win.obj crypto\modes\libfips-lib-cbc128.obj crypto\modes\libfips-lib-ccm128.obj crypto\modes\libfips-lib-cfb128.obj crypto\modes\libfips-lib-ctr128.obj crypto\modes\libfips-lib-gcm128.obj crypto\modes\libfips-lib-ofb128.obj crypto\modes\libfips-lib-wrap128.obj crypto\modes\libfips-lib-xts128.obj crypto\property\libfips-lib-defn_cache.obj crypto\property\libfips-lib-property.obj crypto\property\libfips-lib-property_parse.obj crypto\property\libfips-lib-property_query.obj crypto\property\libfips-lib-property_string.obj crypto\rand\libfips-lib-rand_lib.obj crypto\rsa\libfips-lib-rsa_acvp_test_params.obj crypto\rsa\libfips-lib-rsa_backend.obj crypto\rsa\libfips-lib-rsa_chk.obj crypto\rsa\libfips-lib-rsa_crpt.obj crypto\rsa\libfips-lib-rsa_gen.obj crypto\rsa\libfips-lib-rsa_lib.obj crypto\rsa\libfips-lib-rsa_mp_names.obj crypto\rsa\libfips-lib-rsa_none.obj crypto\rsa\libfips-lib-rsa_oaep.obj crypto\rsa\libfips-lib-rsa_ossl.obj crypto\rsa\libfips-lib-rsa_pk1.obj crypto\rsa\libfips-lib-rsa_pss.obj crypto\rsa\libfips-lib-rsa_schemes.obj crypto\rsa\libfips-lib-rsa_sign.obj crypto\rsa\libfips-lib-rsa_sp800_56b_check.obj crypto\rsa\libfips-lib-rsa_sp800_56b_gen.obj crypto\rsa\libfips-lib-rsa_x931.obj crypto\sha\libfips-lib-keccak1600.obj crypto\sha\libfips-lib-sha1dgst.obj crypto\sha\libfips-lib-sha256.obj crypto\sha\libfips-lib-sha3.obj crypto\sha\libfips-lib-sha512.obj crypto\stack\libfips-lib-stack.obj providers\common\der\libfips-lib-der_rsa_sig.obj providers\common\libfips-lib-bio_prov.obj providers\common\libfips-lib-capabilities.obj providers\common\libfips-lib-digest_to_nid.obj providers\common\libfips-lib-provider_seeding.obj providers\common\libfips-lib-provider_util.obj providers\common\libfips-lib-securitycheck.obj providers\common\libfips-lib-securitycheck_fips.obj providers\fips\libfips-lib-fipsprov.obj providers\fips\libfips-lib-self_test.obj providers\fips\libfips-lib-self_test_kats.obj providers\implementations\asymciphers\libfips-lib-rsa_enc.obj providers\implementations\ciphers\libfips-lib-cipher_aes.obj providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.obj providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.obj providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.obj providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.obj providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.obj providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.obj providers\implementations\ciphers\libfips-lib-cipher_aes_xts.obj providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.obj providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.obj providers\implementations\ciphers\libfips-lib-cipher_cts.obj providers\implementations\ciphers\libfips-lib-cipher_tdes.obj providers\implementations\ciphers\libfips-lib-cipher_tdes_common.obj providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.obj providers\implementations\digests\libfips-lib-sha2_prov.obj providers\implementations\digests\libfips-lib-sha3_prov.obj providers\implementations\exchange\libfips-lib-dh_exch.obj providers\implementations\exchange\libfips-lib-ecdh_exch.obj providers\implementations\exchange\libfips-lib-ecx_exch.obj providers\implementations\exchange\libfips-lib-kdf_exch.obj providers\implementations\kdfs\libfips-lib-hkdf.obj providers\implementations\kdfs\libfips-lib-kbkdf.obj providers\implementations\kdfs\libfips-lib-pbkdf2.obj providers\implementations\kdfs\libfips-lib-pbkdf2_fips.obj providers\implementations\kdfs\libfips-lib-sshkdf.obj providers\implementations\kdfs\libfips-lib-sskdf.obj providers\implementations\kdfs\libfips-lib-tls1_prf.obj providers\implementations\kdfs\libfips-lib-x942kdf.obj providers\implementations\kem\libfips-lib-rsa_kem.obj providers\implementations\keymgmt\libfips-lib-dh_kmgmt.obj providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.obj providers\implementations\keymgmt\libfips-lib-ec_kmgmt.obj providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.obj providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.obj providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.obj providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.obj providers\implementations\macs\libfips-lib-cmac_prov.obj providers\implementations\macs\libfips-lib-gmac_prov.obj providers\implementations\macs\libfips-lib-hmac_prov.obj providers\implementations\macs\libfips-lib-kmac_prov.obj providers\implementations\rands\libfips-lib-crngt.obj providers\implementations\rands\libfips-lib-drbg.obj providers\implementations\rands\libfips-lib-drbg_ctr.obj providers\implementations\rands\libfips-lib-drbg_hash.obj providers\implementations\rands\libfips-lib-drbg_hmac.obj providers\implementations\rands\libfips-lib-test_rng.obj providers\implementations\signature\libfips-lib-dsa_sig.obj providers\implementations\signature\libfips-lib-ecdsa_sig.obj providers\implementations\signature\libfips-lib-eddsa_sig.obj providers\implementations\signature\libfips-lib-mac_legacy_sig.obj providers\implementations\signature\libfips-lib-rsa_sig.obj ssl\libfips-lib-s3_cbc.obj providers\common\der\libcommon-lib-der_digests_gen.obj providers\common\der\libcommon-lib-der_dsa_gen.obj providers\common\der\libcommon-lib-der_dsa_key.obj providers\common\der\libcommon-lib-der_dsa_sig.obj providers\common\der\libcommon-lib-der_ec_gen.obj providers\common\der\libcommon-lib-der_ec_key.obj providers\common\der\libcommon-lib-der_ec_sig.obj providers\common\der\libcommon-lib-der_ecx_gen.obj providers\common\der\libcommon-lib-der_ecx_key.obj providers\common\der\libcommon-lib-der_rsa_gen.obj providers\common\der\libcommon-lib-der_rsa_key.obj providers\common\der\libcommon-lib-der_wrap_gen.obj providers\common\libcommon-lib-provider_ctx.obj providers\common\libcommon-lib-provider_err.obj providers\implementations\ciphers\libcommon-lib-ciphercommon.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_block.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm_hw.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm_hw.obj providers\implementations\ciphers\libcommon-lib-ciphercommon_hw.obj providers\implementations\digests\libcommon-lib-digestcommon.obj ssl\record\libcommon-lib-tls_pad.obj
+	$(AR) $(ARFLAGS) $(AROUTFLAG)providers\libfips.lib @<<
+crypto\aes\libfips-lib-aes_cbc.obj
+crypto\aes\libfips-lib-aes_core.obj
+crypto\aes\libfips-lib-aes_ecb.obj
+crypto\aes\libfips-lib-aes_misc.obj
+crypto\bn\libfips-lib-bn_add.obj
+crypto\bn\libfips-lib-bn_asm.obj
+crypto\bn\libfips-lib-bn_blind.obj
+crypto\bn\libfips-lib-bn_const.obj
+crypto\bn\libfips-lib-bn_conv.obj
+crypto\bn\libfips-lib-bn_ctx.obj
+crypto\bn\libfips-lib-bn_dh.obj
+crypto\bn\libfips-lib-bn_div.obj
+crypto\bn\libfips-lib-bn_exp.obj
+crypto\bn\libfips-lib-bn_exp2.obj
+crypto\bn\libfips-lib-bn_gcd.obj
+crypto\bn\libfips-lib-bn_gf2m.obj
+crypto\bn\libfips-lib-bn_intern.obj
+crypto\bn\libfips-lib-bn_kron.obj
+crypto\bn\libfips-lib-bn_lib.obj
+crypto\bn\libfips-lib-bn_mod.obj
+crypto\bn\libfips-lib-bn_mont.obj
+crypto\bn\libfips-lib-bn_mpi.obj
+crypto\bn\libfips-lib-bn_mul.obj
+crypto\bn\libfips-lib-bn_nist.obj
+crypto\bn\libfips-lib-bn_prime.obj
+crypto\bn\libfips-lib-bn_rand.obj
+crypto\bn\libfips-lib-bn_recp.obj
+crypto\bn\libfips-lib-bn_rsa_fips186_4.obj
+crypto\bn\libfips-lib-bn_shift.obj
+crypto\bn\libfips-lib-bn_sqr.obj
+crypto\bn\libfips-lib-bn_sqrt.obj
+crypto\bn\libfips-lib-bn_word.obj
+crypto\buffer\libfips-lib-buffer.obj
+crypto\cmac\libfips-lib-cmac.obj
+crypto\des\libfips-lib-des_enc.obj
+crypto\des\libfips-lib-ecb3_enc.obj
+crypto\des\libfips-lib-fcrypt_b.obj
+crypto\des\libfips-lib-set_key.obj
+crypto\dh\libfips-lib-dh_backend.obj
+crypto\dh\libfips-lib-dh_check.obj
+crypto\dh\libfips-lib-dh_gen.obj
+crypto\dh\libfips-lib-dh_group_params.obj
+crypto\dh\libfips-lib-dh_kdf.obj
+crypto\dh\libfips-lib-dh_key.obj
+crypto\dh\libfips-lib-dh_lib.obj
+crypto\dsa\libfips-lib-dsa_backend.obj
+crypto\dsa\libfips-lib-dsa_check.obj
+crypto\dsa\libfips-lib-dsa_gen.obj
+crypto\dsa\libfips-lib-dsa_key.obj
+crypto\dsa\libfips-lib-dsa_lib.obj
+crypto\dsa\libfips-lib-dsa_ossl.obj
+crypto\dsa\libfips-lib-dsa_sign.obj
+crypto\dsa\libfips-lib-dsa_vrf.obj
+crypto\ec\curve448\arch_32\libfips-lib-f_impl32.obj
+crypto\ec\curve448\arch_64\libfips-lib-f_impl64.obj
+crypto\ec\curve448\libfips-lib-curve448.obj
+crypto\ec\curve448\libfips-lib-curve448_tables.obj
+crypto\ec\curve448\libfips-lib-eddsa.obj
+crypto\ec\curve448\libfips-lib-f_generic.obj
+crypto\ec\curve448\libfips-lib-scalar.obj
+crypto\ec\libfips-lib-curve25519.obj
+crypto\ec\libfips-lib-ec2_oct.obj
+crypto\ec\libfips-lib-ec2_smpl.obj
+crypto\ec\libfips-lib-ec_asn1.obj
+crypto\ec\libfips-lib-ec_backend.obj
+crypto\ec\libfips-lib-ec_check.obj
+crypto\ec\libfips-lib-ec_curve.obj
+crypto\ec\libfips-lib-ec_cvt.obj
+crypto\ec\libfips-lib-ec_key.obj
+crypto\ec\libfips-lib-ec_kmeth.obj
+crypto\ec\libfips-lib-ec_lib.obj
+crypto\ec\libfips-lib-ec_mult.obj
+crypto\ec\libfips-lib-ec_oct.obj
+crypto\ec\libfips-lib-ecdh_kdf.obj
+crypto\ec\libfips-lib-ecdh_ossl.obj
+crypto\ec\libfips-lib-ecdsa_ossl.obj
+crypto\ec\libfips-lib-ecdsa_sign.obj
+crypto\ec\libfips-lib-ecdsa_vrf.obj
+crypto\ec\libfips-lib-ecp_mont.obj
+crypto\ec\libfips-lib-ecp_nist.obj
+crypto\ec\libfips-lib-ecp_oct.obj
+crypto\ec\libfips-lib-ecp_smpl.obj
+crypto\ec\libfips-lib-ecx_backend.obj
+crypto\ec\libfips-lib-ecx_key.obj
+crypto\evp\libfips-lib-asymcipher.obj
+crypto\evp\libfips-lib-dh_support.obj
+crypto\evp\libfips-lib-digest.obj
+crypto\evp\libfips-lib-ec_support.obj
+crypto\evp\libfips-lib-evp_enc.obj
+crypto\evp\libfips-lib-evp_fetch.obj
+crypto\evp\libfips-lib-evp_lib.obj
+crypto\evp\libfips-lib-evp_rand.obj
+crypto\evp\libfips-lib-evp_utils.obj
+crypto\evp\libfips-lib-exchange.obj
+crypto\evp\libfips-lib-kdf_lib.obj
+crypto\evp\libfips-lib-kdf_meth.obj
+crypto\evp\libfips-lib-kem.obj
+crypto\evp\libfips-lib-keymgmt_lib.obj
+crypto\evp\libfips-lib-keymgmt_meth.obj
+crypto\evp\libfips-lib-m_sigver.obj
+crypto\evp\libfips-lib-mac_lib.obj
+crypto\evp\libfips-lib-mac_meth.obj
+crypto\evp\libfips-lib-p_lib.obj
+crypto\evp\libfips-lib-pmeth_check.obj
+crypto\evp\libfips-lib-pmeth_gn.obj
+crypto\evp\libfips-lib-pmeth_lib.obj
+crypto\evp\libfips-lib-signature.obj
+crypto\ffc\libfips-lib-ffc_backend.obj
+crypto\ffc\libfips-lib-ffc_dh.obj
+crypto\ffc\libfips-lib-ffc_key_generate.obj
+crypto\ffc\libfips-lib-ffc_key_validate.obj
+crypto\ffc\libfips-lib-ffc_params.obj
+crypto\ffc\libfips-lib-ffc_params_generate.obj
+crypto\ffc\libfips-lib-ffc_params_validate.obj
+crypto\hmac\libfips-lib-hmac.obj
+crypto\lhash\libfips-lib-lhash.obj
+crypto\libfips-lib-asn1_dsa.obj
+crypto\libfips-lib-bsearch.obj
+crypto\libfips-lib-context.obj
+crypto\libfips-lib-core_algorithm.obj
+crypto\libfips-lib-core_fetch.obj
+crypto\libfips-lib-core_namemap.obj
+crypto\libfips-lib-cpuid.obj
+crypto\libfips-lib-cryptlib.obj
+crypto\libfips-lib-ctype.obj
+crypto\libfips-lib-der_writer.obj
+crypto\libfips-lib-ex_data.obj
+crypto\libfips-lib-initthread.obj
+crypto\libfips-lib-mem_clr.obj
+crypto\libfips-lib-o_str.obj
+crypto\libfips-lib-packet.obj
+crypto\libfips-lib-param_build.obj
+crypto\libfips-lib-param_build_set.obj
+crypto\libfips-lib-params.obj
+crypto\libfips-lib-params_dup.obj
+crypto\libfips-lib-params_from_text.obj
+crypto\libfips-lib-provider_core.obj
+crypto\libfips-lib-provider_predefined.obj
+crypto\libfips-lib-self_test_core.obj
+crypto\libfips-lib-sparse_array.obj
+crypto\libfips-lib-threads_lib.obj
+crypto\libfips-lib-threads_none.obj
+crypto\libfips-lib-threads_pthread.obj
+crypto\libfips-lib-threads_win.obj
+crypto\modes\libfips-lib-cbc128.obj
+crypto\modes\libfips-lib-ccm128.obj
+crypto\modes\libfips-lib-cfb128.obj
+crypto\modes\libfips-lib-ctr128.obj
+crypto\modes\libfips-lib-gcm128.obj
+crypto\modes\libfips-lib-ofb128.obj
+crypto\modes\libfips-lib-wrap128.obj
+crypto\modes\libfips-lib-xts128.obj
+crypto\property\libfips-lib-defn_cache.obj
+crypto\property\libfips-lib-property.obj
+crypto\property\libfips-lib-property_parse.obj
+crypto\property\libfips-lib-property_query.obj
+crypto\property\libfips-lib-property_string.obj
+crypto\rand\libfips-lib-rand_lib.obj
+crypto\rsa\libfips-lib-rsa_acvp_test_params.obj
+crypto\rsa\libfips-lib-rsa_backend.obj
+crypto\rsa\libfips-lib-rsa_chk.obj
+crypto\rsa\libfips-lib-rsa_crpt.obj
+crypto\rsa\libfips-lib-rsa_gen.obj
+crypto\rsa\libfips-lib-rsa_lib.obj
+crypto\rsa\libfips-lib-rsa_mp_names.obj
+crypto\rsa\libfips-lib-rsa_none.obj
+crypto\rsa\libfips-lib-rsa_oaep.obj
+crypto\rsa\libfips-lib-rsa_ossl.obj
+crypto\rsa\libfips-lib-rsa_pk1.obj
+crypto\rsa\libfips-lib-rsa_pss.obj
+crypto\rsa\libfips-lib-rsa_schemes.obj
+crypto\rsa\libfips-lib-rsa_sign.obj
+crypto\rsa\libfips-lib-rsa_sp800_56b_check.obj
+crypto\rsa\libfips-lib-rsa_sp800_56b_gen.obj
+crypto\rsa\libfips-lib-rsa_x931.obj
+crypto\sha\libfips-lib-keccak1600.obj
+crypto\sha\libfips-lib-sha1dgst.obj
+crypto\sha\libfips-lib-sha256.obj
+crypto\sha\libfips-lib-sha3.obj
+crypto\sha\libfips-lib-sha512.obj
+crypto\stack\libfips-lib-stack.obj
+providers\common\der\libfips-lib-der_rsa_sig.obj
+providers\common\libfips-lib-bio_prov.obj
+providers\common\libfips-lib-capabilities.obj
+providers\common\libfips-lib-digest_to_nid.obj
+providers\common\libfips-lib-provider_seeding.obj
+providers\common\libfips-lib-provider_util.obj
+providers\common\libfips-lib-securitycheck.obj
+providers\common\libfips-lib-securitycheck_fips.obj
+providers\fips\libfips-lib-fipsprov.obj
+providers\fips\libfips-lib-self_test.obj
+providers\fips\libfips-lib-self_test_kats.obj
+providers\implementations\asymciphers\libfips-lib-rsa_enc.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.obj
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.obj
+providers\implementations\ciphers\libfips-lib-cipher_cts.obj
+providers\implementations\ciphers\libfips-lib-cipher_tdes.obj
+providers\implementations\ciphers\libfips-lib-cipher_tdes_common.obj
+providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.obj
+providers\implementations\digests\libfips-lib-sha2_prov.obj
+providers\implementations\digests\libfips-lib-sha3_prov.obj
+providers\implementations\exchange\libfips-lib-dh_exch.obj
+providers\implementations\exchange\libfips-lib-ecdh_exch.obj
+providers\implementations\exchange\libfips-lib-ecx_exch.obj
+providers\implementations\exchange\libfips-lib-kdf_exch.obj
+providers\implementations\kdfs\libfips-lib-hkdf.obj
+providers\implementations\kdfs\libfips-lib-kbkdf.obj
+providers\implementations\kdfs\libfips-lib-pbkdf2.obj
+providers\implementations\kdfs\libfips-lib-pbkdf2_fips.obj
+providers\implementations\kdfs\libfips-lib-sshkdf.obj
+providers\implementations\kdfs\libfips-lib-sskdf.obj
+providers\implementations\kdfs\libfips-lib-tls1_prf.obj
+providers\implementations\kdfs\libfips-lib-x942kdf.obj
+providers\implementations\kem\libfips-lib-rsa_kem.obj
+providers\implementations\keymgmt\libfips-lib-dh_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-ec_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.obj
+providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.obj
+providers\implementations\macs\libfips-lib-cmac_prov.obj
+providers\implementations\macs\libfips-lib-gmac_prov.obj
+providers\implementations\macs\libfips-lib-hmac_prov.obj
+providers\implementations\macs\libfips-lib-kmac_prov.obj
+providers\implementations\rands\libfips-lib-crngt.obj
+providers\implementations\rands\libfips-lib-drbg.obj
+providers\implementations\rands\libfips-lib-drbg_ctr.obj
+providers\implementations\rands\libfips-lib-drbg_hash.obj
+providers\implementations\rands\libfips-lib-drbg_hmac.obj
+providers\implementations\rands\libfips-lib-test_rng.obj
+providers\implementations\signature\libfips-lib-dsa_sig.obj
+providers\implementations\signature\libfips-lib-ecdsa_sig.obj
+providers\implementations\signature\libfips-lib-eddsa_sig.obj
+providers\implementations\signature\libfips-lib-mac_legacy_sig.obj
+providers\implementations\signature\libfips-lib-rsa_sig.obj
+ssl\libfips-lib-s3_cbc.obj
+providers\common\der\libcommon-lib-der_digests_gen.obj
+providers\common\der\libcommon-lib-der_dsa_gen.obj
+providers\common\der\libcommon-lib-der_dsa_key.obj
+providers\common\der\libcommon-lib-der_dsa_sig.obj
+providers\common\der\libcommon-lib-der_ec_gen.obj
+providers\common\der\libcommon-lib-der_ec_key.obj
+providers\common\der\libcommon-lib-der_ec_sig.obj
+providers\common\der\libcommon-lib-der_ecx_gen.obj
+providers\common\der\libcommon-lib-der_ecx_key.obj
+providers\common\der\libcommon-lib-der_rsa_gen.obj
+providers\common\der\libcommon-lib-der_rsa_key.obj
+providers\common\der\libcommon-lib-der_wrap_gen.obj
+providers\common\libcommon-lib-provider_ctx.obj
+providers\common\libcommon-lib-provider_err.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_block.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_ccm_hw.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_gcm_hw.obj
+providers\implementations\ciphers\libcommon-lib-ciphercommon_hw.obj
+providers\implementations\digests\libcommon-lib-digestcommon.obj
+ssl\record\libcommon-lib-tls_pad.obj
+<<
+crypto\aes\libfips-lib-aes_cbc.obj: crypto\aes\aes_cbc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\aes\aes_cbc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\aes\aes_cbc.c" > crypto\aes\libfips-lib-aes_cbc.d 2>&1"
+crypto\aes\libfips-lib-aes_core.obj: crypto\aes\aes_core.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\aes\aes_core.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\aes\aes_core.c" > crypto\aes\libfips-lib-aes_core.d 2>&1"
+crypto\aes\libfips-lib-aes_ecb.obj: crypto\aes\aes_ecb.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\aes\aes_ecb.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\aes\aes_ecb.c" > crypto\aes\libfips-lib-aes_ecb.d 2>&1"
+crypto\aes\libfips-lib-aes_misc.obj: crypto\aes\aes_misc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\aes\aes_misc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\aes\aes_misc.c" > crypto\aes\libfips-lib-aes_misc.d 2>&1"
+crypto\bn\libfips-lib-bn_add.obj: crypto\bn\bn_add.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_add.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_add.c" > crypto\bn\libfips-lib-bn_add.d 2>&1"
+crypto\bn\libfips-lib-bn_asm.obj: crypto\bn\bn_asm.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_asm.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_asm.c" > crypto\bn\libfips-lib-bn_asm.d 2>&1"
+crypto\bn\libfips-lib-bn_blind.obj: crypto\bn\bn_blind.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_blind.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_blind.c" > crypto\bn\libfips-lib-bn_blind.d 2>&1"
+crypto\bn\libfips-lib-bn_const.obj: crypto\bn\bn_const.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_const.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_const.c" > crypto\bn\libfips-lib-bn_const.d 2>&1"
+crypto\bn\libfips-lib-bn_conv.obj: crypto\bn\bn_conv.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_conv.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_conv.c" > crypto\bn\libfips-lib-bn_conv.d 2>&1"
+crypto\bn\libfips-lib-bn_ctx.obj: crypto\bn\bn_ctx.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_ctx.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_ctx.c" > crypto\bn\libfips-lib-bn_ctx.d 2>&1"
+crypto\bn\libfips-lib-bn_dh.obj: crypto\bn\bn_dh.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_dh.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_dh.c" > crypto\bn\libfips-lib-bn_dh.d 2>&1"
+crypto\bn\libfips-lib-bn_div.obj: crypto\bn\bn_div.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_div.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_div.c" > crypto\bn\libfips-lib-bn_div.d 2>&1"
+crypto\bn\libfips-lib-bn_exp.obj: crypto\bn\bn_exp.c
+	$(CC)  $(LIB_CFLAGS) -I"crypto" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_exp.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"crypto" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_exp.c" > crypto\bn\libfips-lib-bn_exp.d 2>&1"
+crypto\bn\libfips-lib-bn_exp2.obj: crypto\bn\bn_exp2.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_exp2.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_exp2.c" > crypto\bn\libfips-lib-bn_exp2.d 2>&1"
+crypto\bn\libfips-lib-bn_gcd.obj: crypto\bn\bn_gcd.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_gcd.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_gcd.c" > crypto\bn\libfips-lib-bn_gcd.d 2>&1"
+crypto\bn\libfips-lib-bn_gf2m.obj: crypto\bn\bn_gf2m.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_gf2m.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_gf2m.c" > crypto\bn\libfips-lib-bn_gf2m.d 2>&1"
+crypto\bn\libfips-lib-bn_intern.obj: crypto\bn\bn_intern.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_intern.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_intern.c" > crypto\bn\libfips-lib-bn_intern.d 2>&1"
+crypto\bn\libfips-lib-bn_kron.obj: crypto\bn\bn_kron.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_kron.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_kron.c" > crypto\bn\libfips-lib-bn_kron.d 2>&1"
+crypto\bn\libfips-lib-bn_lib.obj: crypto\bn\bn_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_lib.c" > crypto\bn\libfips-lib-bn_lib.d 2>&1"
+crypto\bn\libfips-lib-bn_mod.obj: crypto\bn\bn_mod.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_mod.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_mod.c" > crypto\bn\libfips-lib-bn_mod.d 2>&1"
+crypto\bn\libfips-lib-bn_mont.obj: crypto\bn\bn_mont.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_mont.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_mont.c" > crypto\bn\libfips-lib-bn_mont.d 2>&1"
+crypto\bn\libfips-lib-bn_mpi.obj: crypto\bn\bn_mpi.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_mpi.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_mpi.c" > crypto\bn\libfips-lib-bn_mpi.d 2>&1"
+crypto\bn\libfips-lib-bn_mul.obj: crypto\bn\bn_mul.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_mul.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_mul.c" > crypto\bn\libfips-lib-bn_mul.d 2>&1"
+crypto\bn\libfips-lib-bn_nist.obj: crypto\bn\bn_nist.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_nist.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_nist.c" > crypto\bn\libfips-lib-bn_nist.d 2>&1"
+crypto\bn\libfips-lib-bn_prime.obj: crypto\bn\bn_prime.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_prime.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_prime.c" > crypto\bn\libfips-lib-bn_prime.d 2>&1"
+crypto\bn\libfips-lib-bn_rand.obj: crypto\bn\bn_rand.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_rand.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_rand.c" > crypto\bn\libfips-lib-bn_rand.d 2>&1"
+crypto\bn\libfips-lib-bn_recp.obj: crypto\bn\bn_recp.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_recp.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_recp.c" > crypto\bn\libfips-lib-bn_recp.d 2>&1"
+crypto\bn\libfips-lib-bn_rsa_fips186_4.obj: crypto\bn\bn_rsa_fips186_4.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_rsa_fips186_4.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_rsa_fips186_4.c" > crypto\bn\libfips-lib-bn_rsa_fips186_4.d 2>&1"
+crypto\bn\libfips-lib-bn_shift.obj: crypto\bn\bn_shift.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_shift.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_shift.c" > crypto\bn\libfips-lib-bn_shift.d 2>&1"
+crypto\bn\libfips-lib-bn_sqr.obj: crypto\bn\bn_sqr.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_sqr.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_sqr.c" > crypto\bn\libfips-lib-bn_sqr.d 2>&1"
+crypto\bn\libfips-lib-bn_sqrt.obj: crypto\bn\bn_sqrt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_sqrt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_sqrt.c" > crypto\bn\libfips-lib-bn_sqrt.d 2>&1"
+crypto\bn\libfips-lib-bn_word.obj: crypto\bn\bn_word.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bn\bn_word.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bn\bn_word.c" > crypto\bn\libfips-lib-bn_word.d 2>&1"
+crypto\buffer\libfips-lib-buffer.obj: crypto\buffer\buffer.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\buffer\buffer.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\buffer\buffer.c" > crypto\buffer\libfips-lib-buffer.d 2>&1"
+crypto\cmac\libfips-lib-cmac.obj: crypto\cmac\cmac.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\cmac\cmac.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\cmac\cmac.c" > crypto\cmac\libfips-lib-cmac.d 2>&1"
+crypto\des\libfips-lib-des_enc.obj: crypto\des\des_enc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\des\des_enc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\des\des_enc.c" > crypto\des\libfips-lib-des_enc.d 2>&1"
+crypto\des\libfips-lib-ecb3_enc.obj: crypto\des\ecb3_enc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\des\ecb3_enc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\des\ecb3_enc.c" > crypto\des\libfips-lib-ecb3_enc.d 2>&1"
+crypto\des\libfips-lib-fcrypt_b.obj: crypto\des\fcrypt_b.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\des\fcrypt_b.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\des\fcrypt_b.c" > crypto\des\libfips-lib-fcrypt_b.d 2>&1"
+crypto\des\libfips-lib-set_key.obj: crypto\des\set_key.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\des\set_key.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\des\set_key.c" > crypto\des\libfips-lib-set_key.d 2>&1"
+crypto\dh\libfips-lib-dh_backend.obj: crypto\dh\dh_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_backend.c" > crypto\dh\libfips-lib-dh_backend.d 2>&1"
+crypto\dh\libfips-lib-dh_check.obj: crypto\dh\dh_check.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_check.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_check.c" > crypto\dh\libfips-lib-dh_check.d 2>&1"
+crypto\dh\libfips-lib-dh_gen.obj: crypto\dh\dh_gen.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_gen.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_gen.c" > crypto\dh\libfips-lib-dh_gen.d 2>&1"
+crypto\dh\libfips-lib-dh_group_params.obj: crypto\dh\dh_group_params.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_group_params.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_group_params.c" > crypto\dh\libfips-lib-dh_group_params.d 2>&1"
+crypto\dh\libfips-lib-dh_kdf.obj: crypto\dh\dh_kdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_kdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_kdf.c" > crypto\dh\libfips-lib-dh_kdf.d 2>&1"
+crypto\dh\libfips-lib-dh_key.obj: crypto\dh\dh_key.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_key.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_key.c" > crypto\dh\libfips-lib-dh_key.d 2>&1"
+crypto\dh\libfips-lib-dh_lib.obj: crypto\dh\dh_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dh\dh_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dh\dh_lib.c" > crypto\dh\libfips-lib-dh_lib.d 2>&1"
+crypto\dsa\libfips-lib-dsa_backend.obj: crypto\dsa\dsa_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_backend.c" > crypto\dsa\libfips-lib-dsa_backend.d 2>&1"
+crypto\dsa\libfips-lib-dsa_check.obj: crypto\dsa\dsa_check.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_check.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_check.c" > crypto\dsa\libfips-lib-dsa_check.d 2>&1"
+crypto\dsa\libfips-lib-dsa_gen.obj: crypto\dsa\dsa_gen.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_gen.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_gen.c" > crypto\dsa\libfips-lib-dsa_gen.d 2>&1"
+crypto\dsa\libfips-lib-dsa_key.obj: crypto\dsa\dsa_key.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_key.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_key.c" > crypto\dsa\libfips-lib-dsa_key.d 2>&1"
+crypto\dsa\libfips-lib-dsa_lib.obj: crypto\dsa\dsa_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_lib.c" > crypto\dsa\libfips-lib-dsa_lib.d 2>&1"
+crypto\dsa\libfips-lib-dsa_ossl.obj: crypto\dsa\dsa_ossl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_ossl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_ossl.c" > crypto\dsa\libfips-lib-dsa_ossl.d 2>&1"
+crypto\dsa\libfips-lib-dsa_sign.obj: crypto\dsa\dsa_sign.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_sign.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_sign.c" > crypto\dsa\libfips-lib-dsa_sign.d 2>&1"
+crypto\dsa\libfips-lib-dsa_vrf.obj: crypto\dsa\dsa_vrf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\dsa\dsa_vrf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\dsa\dsa_vrf.c" > crypto\dsa\libfips-lib-dsa_vrf.d 2>&1"
+crypto\ec\curve448\arch_32\libfips-lib-f_impl32.obj: crypto\ec\curve448\arch_32\f_impl32.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\arch_32\f_impl32.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\arch_32\f_impl32.c" > crypto\ec\curve448\arch_32\libfips-lib-f_impl32.d 2>&1"
+crypto\ec\curve448\arch_64\libfips-lib-f_impl64.obj: crypto\ec\curve448\arch_64\f_impl64.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\arch_64\f_impl64.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\arch_64\f_impl64.c" > crypto\ec\curve448\arch_64\libfips-lib-f_impl64.d 2>&1"
+crypto\ec\curve448\libfips-lib-curve448.obj: crypto\ec\curve448\curve448.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\curve448.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\curve448.c" > crypto\ec\curve448\libfips-lib-curve448.d 2>&1"
+crypto\ec\curve448\libfips-lib-curve448_tables.obj: crypto\ec\curve448\curve448_tables.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\curve448_tables.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\curve448_tables.c" > crypto\ec\curve448\libfips-lib-curve448_tables.d 2>&1"
+crypto\ec\curve448\libfips-lib-eddsa.obj: crypto\ec\curve448\eddsa.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\eddsa.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\eddsa.c" > crypto\ec\curve448\libfips-lib-eddsa.d 2>&1"
+crypto\ec\curve448\libfips-lib-f_generic.obj: crypto\ec\curve448\f_generic.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\f_generic.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\f_generic.c" > crypto\ec\curve448\libfips-lib-f_generic.d 2>&1"
+crypto\ec\curve448\libfips-lib-scalar.obj: crypto\ec\curve448\scalar.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve448\scalar.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve448\scalar.c" > crypto\ec\curve448\libfips-lib-scalar.d 2>&1"
+crypto\ec\libfips-lib-curve25519.obj: crypto\ec\curve25519.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\curve25519.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\curve25519.c" > crypto\ec\libfips-lib-curve25519.d 2>&1"
+crypto\ec\libfips-lib-ec2_oct.obj: crypto\ec\ec2_oct.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec2_oct.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec2_oct.c" > crypto\ec\libfips-lib-ec2_oct.d 2>&1"
+crypto\ec\libfips-lib-ec2_smpl.obj: crypto\ec\ec2_smpl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec2_smpl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec2_smpl.c" > crypto\ec\libfips-lib-ec2_smpl.d 2>&1"
+crypto\ec\libfips-lib-ec_asn1.obj: crypto\ec\ec_asn1.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_asn1.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_asn1.c" > crypto\ec\libfips-lib-ec_asn1.d 2>&1"
+crypto\ec\libfips-lib-ec_backend.obj: crypto\ec\ec_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_backend.c" > crypto\ec\libfips-lib-ec_backend.d 2>&1"
+crypto\ec\libfips-lib-ec_check.obj: crypto\ec\ec_check.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_check.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_check.c" > crypto\ec\libfips-lib-ec_check.d 2>&1"
+crypto\ec\libfips-lib-ec_curve.obj: crypto\ec\ec_curve.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_curve.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_curve.c" > crypto\ec\libfips-lib-ec_curve.d 2>&1"
+crypto\ec\libfips-lib-ec_cvt.obj: crypto\ec\ec_cvt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_cvt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_cvt.c" > crypto\ec\libfips-lib-ec_cvt.d 2>&1"
+crypto\ec\libfips-lib-ec_key.obj: crypto\ec\ec_key.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_key.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_key.c" > crypto\ec\libfips-lib-ec_key.d 2>&1"
+crypto\ec\libfips-lib-ec_kmeth.obj: crypto\ec\ec_kmeth.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_kmeth.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_kmeth.c" > crypto\ec\libfips-lib-ec_kmeth.d 2>&1"
+crypto\ec\libfips-lib-ec_lib.obj: crypto\ec\ec_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_lib.c" > crypto\ec\libfips-lib-ec_lib.d 2>&1"
+crypto\ec\libfips-lib-ec_mult.obj: crypto\ec\ec_mult.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_mult.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_mult.c" > crypto\ec\libfips-lib-ec_mult.d 2>&1"
+crypto\ec\libfips-lib-ec_oct.obj: crypto\ec\ec_oct.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ec_oct.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ec_oct.c" > crypto\ec\libfips-lib-ec_oct.d 2>&1"
+crypto\ec\libfips-lib-ecdh_kdf.obj: crypto\ec\ecdh_kdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecdh_kdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecdh_kdf.c" > crypto\ec\libfips-lib-ecdh_kdf.d 2>&1"
+crypto\ec\libfips-lib-ecdh_ossl.obj: crypto\ec\ecdh_ossl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecdh_ossl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecdh_ossl.c" > crypto\ec\libfips-lib-ecdh_ossl.d 2>&1"
+crypto\ec\libfips-lib-ecdsa_ossl.obj: crypto\ec\ecdsa_ossl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecdsa_ossl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecdsa_ossl.c" > crypto\ec\libfips-lib-ecdsa_ossl.d 2>&1"
+crypto\ec\libfips-lib-ecdsa_sign.obj: crypto\ec\ecdsa_sign.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecdsa_sign.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecdsa_sign.c" > crypto\ec\libfips-lib-ecdsa_sign.d 2>&1"
+crypto\ec\libfips-lib-ecdsa_vrf.obj: crypto\ec\ecdsa_vrf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecdsa_vrf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecdsa_vrf.c" > crypto\ec\libfips-lib-ecdsa_vrf.d 2>&1"
+crypto\ec\libfips-lib-ecp_mont.obj: crypto\ec\ecp_mont.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecp_mont.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecp_mont.c" > crypto\ec\libfips-lib-ecp_mont.d 2>&1"
+crypto\ec\libfips-lib-ecp_nist.obj: crypto\ec\ecp_nist.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecp_nist.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecp_nist.c" > crypto\ec\libfips-lib-ecp_nist.d 2>&1"
+crypto\ec\libfips-lib-ecp_oct.obj: crypto\ec\ecp_oct.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecp_oct.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecp_oct.c" > crypto\ec\libfips-lib-ecp_oct.d 2>&1"
+crypto\ec\libfips-lib-ecp_smpl.obj: crypto\ec\ecp_smpl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecp_smpl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecp_smpl.c" > crypto\ec\libfips-lib-ecp_smpl.d 2>&1"
+crypto\ec\libfips-lib-ecx_backend.obj: crypto\ec\ecx_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecx_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecx_backend.c" > crypto\ec\libfips-lib-ecx_backend.d 2>&1"
+crypto\ec\libfips-lib-ecx_key.obj: crypto\ec\ecx_key.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ec\ecx_key.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ec\ecx_key.c" > crypto\ec\libfips-lib-ecx_key.d 2>&1"
+crypto\evp\libfips-lib-asymcipher.obj: crypto\evp\asymcipher.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\asymcipher.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\asymcipher.c" > crypto\evp\libfips-lib-asymcipher.d 2>&1"
+crypto\evp\libfips-lib-dh_support.obj: crypto\evp\dh_support.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\dh_support.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\dh_support.c" > crypto\evp\libfips-lib-dh_support.d 2>&1"
+crypto\evp\libfips-lib-digest.obj: crypto\evp\digest.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\digest.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\digest.c" > crypto\evp\libfips-lib-digest.d 2>&1"
+crypto\evp\libfips-lib-ec_support.obj: crypto\evp\ec_support.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\ec_support.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\ec_support.c" > crypto\evp\libfips-lib-ec_support.d 2>&1"
+crypto\evp\libfips-lib-evp_enc.obj: crypto\evp\evp_enc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\evp_enc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\evp_enc.c" > crypto\evp\libfips-lib-evp_enc.d 2>&1"
+crypto\evp\libfips-lib-evp_fetch.obj: crypto\evp\evp_fetch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\evp_fetch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\evp_fetch.c" > crypto\evp\libfips-lib-evp_fetch.d 2>&1"
+crypto\evp\libfips-lib-evp_lib.obj: crypto\evp\evp_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\evp_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\evp_lib.c" > crypto\evp\libfips-lib-evp_lib.d 2>&1"
+crypto\evp\libfips-lib-evp_rand.obj: crypto\evp\evp_rand.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\evp_rand.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\evp_rand.c" > crypto\evp\libfips-lib-evp_rand.d 2>&1"
+crypto\evp\libfips-lib-evp_utils.obj: crypto\evp\evp_utils.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\evp_utils.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\evp_utils.c" > crypto\evp\libfips-lib-evp_utils.d 2>&1"
+crypto\evp\libfips-lib-exchange.obj: crypto\evp\exchange.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\exchange.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\exchange.c" > crypto\evp\libfips-lib-exchange.d 2>&1"
+crypto\evp\libfips-lib-kdf_lib.obj: crypto\evp\kdf_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\kdf_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\kdf_lib.c" > crypto\evp\libfips-lib-kdf_lib.d 2>&1"
+crypto\evp\libfips-lib-kdf_meth.obj: crypto\evp\kdf_meth.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\kdf_meth.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\kdf_meth.c" > crypto\evp\libfips-lib-kdf_meth.d 2>&1"
+crypto\evp\libfips-lib-kem.obj: crypto\evp\kem.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\kem.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\kem.c" > crypto\evp\libfips-lib-kem.d 2>&1"
+crypto\evp\libfips-lib-keymgmt_lib.obj: crypto\evp\keymgmt_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\keymgmt_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\keymgmt_lib.c" > crypto\evp\libfips-lib-keymgmt_lib.d 2>&1"
+crypto\evp\libfips-lib-keymgmt_meth.obj: crypto\evp\keymgmt_meth.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\keymgmt_meth.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\keymgmt_meth.c" > crypto\evp\libfips-lib-keymgmt_meth.d 2>&1"
+crypto\evp\libfips-lib-m_sigver.obj: crypto\evp\m_sigver.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\m_sigver.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\m_sigver.c" > crypto\evp\libfips-lib-m_sigver.d 2>&1"
+crypto\evp\libfips-lib-mac_lib.obj: crypto\evp\mac_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\mac_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\mac_lib.c" > crypto\evp\libfips-lib-mac_lib.d 2>&1"
+crypto\evp\libfips-lib-mac_meth.obj: crypto\evp\mac_meth.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\mac_meth.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\mac_meth.c" > crypto\evp\libfips-lib-mac_meth.d 2>&1"
+crypto\evp\libfips-lib-p_lib.obj: crypto\evp\p_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\p_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\p_lib.c" > crypto\evp\libfips-lib-p_lib.d 2>&1"
+crypto\evp\libfips-lib-pmeth_check.obj: crypto\evp\pmeth_check.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\pmeth_check.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\pmeth_check.c" > crypto\evp\libfips-lib-pmeth_check.d 2>&1"
+crypto\evp\libfips-lib-pmeth_gn.obj: crypto\evp\pmeth_gn.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\pmeth_gn.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\pmeth_gn.c" > crypto\evp\libfips-lib-pmeth_gn.d 2>&1"
+crypto\evp\libfips-lib-pmeth_lib.obj: crypto\evp\pmeth_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\pmeth_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\pmeth_lib.c" > crypto\evp\libfips-lib-pmeth_lib.d 2>&1"
+crypto\evp\libfips-lib-signature.obj: crypto\evp\signature.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\evp\signature.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\evp\signature.c" > crypto\evp\libfips-lib-signature.d 2>&1"
+crypto\ffc\libfips-lib-ffc_backend.obj: crypto\ffc\ffc_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_backend.c" > crypto\ffc\libfips-lib-ffc_backend.d 2>&1"
+crypto\ffc\libfips-lib-ffc_dh.obj: crypto\ffc\ffc_dh.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_dh.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_dh.c" > crypto\ffc\libfips-lib-ffc_dh.d 2>&1"
+crypto\ffc\libfips-lib-ffc_key_generate.obj: crypto\ffc\ffc_key_generate.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_key_generate.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_key_generate.c" > crypto\ffc\libfips-lib-ffc_key_generate.d 2>&1"
+crypto\ffc\libfips-lib-ffc_key_validate.obj: crypto\ffc\ffc_key_validate.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_key_validate.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_key_validate.c" > crypto\ffc\libfips-lib-ffc_key_validate.d 2>&1"
+crypto\ffc\libfips-lib-ffc_params.obj: crypto\ffc\ffc_params.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_params.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_params.c" > crypto\ffc\libfips-lib-ffc_params.d 2>&1"
+crypto\ffc\libfips-lib-ffc_params_generate.obj: crypto\ffc\ffc_params_generate.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_params_generate.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_params_generate.c" > crypto\ffc\libfips-lib-ffc_params_generate.d 2>&1"
+crypto\ffc\libfips-lib-ffc_params_validate.obj: crypto\ffc\ffc_params_validate.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ffc\ffc_params_validate.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ffc\ffc_params_validate.c" > crypto\ffc\libfips-lib-ffc_params_validate.d 2>&1"
+crypto\hmac\libfips-lib-hmac.obj: crypto\hmac\hmac.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\hmac\hmac.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\hmac\hmac.c" > crypto\hmac\libfips-lib-hmac.d 2>&1"
+crypto\lhash\libfips-lib-lhash.obj: crypto\lhash\lhash.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\lhash\lhash.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\lhash\lhash.c" > crypto\lhash\libfips-lib-lhash.d 2>&1"
+crypto\libfips-lib-asn1_dsa.obj: crypto\asn1_dsa.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\asn1_dsa.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\asn1_dsa.c" > crypto\libfips-lib-asn1_dsa.d 2>&1"
+crypto\libfips-lib-bsearch.obj: crypto\bsearch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\bsearch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\bsearch.c" > crypto\libfips-lib-bsearch.d 2>&1"
+crypto\libfips-lib-context.obj: crypto\context.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\context.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\context.c" > crypto\libfips-lib-context.d 2>&1"
+crypto\libfips-lib-core_algorithm.obj: crypto\core_algorithm.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\core_algorithm.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\core_algorithm.c" > crypto\libfips-lib-core_algorithm.d 2>&1"
+crypto\libfips-lib-core_fetch.obj: crypto\core_fetch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\core_fetch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\core_fetch.c" > crypto\libfips-lib-core_fetch.d 2>&1"
+crypto\libfips-lib-core_namemap.obj: crypto\core_namemap.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\core_namemap.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\core_namemap.c" > crypto\libfips-lib-core_namemap.d 2>&1"
+crypto\libfips-lib-cpuid.obj: crypto\cpuid.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\cpuid.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\cpuid.c" > crypto\libfips-lib-cpuid.d 2>&1"
+crypto\libfips-lib-cryptlib.obj: crypto\cryptlib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\cryptlib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\cryptlib.c" > crypto\libfips-lib-cryptlib.d 2>&1"
+crypto\libfips-lib-ctype.obj: crypto\ctype.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ctype.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ctype.c" > crypto\libfips-lib-ctype.d 2>&1"
+crypto\libfips-lib-der_writer.obj: crypto\der_writer.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\der_writer.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\der_writer.c" > crypto\libfips-lib-der_writer.d 2>&1"
+crypto\libfips-lib-ex_data.obj: crypto\ex_data.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\ex_data.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\ex_data.c" > crypto\libfips-lib-ex_data.d 2>&1"
+crypto\libfips-lib-initthread.obj: crypto\initthread.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\initthread.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\initthread.c" > crypto\libfips-lib-initthread.d 2>&1"
+crypto\libfips-lib-mem_clr.obj: crypto\mem_clr.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\mem_clr.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\mem_clr.c" > crypto\libfips-lib-mem_clr.d 2>&1"
+crypto\libfips-lib-o_str.obj: crypto\o_str.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\o_str.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\o_str.c" > crypto\libfips-lib-o_str.d 2>&1"
+crypto\libfips-lib-packet.obj: crypto\packet.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\packet.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\packet.c" > crypto\libfips-lib-packet.d 2>&1"
+crypto\libfips-lib-param_build.obj: crypto\param_build.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\param_build.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\param_build.c" > crypto\libfips-lib-param_build.d 2>&1"
+crypto\libfips-lib-param_build_set.obj: crypto\param_build_set.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\param_build_set.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\param_build_set.c" > crypto\libfips-lib-param_build_set.d 2>&1"
+crypto\libfips-lib-params.obj: crypto\params.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\params.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\params.c" > crypto\libfips-lib-params.d 2>&1"
+crypto\libfips-lib-params_dup.obj: crypto\params_dup.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\params_dup.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\params_dup.c" > crypto\libfips-lib-params_dup.d 2>&1"
+crypto\libfips-lib-params_from_text.obj: crypto\params_from_text.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\params_from_text.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\params_from_text.c" > crypto\libfips-lib-params_from_text.d 2>&1"
+crypto\libfips-lib-provider_core.obj: crypto\provider_core.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\provider_core.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\provider_core.c" > crypto\libfips-lib-provider_core.d 2>&1"
+crypto\libfips-lib-provider_predefined.obj: crypto\provider_predefined.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\provider_predefined.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\provider_predefined.c" > crypto\libfips-lib-provider_predefined.d 2>&1"
+crypto\libfips-lib-self_test_core.obj: crypto\self_test_core.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\self_test_core.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\self_test_core.c" > crypto\libfips-lib-self_test_core.d 2>&1"
+crypto\libfips-lib-sparse_array.obj: crypto\sparse_array.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sparse_array.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sparse_array.c" > crypto\libfips-lib-sparse_array.d 2>&1"
+crypto\libfips-lib-threads_lib.obj: crypto\threads_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\threads_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\threads_lib.c" > crypto\libfips-lib-threads_lib.d 2>&1"
+crypto\libfips-lib-threads_none.obj: crypto\threads_none.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\threads_none.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\threads_none.c" > crypto\libfips-lib-threads_none.d 2>&1"
+crypto\libfips-lib-threads_pthread.obj: crypto\threads_pthread.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\threads_pthread.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\threads_pthread.c" > crypto\libfips-lib-threads_pthread.d 2>&1"
+crypto\libfips-lib-threads_win.obj: crypto\threads_win.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\threads_win.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\threads_win.c" > crypto\libfips-lib-threads_win.d 2>&1"
+crypto\modes\libfips-lib-cbc128.obj: crypto\modes\cbc128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\cbc128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\cbc128.c" > crypto\modes\libfips-lib-cbc128.d 2>&1"
+crypto\modes\libfips-lib-ccm128.obj: crypto\modes\ccm128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\ccm128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\ccm128.c" > crypto\modes\libfips-lib-ccm128.d 2>&1"
+crypto\modes\libfips-lib-cfb128.obj: crypto\modes\cfb128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\cfb128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\cfb128.c" > crypto\modes\libfips-lib-cfb128.d 2>&1"
+crypto\modes\libfips-lib-ctr128.obj: crypto\modes\ctr128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\ctr128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\ctr128.c" > crypto\modes\libfips-lib-ctr128.d 2>&1"
+crypto\modes\libfips-lib-gcm128.obj: crypto\modes\gcm128.c
+	$(CC)  $(LIB_CFLAGS) -I"crypto" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\gcm128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"crypto" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\gcm128.c" > crypto\modes\libfips-lib-gcm128.d 2>&1"
+crypto\modes\libfips-lib-ofb128.obj: crypto\modes\ofb128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\ofb128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\ofb128.c" > crypto\modes\libfips-lib-ofb128.d 2>&1"
+crypto\modes\libfips-lib-wrap128.obj: crypto\modes\wrap128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\wrap128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\wrap128.c" > crypto\modes\libfips-lib-wrap128.d 2>&1"
+crypto\modes\libfips-lib-xts128.obj: crypto\modes\xts128.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\modes\xts128.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\modes\xts128.c" > crypto\modes\libfips-lib-xts128.d 2>&1"
+crypto\property\libfips-lib-defn_cache.obj: crypto\property\defn_cache.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\property\defn_cache.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\property\defn_cache.c" > crypto\property\libfips-lib-defn_cache.d 2>&1"
+crypto\property\libfips-lib-property.obj: crypto\property\property.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\property\property.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\property\property.c" > crypto\property\libfips-lib-property.d 2>&1"
+crypto\property\libfips-lib-property_parse.obj: crypto\property\property_parse.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\property\property_parse.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\property\property_parse.c" > crypto\property\libfips-lib-property_parse.d 2>&1"
+crypto\property\libfips-lib-property_query.obj: crypto\property\property_query.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\property\property_query.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\property\property_query.c" > crypto\property\libfips-lib-property_query.d 2>&1"
+crypto\property\libfips-lib-property_string.obj: crypto\property\property_string.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\property\property_string.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\property\property_string.c" > crypto\property\libfips-lib-property_string.d 2>&1"
+crypto\rand\libfips-lib-rand_lib.obj: crypto\rand\rand_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rand\rand_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rand\rand_lib.c" > crypto\rand\libfips-lib-rand_lib.d 2>&1"
+crypto\rsa\libfips-lib-rsa_acvp_test_params.obj: crypto\rsa\rsa_acvp_test_params.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_acvp_test_params.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_acvp_test_params.c" > crypto\rsa\libfips-lib-rsa_acvp_test_params.d 2>&1"
+crypto\rsa\libfips-lib-rsa_backend.obj: crypto\rsa\rsa_backend.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_backend.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_backend.c" > crypto\rsa\libfips-lib-rsa_backend.d 2>&1"
+crypto\rsa\libfips-lib-rsa_chk.obj: crypto\rsa\rsa_chk.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_chk.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_chk.c" > crypto\rsa\libfips-lib-rsa_chk.d 2>&1"
+crypto\rsa\libfips-lib-rsa_crpt.obj: crypto\rsa\rsa_crpt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_crpt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_crpt.c" > crypto\rsa\libfips-lib-rsa_crpt.d 2>&1"
+crypto\rsa\libfips-lib-rsa_gen.obj: crypto\rsa\rsa_gen.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_gen.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_gen.c" > crypto\rsa\libfips-lib-rsa_gen.d 2>&1"
+crypto\rsa\libfips-lib-rsa_lib.obj: crypto\rsa\rsa_lib.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_lib.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_lib.c" > crypto\rsa\libfips-lib-rsa_lib.d 2>&1"
+crypto\rsa\libfips-lib-rsa_mp_names.obj: crypto\rsa\rsa_mp_names.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_mp_names.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_mp_names.c" > crypto\rsa\libfips-lib-rsa_mp_names.d 2>&1"
+crypto\rsa\libfips-lib-rsa_none.obj: crypto\rsa\rsa_none.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_none.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_none.c" > crypto\rsa\libfips-lib-rsa_none.d 2>&1"
+crypto\rsa\libfips-lib-rsa_oaep.obj: crypto\rsa\rsa_oaep.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_oaep.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_oaep.c" > crypto\rsa\libfips-lib-rsa_oaep.d 2>&1"
+crypto\rsa\libfips-lib-rsa_ossl.obj: crypto\rsa\rsa_ossl.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_ossl.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_ossl.c" > crypto\rsa\libfips-lib-rsa_ossl.d 2>&1"
+crypto\rsa\libfips-lib-rsa_pk1.obj: crypto\rsa\rsa_pk1.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_pk1.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_pk1.c" > crypto\rsa\libfips-lib-rsa_pk1.d 2>&1"
+crypto\rsa\libfips-lib-rsa_pss.obj: crypto\rsa\rsa_pss.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_pss.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_pss.c" > crypto\rsa\libfips-lib-rsa_pss.d 2>&1"
+crypto\rsa\libfips-lib-rsa_schemes.obj: crypto\rsa\rsa_schemes.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_schemes.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_schemes.c" > crypto\rsa\libfips-lib-rsa_schemes.d 2>&1"
+crypto\rsa\libfips-lib-rsa_sign.obj: crypto\rsa\rsa_sign.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_sign.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_sign.c" > crypto\rsa\libfips-lib-rsa_sign.d 2>&1"
+crypto\rsa\libfips-lib-rsa_sp800_56b_check.obj: crypto\rsa\rsa_sp800_56b_check.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_sp800_56b_check.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_sp800_56b_check.c" > crypto\rsa\libfips-lib-rsa_sp800_56b_check.d 2>&1"
+crypto\rsa\libfips-lib-rsa_sp800_56b_gen.obj: crypto\rsa\rsa_sp800_56b_gen.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_sp800_56b_gen.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_sp800_56b_gen.c" > crypto\rsa\libfips-lib-rsa_sp800_56b_gen.d 2>&1"
+crypto\rsa\libfips-lib-rsa_x931.obj: crypto\rsa\rsa_x931.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\rsa\rsa_x931.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\rsa\rsa_x931.c" > crypto\rsa\libfips-lib-rsa_x931.d 2>&1"
+crypto\sha\libfips-lib-keccak1600.obj: crypto\sha\keccak1600.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sha\keccak1600.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sha\keccak1600.c" > crypto\sha\libfips-lib-keccak1600.d 2>&1"
+crypto\sha\libfips-lib-sha1dgst.obj: crypto\sha\sha1dgst.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sha\sha1dgst.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sha\sha1dgst.c" > crypto\sha\libfips-lib-sha1dgst.d 2>&1"
+crypto\sha\libfips-lib-sha256.obj: crypto\sha\sha256.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sha\sha256.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sha\sha256.c" > crypto\sha\libfips-lib-sha256.d 2>&1"
+crypto\sha\libfips-lib-sha3.obj: crypto\sha\sha3.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sha\sha3.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sha\sha3.c" > crypto\sha\libfips-lib-sha3.d 2>&1"
+crypto\sha\libfips-lib-sha512.obj: crypto\sha\sha512.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\sha\sha512.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\sha\sha512.c" > crypto\sha\libfips-lib-sha512.d 2>&1"
+crypto\stack\libfips-lib-stack.obj: crypto\stack\stack.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "crypto\stack\stack.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "crypto\stack\stack.c" > crypto\stack\libfips-lib-stack.d 2>&1"
+providers\common\der\libfips-lib-der_rsa_sig.obj: providers\common\der\der_rsa_sig.c providers\common\include\prov\der_digests.h providers\common\include\prov\der_rsa.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\der\der_rsa_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\der\der_rsa_sig.c" > providers\common\der\libfips-lib-der_rsa_sig.d 2>&1"
+providers\common\libfips-lib-bio_prov.obj: providers\common\bio_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\bio_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\bio_prov.c" > providers\common\libfips-lib-bio_prov.d 2>&1"
+providers\common\libfips-lib-capabilities.obj: providers\common\capabilities.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\capabilities.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\capabilities.c" > providers\common\libfips-lib-capabilities.d 2>&1"
+providers\common\libfips-lib-digest_to_nid.obj: providers\common\digest_to_nid.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\digest_to_nid.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\digest_to_nid.c" > providers\common\libfips-lib-digest_to_nid.d 2>&1"
+providers\common\libfips-lib-provider_seeding.obj: providers\common\provider_seeding.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\provider_seeding.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\provider_seeding.c" > providers\common\libfips-lib-provider_seeding.d 2>&1"
+providers\common\libfips-lib-provider_util.obj: providers\common\provider_util.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\provider_util.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\provider_util.c" > providers\common\libfips-lib-provider_util.d 2>&1"
+providers\common\libfips-lib-securitycheck.obj: providers\common\securitycheck.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\securitycheck.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\securitycheck.c" > providers\common\libfips-lib-securitycheck.d 2>&1"
+providers\common\libfips-lib-securitycheck_fips.obj: providers\common\securitycheck_fips.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\common\securitycheck_fips.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\common\securitycheck_fips.c" > providers\common\libfips-lib-securitycheck_fips.d 2>&1"
+providers\fips\libfips-lib-fipsprov.obj: providers\fips\fipsprov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\fips\fipsprov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\fips\fipsprov.c" > providers\fips\libfips-lib-fipsprov.d 2>&1"
+providers\fips\libfips-lib-self_test.obj: providers\fips\self_test.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\fips\self_test.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\fips\self_test.c" > providers\fips\libfips-lib-self_test.d 2>&1"
+providers\fips\libfips-lib-self_test_kats.obj: providers\fips\self_test_kats.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\fips\self_test_kats.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\fips\self_test_kats.c" > providers\fips\libfips-lib-self_test_kats.d 2>&1"
+providers\implementations\asymciphers\libfips-lib-rsa_enc.obj: providers\implementations\asymciphers\rsa_enc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\asymciphers\rsa_enc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\asymciphers\rsa_enc.c" > providers\implementations\asymciphers\libfips-lib-rsa_enc.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes.obj: providers\implementations\ciphers\cipher_aes.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes.c" > providers\implementations\ciphers\libfips-lib-cipher_aes.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.obj: providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.obj: providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.obj: providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.obj: providers\implementations\ciphers\cipher_aes_ccm.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_ccm.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_ccm.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.obj: providers\implementations\ciphers\cipher_aes_ccm_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_ccm_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_ccm_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.obj: providers\implementations\ciphers\cipher_aes_gcm.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_gcm.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_gcm.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.obj: providers\implementations\ciphers\cipher_aes_gcm_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_gcm_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_gcm_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_hw.obj: providers\implementations\ciphers\cipher_aes_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.obj: providers\implementations\ciphers\cipher_aes_ocb.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_ocb.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_ocb.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.obj: providers\implementations\ciphers\cipher_aes_ocb_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_ocb_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_ocb_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.obj: providers\implementations\ciphers\cipher_aes_wrp.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_wrp.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_wrp.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts.obj: providers\implementations\ciphers\cipher_aes_xts.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_xts.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_xts.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_xts.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.obj: providers\implementations\ciphers\cipher_aes_xts_fips.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_xts_fips.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_xts_fips.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.obj: providers\implementations\ciphers\cipher_aes_xts_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_aes_xts_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_aes_xts_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_cts.obj: providers\implementations\ciphers\cipher_cts.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_cts.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_cts.c" > providers\implementations\ciphers\libfips-lib-cipher_cts.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_tdes.obj: providers\implementations\ciphers\cipher_tdes.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_tdes.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_tdes.c" > providers\implementations\ciphers\libfips-lib-cipher_tdes.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_tdes_common.obj: providers\implementations\ciphers\cipher_tdes_common.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_tdes_common.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_tdes_common.c" > providers\implementations\ciphers\libfips-lib-cipher_tdes_common.d 2>&1"
+providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.obj: providers\implementations\ciphers\cipher_tdes_hw.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\ciphers\cipher_tdes_hw.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\ciphers\cipher_tdes_hw.c" > providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.d 2>&1"
+providers\implementations\digests\libfips-lib-sha2_prov.obj: providers\implementations\digests\sha2_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\digests\sha2_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\digests\sha2_prov.c" > providers\implementations\digests\libfips-lib-sha2_prov.d 2>&1"
+providers\implementations\digests\libfips-lib-sha3_prov.obj: providers\implementations\digests\sha3_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\digests\sha3_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\digests\sha3_prov.c" > providers\implementations\digests\libfips-lib-sha3_prov.d 2>&1"
+providers\implementations\exchange\libfips-lib-dh_exch.obj: providers\implementations\exchange\dh_exch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\exchange\dh_exch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\exchange\dh_exch.c" > providers\implementations\exchange\libfips-lib-dh_exch.d 2>&1"
+providers\implementations\exchange\libfips-lib-ecdh_exch.obj: providers\implementations\exchange\ecdh_exch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\exchange\ecdh_exch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\exchange\ecdh_exch.c" > providers\implementations\exchange\libfips-lib-ecdh_exch.d 2>&1"
+providers\implementations\exchange\libfips-lib-ecx_exch.obj: providers\implementations\exchange\ecx_exch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\exchange\ecx_exch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\exchange\ecx_exch.c" > providers\implementations\exchange\libfips-lib-ecx_exch.d 2>&1"
+providers\implementations\exchange\libfips-lib-kdf_exch.obj: providers\implementations\exchange\kdf_exch.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\exchange\kdf_exch.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\exchange\kdf_exch.c" > providers\implementations\exchange\libfips-lib-kdf_exch.d 2>&1"
+providers\implementations\kdfs\libfips-lib-hkdf.obj: providers\implementations\kdfs\hkdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\hkdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\hkdf.c" > providers\implementations\kdfs\libfips-lib-hkdf.d 2>&1"
+providers\implementations\kdfs\libfips-lib-kbkdf.obj: providers\implementations\kdfs\kbkdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\kbkdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\kbkdf.c" > providers\implementations\kdfs\libfips-lib-kbkdf.d 2>&1"
+providers\implementations\kdfs\libfips-lib-pbkdf2.obj: providers\implementations\kdfs\pbkdf2.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\pbkdf2.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\pbkdf2.c" > providers\implementations\kdfs\libfips-lib-pbkdf2.d 2>&1"
+providers\implementations\kdfs\libfips-lib-pbkdf2_fips.obj: providers\implementations\kdfs\pbkdf2_fips.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\pbkdf2_fips.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\pbkdf2_fips.c" > providers\implementations\kdfs\libfips-lib-pbkdf2_fips.d 2>&1"
+providers\implementations\kdfs\libfips-lib-sshkdf.obj: providers\implementations\kdfs\sshkdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\sshkdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\sshkdf.c" > providers\implementations\kdfs\libfips-lib-sshkdf.d 2>&1"
+providers\implementations\kdfs\libfips-lib-sskdf.obj: providers\implementations\kdfs\sskdf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\sskdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\sskdf.c" > providers\implementations\kdfs\libfips-lib-sskdf.d 2>&1"
+providers\implementations\kdfs\libfips-lib-tls1_prf.obj: providers\implementations\kdfs\tls1_prf.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\tls1_prf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\tls1_prf.c" > providers\implementations\kdfs\libfips-lib-tls1_prf.d 2>&1"
+providers\implementations\kdfs\libfips-lib-x942kdf.obj: providers\implementations\kdfs\x942kdf.c providers\common\include\prov\der_wrap.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kdfs\x942kdf.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kdfs\x942kdf.c" > providers\implementations\kdfs\libfips-lib-x942kdf.d 2>&1"
+providers\implementations\kem\libfips-lib-rsa_kem.obj: providers\implementations\kem\rsa_kem.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\kem\rsa_kem.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\kem\rsa_kem.c" > providers\implementations\kem\libfips-lib-rsa_kem.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-dh_kmgmt.obj: providers\implementations\keymgmt\dh_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\dh_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\dh_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-dh_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.obj: providers\implementations\keymgmt\dsa_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\dsa_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\dsa_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-ec_kmgmt.obj: providers\implementations\keymgmt\ec_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\ec_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\ec_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-ec_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.obj: providers\implementations\keymgmt\ecx_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\ecx_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\ecx_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.obj: providers\implementations\keymgmt\kdf_legacy_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\kdf_legacy_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\kdf_legacy_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.obj: providers\implementations\keymgmt\mac_legacy_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\mac_legacy_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\mac_legacy_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.d 2>&1"
+providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.obj: providers\implementations\keymgmt\rsa_kmgmt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\keymgmt\rsa_kmgmt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\keymgmt\rsa_kmgmt.c" > providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.d 2>&1"
+providers\implementations\macs\libfips-lib-cmac_prov.obj: providers\implementations\macs\cmac_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\macs\cmac_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\macs\cmac_prov.c" > providers\implementations\macs\libfips-lib-cmac_prov.d 2>&1"
+providers\implementations\macs\libfips-lib-gmac_prov.obj: providers\implementations\macs\gmac_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\macs\gmac_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\macs\gmac_prov.c" > providers\implementations\macs\libfips-lib-gmac_prov.d 2>&1"
+providers\implementations\macs\libfips-lib-hmac_prov.obj: providers\implementations\macs\hmac_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\macs\hmac_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\macs\hmac_prov.c" > providers\implementations\macs\libfips-lib-hmac_prov.d 2>&1"
+providers\implementations\macs\libfips-lib-kmac_prov.obj: providers\implementations\macs\kmac_prov.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\macs\kmac_prov.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\macs\kmac_prov.c" > providers\implementations\macs\libfips-lib-kmac_prov.d 2>&1"
+providers\implementations\rands\libfips-lib-crngt.obj: providers\implementations\rands\crngt.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\crngt.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\crngt.c" > providers\implementations\rands\libfips-lib-crngt.d 2>&1"
+providers\implementations\rands\libfips-lib-drbg.obj: providers\implementations\rands\drbg.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\drbg.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\drbg.c" > providers\implementations\rands\libfips-lib-drbg.d 2>&1"
+providers\implementations\rands\libfips-lib-drbg_ctr.obj: providers\implementations\rands\drbg_ctr.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\drbg_ctr.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\drbg_ctr.c" > providers\implementations\rands\libfips-lib-drbg_ctr.d 2>&1"
+providers\implementations\rands\libfips-lib-drbg_hash.obj: providers\implementations\rands\drbg_hash.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\drbg_hash.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\drbg_hash.c" > providers\implementations\rands\libfips-lib-drbg_hash.d 2>&1"
+providers\implementations\rands\libfips-lib-drbg_hmac.obj: providers\implementations\rands\drbg_hmac.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\drbg_hmac.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\drbg_hmac.c" > providers\implementations\rands\libfips-lib-drbg_hmac.d 2>&1"
+providers\implementations\rands\libfips-lib-test_rng.obj: providers\implementations\rands\test_rng.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\rands\test_rng.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\rands\test_rng.c" > providers\implementations\rands\libfips-lib-test_rng.d 2>&1"
+providers\implementations\signature\libfips-lib-dsa_sig.obj: providers\implementations\signature\dsa_sig.c providers\common\include\prov\der_dsa.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\signature\dsa_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\signature\dsa_sig.c" > providers\implementations\signature\libfips-lib-dsa_sig.d 2>&1"
+providers\implementations\signature\libfips-lib-ecdsa_sig.obj: providers\implementations\signature\ecdsa_sig.c providers\common\include\prov\der_ec.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\signature\ecdsa_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\signature\ecdsa_sig.c" > providers\implementations\signature\libfips-lib-ecdsa_sig.d 2>&1"
+providers\implementations\signature\libfips-lib-eddsa_sig.obj: providers\implementations\signature\eddsa_sig.c providers\common\include\prov\der_ecx.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\signature\eddsa_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\signature\eddsa_sig.c" > providers\implementations\signature\libfips-lib-eddsa_sig.d 2>&1"
+providers\implementations\signature\libfips-lib-mac_legacy_sig.obj: providers\implementations\signature\mac_legacy_sig.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\signature\mac_legacy_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\signature\mac_legacy_sig.c" > providers\implementations\signature\libfips-lib-mac_legacy_sig.d 2>&1"
+providers\implementations\signature\libfips-lib-rsa_sig.obj: providers\implementations\signature\rsa_sig.c providers\common\include\prov\der_rsa.h
+	$(CC)  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\implementations\signature\rsa_sig.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"providers\common\include\prov" -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "providers\implementations\signature\rsa_sig.c" > providers\implementations\signature\libfips-lib-rsa_sig.d 2>&1"
+ssl\libfips-lib-s3_cbc.obj: ssl\s3_cbc.c
+	$(CC)  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "ssl\s3_cbc.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"." -I"crypto" -I"include" -I"providers\implementations\include" -I"providers\common\include" $(LIB_CPPFLAGS)  -DFIPS_MODULE "ssl\s3_cbc.c" > ssl\libfips-lib-s3_cbc.d 2>&1"
 providers\liblegacy.lib: crypto\bn\liblegacy-lib-bn_asm.obj crypto\des\liblegacy-lib-des_enc.obj crypto\des\liblegacy-lib-fcrypt_b.obj crypto\md5\liblegacy-lib-md5_dgst.obj crypto\md5\liblegacy-lib-md5_one.obj crypto\md5\liblegacy-lib-md5_sha1.obj providers\implementations\ciphers\liblegacy-lib-cipher_blowfish.obj providers\implementations\ciphers\liblegacy-lib-cipher_blowfish_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_cast5.obj providers\implementations\ciphers\liblegacy-lib-cipher_cast5_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_des.obj providers\implementations\ciphers\liblegacy-lib-cipher_des_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_desx.obj providers\implementations\ciphers\liblegacy-lib-cipher_desx_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc2.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc2_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc4.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hmac_md5_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc4_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc5.obj providers\implementations\ciphers\liblegacy-lib-cipher_rc5_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_seed.obj providers\implementations\ciphers\liblegacy-lib-cipher_seed_hw.obj providers\implementations\ciphers\liblegacy-lib-cipher_tdes_common.obj providers\implementations\digests\liblegacy-lib-md2_prov.obj providers\implementations\digests\liblegacy-lib-md4_prov.obj providers\implementations\digests\liblegacy-lib-ripemd_prov.obj providers\implementations\digests\liblegacy-lib-wp_prov.obj providers\implementations\kdfs\liblegacy-lib-pbkdf1.obj providers\liblegacy-lib-prov_running.obj
 	$(AR) $(ARFLAGS) $(AROUTFLAG)providers\liblegacy.lib @<<
 crypto\bn\liblegacy-lib-bn_asm.obj
@@ -5876,6 +6920,26 @@ test\testutil\libtestutil-lib-tests.obj: test\testutil\tests.c
 test\testutil\libtestutil-lib-testutil_init.obj: test\testutil\testutil_init.c
 	$(CC)  $(LIB_CFLAGS) -I"include" -I"apps\include" -I"." $(LIB_CPPFLAGS)  -c $(COUTFLAG)$@ "test\testutil\testutil_init.c"
 	cmd /C ""$(CC)" /Zs /showIncludes  $(LIB_CFLAGS) -I"include" -I"apps\include" -I"." $(LIB_CPPFLAGS)  "test\testutil\testutil_init.c" > test\testutil\libtestutil-lib-testutil_init.d 2>&1"
+providers\fips.dll: providers\fips\fips-dso-fips_entry.obj providers\fips-dso-fips.res providers\fips.def providers\libfips.lib
+	IF EXIST providers\fips.dll.manifest DEL /F /Q providers\fips.dll.manifest
+	cmd /C "$(LD) $(LDFLAGS) $(DSO_LDFLAGS) @<< || (DEL /Q $(@B).* providers\fips.* & EXIT 1)"
+providers\fips\fips-dso-fips_entry.obj
+$(LDOUTFLAG)providers\fips.dll
+providers\libfips.lib
+ $(DSO_EX_LIBS)
+/def:providers\fips.def providers\fips-dso-fips.res
+<<
+	IF EXIST providers\fips.dll.manifest \
+	   $(MT) $(MTFLAGS) $(MTINFLAG)providers\fips.dll.manifest $(MTOUTFLAG)providers\fips.dll
+providers\fips-dso-fips.res: providers\fips.rc
+	$(RC) $(RCFLAGS) $(RCOUTFLAG)$@ "providers\fips.rc"
+providers\fips.rc: "util\mkrc.pl" 
+	"$(PERL)" "util\mkrc.pl" fips > $@
+providers\fips.def: util\providers.num  util\mkdef.pl
+	"$(PERL)" "util\mkdef.pl" --type dso --ordinals util\providers.num --name providers\fips --OS windows > providers\fips.def
+providers\fips\fips-dso-fips_entry.obj: providers\fips\fips_entry.c
+	$(CC)  $(DSO_CFLAGS) -I"include" $(DSO_CPPFLAGS)  -DFIPS_MODULE -c $(COUTFLAG)$@ "providers\fips\fips_entry.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(DSO_CFLAGS) -I"include" $(DSO_CPPFLAGS)  -DFIPS_MODULE "providers\fips\fips_entry.c" > providers\fips\fips-dso-fips_entry.d 2>&1"
 providers\legacy.dll: providers\legacy-dso-legacyprov.obj providers\legacy-dso-legacy.res providers\legacy.def providers\liblegacy.lib providers\libcommon.lib libcrypto.lib
 	IF EXIST providers\legacy.dll.manifest DEL /F /Q providers\legacy.dll.manifest
 	cmd /C "$(LD) $(LDFLAGS) $(DSO_LDFLAGS) @<< || (DEL /Q $(@B).* providers\legacy.* & EXIT 1)"
@@ -6392,6 +7456,20 @@ $(BIN_EX_LIBS)
 test\aborttest-bin-aborttest.obj: test\aborttest.c
 	$(CC)  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  -c $(COUTFLAG)$@ "test\aborttest.c"
 	cmd /C ""$(CC)" /Zs /showIncludes  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  "test\aborttest.c" > test\aborttest-bin-aborttest.d 2>&1"
+test\acvp_test.exe: test\acvp_test-bin-acvp_test.obj test\libtestutil.lib libcrypto.lib
+	IF EXIST test\acvp_test.exe.manifest DEL /F /Q test\acvp_test.exe.manifest
+	$(LD) $(LDFLAGS) $(BIN_LDFLAGS) @<<
+test\acvp_test-bin-acvp_test.obj
+$(LDOUTFLAG)test\acvp_test.exe
+test\libtestutil.lib
+libcrypto.lib
+$(BIN_EX_LIBS)  
+<<
+	IF EXIST test\acvp_test.exe.manifest \
+	   $(MT) $(MTFLAGS) $(MTINFLAG)test\acvp_test.exe.manifest $(MTOUTFLAG)test\acvp_test.exe
+test\acvp_test-bin-acvp_test.obj: test\acvp_test.c
+	$(CC)  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  -c $(COUTFLAG)$@ "test\acvp_test.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  "test\acvp_test.c" > test\acvp_test-bin-acvp_test.d 2>&1"
 test\aesgcmtest.exe: test\aesgcmtest-bin-aesgcmtest.obj test\libtestutil.lib libcrypto.lib
 	IF EXIST test\aesgcmtest.exe.manifest DEL /F /Q test\aesgcmtest.exe.manifest
 	$(LD) $(LDFLAGS) $(BIN_LDFLAGS) @<<
@@ -8511,8 +9589,8 @@ $(BIN_EX_LIBS)
 	IF EXIST test\evp_extra_test.exe.manifest \
 	   $(MT) $(MTFLAGS) $(MTINFLAG)test\evp_extra_test.exe.manifest $(MTOUTFLAG)test\evp_extra_test.exe
 test\evp_extra_test-bin-evp_extra_test.obj: test\evp_extra_test.c
-	$(CC)  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  -DNO_FIPS_MODULE -c $(COUTFLAG)$@ "test\evp_extra_test.c"
-	cmd /C ""$(CC)" /Zs /showIncludes  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  -DNO_FIPS_MODULE "test\evp_extra_test.c" > test\evp_extra_test-bin-evp_extra_test.d 2>&1"
+	$(CC)  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  -c $(COUTFLAG)$@ "test\evp_extra_test.c"
+	cmd /C ""$(CC)" /Zs /showIncludes  $(BIN_CFLAGS) -I"include" -I"apps\include" $(BIN_CPPFLAGS)  "test\evp_extra_test.c" > test\evp_extra_test-bin-evp_extra_test.d 2>&1"
 test\evp_extra_test2.exe: test\evp_extra_test2-bin-evp_extra_test2.obj test\libtestutil.lib libcrypto.lib
 	IF EXIST test\evp_extra_test2.exe.manifest DEL /F /Q test\evp_extra_test2.exe.manifest
 	$(LD) $(LDFLAGS) $(BIN_LDFLAGS) @<<
@@ -13796,6 +14874,15 @@ crypto\aes\libcrypto-lib-aes_wrap.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\aes\libfips-lib-aes_cbc.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\aes\libfips-lib-aes_core.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\aes\libfips-lib-aes_ecb.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\aes\libfips-lib-aes_misc.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
 crypto\aria\libcrypto-lib-aria.obj : "include\openssl\configuration.h" \
  "include\openssl\opensslv.h"
 crypto\asn1\libcrypto-lib-a_bitstr.obj : "include\openssl\asn1.h" \
@@ -14457,6 +15544,144 @@ crypto\bn\libcrypto-lib-bn_x931p.obj : "include\crypto\bn_conf.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_add.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_asm.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_blind.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_const.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_conv.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_ctx.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_dh.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_div.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_exp.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_exp2.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_gcd.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_gf2m.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_intern.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_kron.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_lib.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_mod.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_mont.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_mpi.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_mul.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_nist.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_prime.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_rand.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_recp.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_rsa_fips186_4.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_shift.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_sqr.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_sqrt.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\bn\libfips-lib-bn_word.obj : "include\crypto\bn_conf.h" \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\bn\liblegacy-lib-bn_asm.obj : "include\crypto\bn_conf.h" \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -14467,6 +15692,10 @@ crypto\buffer\libcrypto-lib-buf_err.obj : "include\openssl\bio.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\buffer\libcrypto-lib-buffer.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\buffer\libfips-lib-buffer.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -14497,6 +15726,10 @@ crypto\cast\libcrypto-lib-c_skey.obj : "include\openssl\configuration.h" \
 crypto\chacha\libcrypto-lib-chacha_enc.obj : "include\openssl\configuration.h" \
  "include\openssl\opensslv.h"
 crypto\cmac\libcrypto-lib-cmac.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\cmac\libfips-lib-cmac.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -14900,6 +16133,16 @@ crypto\des\libcrypto-lib-str2key.obj : "include\openssl\configuration.h" \
  "include\openssl\safestack.h"
 crypto\des\libcrypto-lib-xcbc_enc.obj : "include\openssl\configuration.h" \
  "include\openssl\opensslv.h"
+crypto\des\libfips-lib-des_enc.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\des\libfips-lib-ecb3_enc.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\des\libfips-lib-fcrypt_b.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\des\libfips-lib-set_key.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
 crypto\des\liblegacy-lib-des_enc.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
@@ -14978,6 +16221,34 @@ crypto\dh\libcrypto-lib-dh_rfc5114.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_check.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_gen.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_group_params.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_kdf.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_key.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dh\libfips-lib-dh_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\dsa\libcrypto-lib-dsa_ameth.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\conf.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -15051,6 +16322,38 @@ crypto\dsa\libcrypto-lib-dsa_vrf.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_check.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_gen.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_key.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_ossl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_sign.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\dsa\libfips-lib-dsa_vrf.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\dso\libcrypto-lib-dso_dl.obj : "include\crypto\dso_conf.h" \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -15088,7 +16391,13 @@ crypto\dso\libcrypto-lib-dso_win32.obj : "include\crypto\dso_conf.h" \
 crypto\ec\curve448\arch_32\libcrypto-lib-f_impl32.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\curve448\arch_32\libfips-lib-f_impl32.obj : \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\ec\curve448\arch_64\libcrypto-lib-f_impl64.obj : \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\curve448\arch_64\libfips-lib-f_impl64.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\ec\curve448\libcrypto-lib-curve448.obj : "include\openssl\bio.h" \
@@ -15105,6 +16414,20 @@ crypto\ec\curve448\libcrypto-lib-f_generic.obj : \
 crypto\ec\curve448\libcrypto-lib-scalar.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\curve448\libfips-lib-curve448.obj : "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\curve448\libfips-lib-curve448_tables.obj : \
+ "include\openssl\configuration.h" "include\openssl\opensslv.h"
+crypto\ec\curve448\libfips-lib-eddsa.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ec\curve448\libfips-lib-f_generic.obj : \
+ "include\openssl\configuration.h" "include\openssl\opensslv.h"
+crypto\ec\curve448\libfips-lib-scalar.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
 crypto\ec\libcrypto-lib-curve25519.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
@@ -15251,6 +16574,103 @@ crypto\ec\libcrypto-lib-ecx_meth.obj : "include\openssl\asn1.h" \
  "include\openssl\opensslv.h" "include\openssl\pkcs7.h" \
  "include\openssl\safestack.h" "include\openssl\x509.h" \
  "include\openssl\x509_vfy.h"
+crypto\ec\libfips-lib-curve25519.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec2_oct.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec2_smpl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_asn1.obj : "include\openssl\asn1.h" \
+ "include\openssl\asn1t.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_check.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_curve.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_cvt.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_key.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_kmeth.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_mult.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ec_oct.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecdh_kdf.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecdh_ossl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecdsa_ossl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecdsa_sign.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecdsa_vrf.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecp_mont.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecp_nist.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecp_oct.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecp_smpl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecx_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ec\libfips-lib-ecx_key.obj : "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\encode_decode\libcrypto-lib-decoder_err.obj : "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -15863,6 +17283,98 @@ crypto\evp\libcrypto-lib-signature.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-asymcipher.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-dh_support.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\evp\libfips-lib-digest.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-ec_support.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\evp\libfips-lib-evp_enc.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-evp_fetch.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-evp_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-evp_rand.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-evp_utils.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-exchange.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-kdf_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-kdf_meth.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-kem.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-keymgmt_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-keymgmt_meth.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-m_sigver.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-mac_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-mac_meth.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-p_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-pmeth_check.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-pmeth_gn.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-pmeth_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\evp\libfips-lib-signature.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\ffc\libcrypto-lib-ffc_backend.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
@@ -15891,7 +17403,39 @@ crypto\ffc\libcrypto-lib-ffc_params_validate.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_dh.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_key_generate.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_key_validate.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_params.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_params_generate.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\ffc\libfips-lib-ffc_params_validate.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\hmac\libcrypto-lib-hmac.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\hmac\libfips-lib-hmac.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -15918,6 +17462,10 @@ crypto\lhash\libcrypto-lib-lh_stats.obj : "include\openssl\asn1.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\lhash\libcrypto-lib-lhash.obj : "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\lhash\libfips-lib-lhash.obj : "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -16105,6 +17653,109 @@ crypto\libcrypto-lib-trace.obj : "include\openssl\asn1.h" \
 crypto\libcrypto-lib-uid.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
+crypto\libfips-lib-asn1_dsa.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\libfips-lib-bsearch.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-context.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\conf.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-core_algorithm.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-core_fetch.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-core_namemap.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-cpuid.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-cryptlib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-ctype.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\libfips-lib-der_writer.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-ex_data.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-initthread.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-mem_clr.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\libfips-lib-o_str.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-packet.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-param_build.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-param_build_set.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-params.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\libfips-lib-params_dup.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-params_from_text.obj : "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-provider_core.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-provider_predefined.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-self_test_core.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-sparse_array.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\libfips-lib-threads_lib.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\libfips-lib-threads_none.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-threads_pthread.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\libfips-lib-threads_win.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
 crypto\md2\libcrypto-lib-md2_dgst.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
@@ -16173,6 +17824,32 @@ crypto\modes\libcrypto-lib-wrap128.obj : "include\openssl\asn1.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\modes\libcrypto-lib-xts128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-cbc128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-ccm128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-cfb128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-ctr128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-gcm128.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\modes\libfips-lib-ofb128.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\modes\libfips-lib-wrap128.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\modes\libfips-lib-xts128.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
 crypto\objects\libcrypto-lib-o_names.obj : "include\openssl\asn1.h" \
@@ -16522,6 +18199,26 @@ crypto\property\libcrypto-lib-property_string.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\property\libfips-lib-defn_cache.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\property\libfips-lib-property.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\property\libfips-lib-property_parse.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\property\libfips-lib-property_query.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\property\libfips-lib-property_string.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\rand\libcrypto-lib-prov_seed.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -16553,6 +18250,10 @@ crypto\rand\libcrypto-lib-rand_pool.obj : "include\openssl\asn1.h" \
  "include\openssl\safestack.h" "include\openssl\ui.h" "include\openssl\x509.h" \
  "include\openssl\x509_vfy.h"
 crypto\rand\libcrypto-lib-randfile.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rand\libfips-lib-rand_lib.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -16712,6 +18413,74 @@ crypto\rsa\libcrypto-lib-rsa_x931g.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_acvp_test_params.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_backend.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_chk.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_crpt.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_gen.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_lib.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_mp_names.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_none.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_oaep.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_ossl.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_pk1.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_pss.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_schemes.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_sign.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_sp800_56b_check.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_sp800_56b_gen.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\rsa\libfips-lib-rsa_x931.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 crypto\seed\libcrypto-lib-seed.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
@@ -16743,6 +18512,21 @@ crypto\sha\libcrypto-lib-sha256.obj : "include\openssl\configuration.h" \
 crypto\sha\libcrypto-lib-sha3.obj : "include\openssl\configuration.h" \
  "include\openssl\opensslv.h"
 crypto\sha\libcrypto-lib-sha512.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\sha\libfips-lib-keccak1600.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\sha\libfips-lib-sha1dgst.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\sha\libfips-lib-sha256.obj : "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+crypto\sha\libfips-lib-sha3.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h"
+crypto\sha\libfips-lib-sha512.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -16786,6 +18570,10 @@ crypto\srp\libcrypto-lib-srp_vfy.obj : "include\openssl\asn1.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h" \
  "include\openssl\srp.h"
 crypto\stack\libcrypto-lib-stack.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+crypto\stack\libfips-lib-stack.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -17686,6 +19474,11 @@ providers\common\der\libdefault-lib-der_sm2_sig.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h" "providers\common\include\prov\der_sm2.h"
+providers\common\der\libfips-lib-der_rsa_sig.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h" "providers\common\include\prov\der_digests.h" \
+ "providers\common\include\prov\der_rsa.h"
 providers\common\libcommon-lib-provider_ctx.obj : "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -17723,12 +19516,59 @@ providers\common\libdefault-lib-securitycheck_default.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\common\libfips-lib-bio_prov.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\common\libfips-lib-capabilities.obj : \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\common\libfips-lib-digest_to_nid.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+providers\common\libfips-lib-provider_seeding.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\opensslv.h" \
+ "include\openssl\safestack.h"
+providers\common\libfips-lib-provider_util.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\common\libfips-lib-securitycheck.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\common\libfips-lib-securitycheck_fips.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\fips\fips-dso-fips_entry.obj : "include\openssl\configuration.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\fips\libfips-lib-fipsprov.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\fips\libfips-lib-self_test.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" \
+ "include\openssl\fipskey.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\fips\libfips-lib-self_test_kats.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\asymciphers\libdefault-lib-rsa_enc.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\asymciphers\libdefault-lib-sm2_enc.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\asymciphers\libfips-lib-rsa_enc.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -17968,6 +19808,101 @@ providers\implementations\ciphers\libdefault-lib-cipher_tdes_wrap_hw.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha1_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_cbc_hmac_sha256_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ccm_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_gcm_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_ocb_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_wrp.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_fips.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_aes_xts_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_cts.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_tdes.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_tdes_common.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\ciphers\libfips-lib-cipher_tdes_hw.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\ciphers\liblegacy-lib-cipher_blowfish.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -18098,6 +20033,15 @@ providers\implementations\digests\libdefault-lib-sha3_prov.obj : \
 providers\implementations\digests\libdefault-lib-sm3_prov.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\digests\libfips-lib-sha2_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\digests\libfips-lib-sha3_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\digests\liblegacy-lib-md2_prov.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
@@ -18200,6 +20144,25 @@ providers\implementations\exchange\libdefault-lib-kdf_exch.obj : \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\exchange\libfips-lib-dh_exch.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\exchange\libfips-lib-ecdh_exch.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\exchange\libfips-lib-ecx_exch.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\exchange\libfips-lib-kdf_exch.obj : \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\kdfs\libdefault-lib-hkdf.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -18251,12 +20214,52 @@ providers\implementations\kdfs\libdefault-lib-x942kdf.obj : \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h" \
  "providers\common\include\prov\der_wrap.h"
+providers\implementations\kdfs\libfips-lib-hkdf.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-kbkdf.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-pbkdf2.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-sshkdf.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-sskdf.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-tls1_prf.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kdfs\libfips-lib-x942kdf.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h" \
+ "providers\common\include\prov\der_wrap.h"
 providers\implementations\kdfs\liblegacy-lib-pbkdf1.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\kem\libdefault-lib-rsa_kem.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\kem\libfips-lib-rsa_kem.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -18293,6 +20296,40 @@ providers\implementations\keymgmt\libdefault-lib-mac_legacy_kmgmt.obj : \
  "include\openssl\safestack.h" "include\openssl\ui.h" "include\openssl\x509.h" \
  "include\openssl\x509_vfy.h"
 providers\implementations\keymgmt\libdefault-lib-rsa_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-dh_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-dsa_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-ec_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-ecx_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-kdf_legacy_kmgmt.obj : \
+ "include\openssl\bio.h" "include\openssl\configuration.h" \
+ "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-mac_legacy_kmgmt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\keymgmt\libfips-lib-rsa_kmgmt.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -18335,6 +20372,24 @@ providers\implementations\macs\libdefault-lib-siphash_prov.obj : \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\macs\libfips-lib-cmac_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\macs\libfips-lib-gmac_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\macs\libfips-lib-hmac_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\macs\libfips-lib-kmac_prov.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\rands\libdefault-lib-crngt.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -18366,6 +20421,36 @@ providers\implementations\rands\libdefault-lib-seed_src.obj : \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 providers\implementations\rands\libdefault-lib-test_rng.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-crngt.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-drbg.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-drbg_ctr.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-drbg_hash.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-drbg_hmac.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\rands\libfips-lib-test_rng.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
  "include\openssl\err.h" "include\openssl\lhash.h" \
@@ -18427,6 +20512,35 @@ providers\implementations\signature\libdefault-lib-sm2_sig.obj : \
  "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h" \
  "providers\common\include\prov\der_sm2.h"
+providers\implementations\signature\libfips-lib-dsa_sig.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h" \
+ "providers\common\include\prov\der_dsa.h"
+providers\implementations\signature\libfips-lib-ecdsa_sig.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h" \
+ "providers\common\include\prov\der_ec.h"
+providers\implementations\signature\libfips-lib-eddsa_sig.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h" \
+ "providers\common\include\prov\der_ecx.h"
+providers\implementations\signature\libfips-lib-mac_legacy_sig.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+providers\implementations\signature\libfips-lib-rsa_sig.obj : \
+ "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h" \
+ "providers\common\include\prov\der_rsa.h"
 providers\implementations\storemgmt\libdefault-lib-file_store.obj : \
  "include\openssl\asn1.h" "include\openssl\bio.h" "include\openssl\conf.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \
@@ -18461,6 +20575,10 @@ providers\liblegacy-lib-prov_running.obj : "include\openssl\configuration.h" \
 ssl\libdefault-lib-s3_cbc.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\safestack.h"
+ssl\libfips-lib-s3_cbc.obj : "include\openssl\asn1.h" "include\openssl\bio.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
  "include\openssl\opensslv.h" "include\openssl\safestack.h"
 ssl\libssl-lib-bio_ssl.obj : "include\openssl\asn1.h" "include\openssl\bio.h" \
  "include\openssl\conf.h" "include\openssl\configuration.h" \
@@ -18764,6 +20882,13 @@ ssl\statem\libssl-lib-statem_srvr.obj : "include\openssl\asn1.h" \
 test\aborttest-bin-aborttest.obj : "include\openssl\configuration.h" \
  "include\openssl\crypto.h" "include\openssl\opensslv.h" \
  "include\openssl\safestack.h"
+test\acvp_test-bin-acvp_test.obj : "include\openssl\asn1.h" \
+ "include\openssl\bio.h" "include\openssl\conf.h" \
+ "include\openssl\configuration.h" "include\openssl\crypto.h" \
+ "include\openssl\err.h" "include\openssl\lhash.h" \
+ "include\openssl\opensslv.h" "include\openssl\pkcs7.h" \
+ "include\openssl\safestack.h" "include\openssl\x509.h" \
+ "include\openssl\x509_vfy.h"
 test\aesgcmtest-bin-aesgcmtest.obj : "include\openssl\asn1.h" \
  "include\openssl\bio.h" "include\openssl\conf.h" \
  "include\openssl\configuration.h" "include\openssl\crypto.h" \

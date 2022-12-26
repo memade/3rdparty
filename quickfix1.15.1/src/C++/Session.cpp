@@ -29,7 +29,7 @@
 #include <iostream>
 
 #if HAVE_PACKEY_COMPRESS
-#include "../../Project.Common/zlibs.hpp"
+#include <zip++.h>
 #endif
 
 namespace FIX
@@ -1176,7 +1176,7 @@ namespace FIX
 			{
 				std::string unzipOut;
 				size_t nSource = sourceDataLength.getValue();
-				if (Z_OK == shared::ZLibs::zipUnCompress(rawData.getValue(), nSource, unzipOut))
+				if (Z_OK == shared::Zip::zipUnCompress(rawData.getValue(), nSource, unzipOut))
 				{
 					Message nowMsg(msg);
 					nowMsg.setField(FIX::RawData(unzipOut));
@@ -1546,11 +1546,11 @@ namespace FIX
 			if (rawData.getValue().size() >= GC_PACKET_PROCESS_SIZE)
 			{
 				std::string zipOut;
-				if (Z_OK == shared::ZLibs::zipCompress(rawData.getValue(), zipOut))
+				if (Z_OK == shared::Zip::zipCompress(rawData.getValue(), zipOut))
 				{
 					message.setField(FIX::RawData(zipOut));
-					message.setField(FIX::RawDataLength(zipOut.size()));
-					message.setField(FIX::SourceDataLength(rawData.getValue().size()));
+					message.setField(FIX::RawDataLength(static_cast<FIX::LENGTH>(zipOut.size())));
+					message.setField(FIX::SourceDataLength(static_cast<FIX::LENGTH>(rawData.getValue().size())));
 				}
 			}
 		}
