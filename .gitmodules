@@ -1,9 +1,0 @@
-[submodule "llvm-project"]
-	path = llvm-project
-	url = git@github.com:llvm/llvm-project.git
-[submodule "imgui"]
-	path = imgui
-	url = git@github.com:ocornut/imgui.git
-[submodule "SDL"]
-	path = SDL
-	url = git@github.com:libsdl-org/SDL.git
