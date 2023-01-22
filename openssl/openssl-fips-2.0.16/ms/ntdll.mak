@@ -146,8 +146,6 @@ T_OBJ=$(OBJ_D)\fips_test_suite.obj \
 
 E_OBJ=
 
-CRYPTOOBJ=$(OBJ_D)\$(CRYPTO).res 
-
 FIPSOBJ=$(OBJ_D)\fips.obj \
 	$(OBJ_D)\fips_post.obj $(OBJ_D)\fips_aes_selftest.obj $(OBJ_D)\fips_cmac_selftest.obj \
 	$(OBJ_D)\fips_des_selftest.obj $(OBJ_D)\fips_dsa_selftest.obj $(OBJ_D)\fips_dsa_lib.obj \
@@ -191,6 +189,8 @@ FIPSOBJ=$(OBJ_D)\fips.obj \
 	$(OBJ_D)\ecs_ossl.obj $(OBJ_D)\buf_str.obj $(OBJ_D)\e_des3.obj \
 	$(OBJ_D)\e_aes.obj $(OBJ_D)\m_sha1.obj $(OBJ_D)\m_dss.obj \
 	$(OBJ_D)\m_dss1.obj $(OBJ_D)\m_ecdsa.obj $(OBJ_D)\e_null.obj 
+
+CRYPTOOBJ=$(OBJ_D)\$(CRYPTO).res 
 
 T_EXE=$(TEST_D)\fips_test_suite.exe \
 	$(TEST_D)\fips_aesavs.exe $(TEST_D)\fips_gcmtest.exe $(TEST_D)\fips_cmactest.exe \
