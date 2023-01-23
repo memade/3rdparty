@@ -9,7 +9,7 @@
 Makefile
 *~
 
-build/
+#build/
 m4/
 CMakeFiles/
 
