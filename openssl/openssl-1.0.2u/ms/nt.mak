@@ -12,13 +12,13 @@
 # The one monster makefile better suits building in non-unix
 # environments.
 
-INSTALLTOP=D:\__Github__\Windows\compile\scripts\openssl\..\..\..\3rdparty\openssl\openssl-1.0.2u
-OPENSSLDIR=D:\__Github__\Windows\compile\scripts\openssl\..\..\..\3rdparty\openssl\openssl-1.0.2u
+INSTALLTOP=D:\__Github__\Windows\compile\scripts\openssl\..\..\..\3rdparty\openssl\openssl-1.0.2u\
+OPENSSLDIR=D:\__Github__\Windows\compile\scripts\openssl\..\..\..\3rdparty\openssl\openssl-1.0.2u\
 
 # Set your compiler options
 PLATFORM=VC-WIN32
 CC=cl
-CFLAG= /MD /Ox /O2 /Ob2 -DOPENSSL_THREADS  -DDSO_WIN32 -W3  -Gs0 -GF -Gy -nologo -DOPENSSL_SYSNAME_WIN32 -DWIN32_LEAN_AND_MEAN -DL_ENDIAN -D_CRT_SECURE_NO_DEPRECATE -D_WINSOCK_DEPRECATED_NO_WARNINGS -I$(FIPSDIR)/include -DOPENSSL_NO_IDEA -DOPENSSL_NO_MDC2 -DOPENSSL_NO_SSL2 -DOPENSSL_NO_SSL3 -DOPENSSL_NO_KRB5 -DOPENSSL_FIPS -DOPENSSL_NO_JPAKE -DOPENSSL_NO_EC2M -DOPENSSL_NO_WEAK_SSL_CIPHERS -DOPENSSL_NO_DYNAMIC_ENGINE    
+CFLAG= /MT /Ox /O2 /Ob2 -DOPENSSL_THREADS  -DDSO_WIN32 -W3  -Gs0 -GF -Gy -nologo -DOPENSSL_SYSNAME_WIN32 -DWIN32_LEAN_AND_MEAN -DL_ENDIAN -D_CRT_SECURE_NO_DEPRECATE -D_WINSOCK_DEPRECATED_NO_WARNINGS -DOPENSSL_NO_IDEA -DOPENSSL_NO_MDC2 -DOPENSSL_NO_SSL2 -DOPENSSL_NO_SSL3 -DOPENSSL_NO_KRB5 -DOPENSSL_NO_JPAKE -DOPENSSL_NO_EC2M -DOPENSSL_NO_WEAK_SSL_CIPHERS -DOPENSSL_NO_DYNAMIC_ENGINE    
 APP_CFLAG= /Zi /Fd$(TMP_D)/app
 LIB_CFLAG=/Zl /Zi /Fd$(TMP_D)/lib
 SHLIB_CFLAG=
@@ -50,13 +50,13 @@ RANLIB=
 MKDIR=$(PERL) util/mkdir-p.pl
 MKLIB=lib /nologo
 MLFLAGS=
-ASM=nasm -f win32
+ASM=ml /nologo /Cp /coff /c /Cx /Zi
 
 # FIPS validated module and support file locations
 
 E_PREMAIN_DSO=fips_premain_dso
 
-FIPSDIR=D:\__Github__\Windows\compile\scripts\openssl\..\..\..\3rdparty\openssl\openssl-fips-2.0.16
+FIPSDIR=\usr\local\ssl\fips-2.0
 BASEADDR=0xFB00000
 FIPSLIB_D=$(FIPSDIR)\lib
 FIPS_PREMAIN_SRC=$(FIPSLIB_D)\fips_premain.c
@@ -71,7 +71,7 @@ FIPSLINK=$(PERL) $(FIPSDIR)\bin\fipslink.pl
 
 E_EXE=openssl
 SSL=ssleay32
-CRYPTO=libeayfips32
+CRYPTO=libeay32
 
 # BIN_D  - Binary output directory
 # TEST_D - Binary test file output directory
@@ -97,7 +97,7 @@ SO_CRYPTO= $(CRYPTO)
 L_SSL=     $(LIB_D)\$(SSL).lib
 L_CRYPTO=  $(LIB_D)\$(CRYPTO).lib
 
-L_LIBS= $(L_SSL) $(L_CRYPTO)  $(O_FIPSCANISTER)
+L_LIBS= $(L_SSL) $(L_CRYPTO) 
 
 ######################################################
 # Don't touch anything below this point
@@ -443,7 +443,7 @@ T_EXE=$(TEST_D)\constant_time_test.exe \
 E_SHLIB=
 
 ###################################################################
-all: banner $(TMP_D) $(BIN_D) $(TEST_D) $(LIB_D) $(INCO_D) headers lib exe  $(LIB_D)\libeaycompat32.lib $(PREMAIN_DSO_EXE)
+all: banner $(TMP_D) $(BIN_D) $(TEST_D) $(LIB_D) $(INCO_D) headers lib exe 
 
 banner:
 	@echo Building OpenSSL
@@ -1234,15 +1234,6 @@ $(OBJ_D)\srp.obj: $(SRC_D)\apps\srp.c
 
 $(OBJ_D)\openssl.obj: $(SRC_D)\apps\openssl.c
 	$(CC) /Fo$(OBJ_D)\openssl.obj -DMONOLITH $(APP_CFLAGS) -c $(SRC_D)\apps\openssl.c
-
-$(OBJ_D)\$(E_PREMAIN_DSO).obj: $(FIPS_PREMAIN_SRC)
-	$(CC) /Fo$(OBJ_D)\$(E_PREMAIN_DSO).obj -DFINGERPRINT_PREMAIN_DSO_LOAD $(APP_CFLAGS) -c $(FIPS_PREMAIN_SRC)
-
-$(PREMAIN_DSO_EXE): $(OBJ_D)\$(E_PREMAIN_DSO).obj $(CRYPTOOBJ) $(O_FIPSCANISTER) 
-  $(LINK_CMD) $(LFLAGS) /out:$(PREMAIN_DSO_EXE) @<<
-	$(EX_LIBS) $(OBJ_D)\$(E_PREMAIN_DSO).obj $(CRYPTOOBJ) $(O_FIPSCANISTER) $(EX_LIBS)
-<<
-	IF EXIST $@.manifest mt -nologo -manifest $@.manifest -outputresource:$@;1
 
 $(OBJ_D)\s2_meth.obj: $(SRC_D)\ssl\s2_meth.c
 	$(CC) /Fo$(OBJ_D)\s2_meth.obj  $(LIB_CFLAGS) -c $(SRC_D)\ssl\s2_meth.c
@@ -3495,21 +3486,9 @@ $(O_CRYPTO): $(CRYPTOOBJ)
   $(CRYPTOOBJ)
 <<
 
-$(LIB_D)\libeaycompat32.lib: $(CRYPTOOBJ) $(O_FIPSCANISTER)
-	$(MKLIB) /out:$(LIB_D)\libeaycompat32.lib @<<
-  $(CRYPTOOBJ) $(O_FIPSCANISTER)
-<<
-
 $(BIN_D)\$(E_EXE).exe: $(E_OBJ) $(LIBS_DEP)
-	SET FIPS_LINK=$(LINK_CMD)
-	SET FIPS_CC=$(CC)
-	SET FIPS_CC_ARGS=/Fo$(OBJ_D)\fips_premain.obj $(SHLIB_CFLAGS) -c
-	SET PREMAIN_DSO_EXE=
-	SET FIPS_TARGET=$(BIN_D)\$(E_EXE).exe
-	SET FIPS_SHA1_EXE=$(FIPS_SHA1_EXE)
-	SET FIPSLIB_D=$(FIPSLIB_D)
-	$(FIPSLINK) $(LFLAGS) /fixed /map /out:$(BIN_D)\$(E_EXE).exe @<<
-	$(APP_EX_OBJ) $(E_OBJ) $(OBJ_D)\fips_premain.obj $(L_LIBS) $(EX_LIBS)
+	$(LINK_CMD) $(LFLAGS) /out:$(BIN_D)\$(E_EXE).exe @<<
+	$(APP_EX_OBJ) $(E_OBJ) $(L_LIBS) $(EX_LIBS)
 <<
 	IF EXIST $@.manifest mt -nologo -manifest $@.manifest -outputresource:$@;1
 
