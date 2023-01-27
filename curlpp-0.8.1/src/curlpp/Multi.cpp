@@ -119,7 +119,9 @@ namespace curlpp {
 
  IMulti::~IMulti() {
  }
-
+ void IMulti::Stop() {
+  return;
+ }
  void IMulti::Init() {
   m_MultiHandle = curl_multi_init();
   runtimeAssert("Error when trying to curl_multi_init() a handle", m_MultiHandle != NULL);
