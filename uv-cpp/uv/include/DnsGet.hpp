@@ -31,7 +31,7 @@ namespace uv
 
   int GetIP(std::string& hostname, std::string service = "");
   int GetIP(std::string&& hostname, std::string service = "");
-
+  int GetIP(const std::string& hostname, std::string service = "");
 
  private:
   EventLoop* loop_;

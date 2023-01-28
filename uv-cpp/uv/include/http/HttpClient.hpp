@@ -17,41 +17,40 @@
 
 namespace uv
 {
-namespace http
-{
+ namespace http
+ {
 
-class HttpClient 
-{
-public:
-    enum ReqResult
-    {
-        Success = 0,
-        ConnectFail = 1,
-        ParseFail = 2,
-        Unknow = 3,
-    };
-    using OnRespCallback = std::function<void(ReqResult, Response*)>;
-public:
-    HttpClient(EventLoop* loop);
-    virtual ~HttpClient();
+  class HttpClient
+  {
+  public:
+   enum ReqResult
+   {
+    Success = 0,
+    ConnectFail = 1,
+    ParseFail = 2,
+    Unknow = 3,
+   };
+   using OnRespCallback = std::function<void(ReqResult, Response*)>;
+  public:
+   HttpClient(EventLoop* loop);
+   virtual ~HttpClient();
 
-    void Req(uv::SocketAddr& addr,Request& req);
+   virtual void Req(uv::SocketAddr& addr, Request& req);
+   virtual void setOnResp(OnRespCallback callback);
 
-    void setOnResp(OnRespCallback callback);
+  protected:
+   TcpClient* client_;
+   OnRespCallback callback_;
+   Request req_;
+   std::string buffer_;
 
-private:
-    TcpClient* client_;
-    OnRespCallback callback_;
-    Request req_;
-    std::string buffer_;
+  protected:
+   void onResp(ReqResult rst, Response* resp);
+   void onConnectStatus(TcpClient::ConnectStatus status);
+   void onMessage(const char* data, ssize_t size);
+   bool isConnected;
+  };
 
-private:
-    void onResp(ReqResult rst, Response* resp);
-    void onConnectStatus(TcpClient::ConnectStatus status);
-    void onMessage(const char* data, ssize_t size);
-    bool isConnected;
-};
-
-}
+ }
 }
 #endif

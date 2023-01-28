@@ -27,7 +27,9 @@ int DNSGet::GetIP(std::string& hostname, std::string service)
 {
  return uv_getaddrinfo(loop_->handle(), &handle_, DNSGet::onDNSGet, hostname.c_str(), service.c_str(), NULL);
 }
-
+int DNSGet::GetIP(const std::string& hostname, std::string service /*= ""*/) {
+ return uv_getaddrinfo(loop_->handle(), &handle_, DNSGet::onDNSGet, hostname.c_str(), service.c_str(), NULL);
+}
 int DNSGet::GetIP(std::string&& hostname, std::string service)
 {
  return GetIP(hostname, service);
