@@ -267,8 +267,6 @@ namespace DuiLib {
   HINSTANCE m_instance;
 
   CStdStringPtrMap m_mCustomAttrHash;
- protected:
-  std::shared_ptr<std::mutex> m_Mutex = std::make_shared<std::mutex>();
  };
 
 } // namespace DuiLib

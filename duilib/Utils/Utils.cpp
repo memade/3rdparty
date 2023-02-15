@@ -171,8 +171,7 @@ namespace DuiLib
 	}
 
 	void CStdPtrArray::Empty()
-	{
-		std::lock_guard<std::mutex> l{*m_Mutex};
+	{	
 		if (m_ppVoid != NULL) {
 			free(m_ppVoid);
 			m_ppVoid = NULL;
@@ -183,7 +182,6 @@ namespace DuiLib
 	void CStdPtrArray::Resize(int iSize)
 	{
 		Empty();
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		m_ppVoid = static_cast<LPVOID*>(malloc(iSize * sizeof(LPVOID)));
 		::ZeroMemory(m_ppVoid, iSize * sizeof(LPVOID));
 		m_nAllocated = iSize;
@@ -197,7 +195,6 @@ namespace DuiLib
 
 	bool CStdPtrArray::Add(LPVOID pData)
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		if( ++m_nCount >= m_nAllocated) {
 			int nAllocated = m_nAllocated * 2;
 			if( nAllocated == 0 ) nAllocated = 11;
@@ -218,7 +215,6 @@ namespace DuiLib
 	bool CStdPtrArray::InsertAt(int iIndex, LPVOID pData)
 	{
 		if( iIndex == m_nCount ) return Add(pData);
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		if( iIndex < 0 || iIndex > m_nCount ) return false;
 		if( ++m_nCount >= m_nAllocated) {
 			int nAllocated = m_nAllocated * 2;
@@ -240,7 +236,6 @@ namespace DuiLib
 
 	bool CStdPtrArray::SetAt(int iIndex, LPVOID pData)
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		if( iIndex < 0 || iIndex >= m_nCount ) return false;
 		m_ppVoid[iIndex] = pData;
 		return true;
@@ -248,7 +243,6 @@ namespace DuiLib
 
 	bool CStdPtrArray::Remove(int iIndex)
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		if( iIndex < 0 || iIndex >= m_nCount ) 
 			return false;
 		if( iIndex < --m_nCount ) 
@@ -258,8 +252,8 @@ namespace DuiLib
 
 	int CStdPtrArray::Find(LPVOID pData) const
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
-		for( int i = 0; i < m_nCount; i++ ) if( m_ppVoid[i] == pData ) return i;
+		for( int i = 0; i < m_nCount; i++ ) 
+			if( m_ppVoid[i] == pData ) return i;
 		return -1;
 	}
 
@@ -275,14 +269,12 @@ namespace DuiLib
 
 	LPVOID CStdPtrArray::GetAt(int iIndex) const
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		if( iIndex < 0 || iIndex >= m_nCount ) return NULL;
 		return m_ppVoid[iIndex];
 	}
 
 	LPVOID CStdPtrArray::operator[] (int iIndex) const
 	{
-		std::lock_guard<std::mutex> l{ *m_Mutex };
 		ASSERT(iIndex>=0 && iIndex<m_nCount);
 		return m_ppVoid[iIndex];
 	}
@@ -461,6 +453,8 @@ namespace DuiLib
 
 	bool CDuiString::IsEmpty() const 
 	{ 
+		if (!m_pstr)
+			return true;
 		return m_pstr[0] == '\0'; 
 	}
 

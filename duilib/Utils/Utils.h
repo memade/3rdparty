@@ -75,7 +75,6 @@ namespace DuiLib
 
 	class UILIB_API CStdPtrArray
 	{
-		std::shared_ptr<std::mutex> m_Mutex = std::make_shared<std::mutex>();
 	public:
 		CStdPtrArray(int iPreallocSize = 0);
 		CStdPtrArray(const CStdPtrArray& src);

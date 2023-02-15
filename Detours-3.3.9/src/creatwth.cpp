@@ -6,7 +6,7 @@
 //
 //  Copyright (c) Microsoft Corporation.  All rights reserved.
 //
-
+#include "stdafx.h"
 // #define DETOUR_DEBUG 1
 #define DETOURS_INTERNAL
 #include "detours.h"

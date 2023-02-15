@@ -334,8 +334,8 @@ namespace DuiLib {
   // 销毁拖拽图片
   if (m_hDragBitmap != NULL) ::DeleteObject(m_hDragBitmap);
   //卸载GDIPlus
-  Gdiplus::GdiplusShutdown(m_gdiplusToken);
-  delete m_pGdiplusStartupInput;
+  //Gdiplus::GdiplusShutdown(m_gdiplusToken);
+  //delete m_pGdiplusStartupInput;
   // DPI管理对象
   if (m_pDPI != NULL) {
    delete m_pDPI;
