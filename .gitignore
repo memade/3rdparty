@@ -1,0 +1,53 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+#*.so
+*.dylib
+#*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+*.pdb
+*.vcxproj.user
+.vs/
+*.idb
+*.tlog
+*.ilk
+*.log
+
+*.idb
+*.vcxproj.user
+.vs/
+libcef_dll_wrapper.lib
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x64_beta/Debug
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x64_beta/Release
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x86_beta/Debug
+cef/cef_binary-107.0.3_chromium-107.0.5304.18_x86_beta/Release
+# wxWidgets-3.2.1/lib
+SDL/
+imgui/
+llvm-project/
