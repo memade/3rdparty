@@ -1,2 +1,0 @@
-git.commit.id.abbrev=$Format:%h$
-git.commit.id.describe=$Format:%(describe)$

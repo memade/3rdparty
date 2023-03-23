@@ -1,3 +1,0 @@
-[submodule "third_party/ticpp"]
-	path = third_party/ticpp
-	url = ../ticpp.git

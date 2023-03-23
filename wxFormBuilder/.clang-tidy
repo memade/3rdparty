@@ -1,3 +1,0 @@
----
-Checks:          '-*,clang-diagnostic-*,clang-analyzer-*,boost-*,bugprone-*,cppcoreguidelines-*,misc-*,modernize-*,performance-*,portability-*,readability-*'
-...
